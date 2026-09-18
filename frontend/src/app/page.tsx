@@ -51,7 +51,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-12 font-medium">
-            LAURA is an intelligent, unified retrieval assistant designed
+            IP Shakti Sahayak is an intelligent, unified retrieval assistant designed
             specifically to guide you through the regulatory complexities of the
             AYUSH sector.
           </p>

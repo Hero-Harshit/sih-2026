@@ -78,11 +78,6 @@ export default function Sidebar() {
       href: "/expert-escalation",
       icon: <UserPlus size={22} className="shrink-0" />,
     },
-    {
-      name: "Settings",
-      href: "/settings",
-      icon: <Settings size={22} className="shrink-0" />,
-    },
   ];
 
   return (
@@ -113,19 +108,18 @@ export default function Sidebar() {
       </div>
 
       <div className="mt-auto px-3 w-full flex flex-col items-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
-        <Link
-          href="/team"
-          className={`w-full flex items-center justify-center h-10 rounded-full border active:scale-95 transition-all duration-500 overflow-hidden ${
+        <div
+          className={`cursor-default w-full flex items-center justify-center h-10 rounded-full border transition-all duration-500 overflow-hidden ${
             pathname === "/team"
               ? "text-brand-600 bg-brand-500/10 border-brand-500/30 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] dark:text-brand-400"
-              : "text-slate-400 dark:text-slate-500 border-transparent bg-transparent hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-500/10 hover:border-brand-500/30 hover:shadow-[0_0_15px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]"
+              : "text-slate-400 dark:text-slate-500 border-transparent bg-transparent"
           }`}
           title="Team Codeveda"
         >
           <span className="font-bold text-sm tracking-wide whitespace-nowrap">
             Team Codeveda
           </span>
-        </Link>
+        </div>
       </div>
     </aside>
   );

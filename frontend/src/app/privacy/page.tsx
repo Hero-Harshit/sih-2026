@@ -10,10 +10,10 @@ const policies = [
     id: "introduction",
     title: "Introduction",
     paragraphs: [
-      "Welcome to Laura, an advanced AI powered assistant dedicated to providing guidance on Ayurveda, Intellectual Property Rights (IPR), Access and Benefit Sharing (ABS), and regulatory frameworks. Our infrastructure is engineered to facilitate secure educational experiences, recognizing that the subject matter we handle requires the highest standards of discretion.",
+      "Welcome to IP Shakti Sahayak, an advanced AI powered assistant dedicated to providing guidance on Ayurveda, Intellectual Property Rights (IPR), Access and Benefit Sharing (ABS), and regulatory frameworks. Our infrastructure is engineered to facilitate secure educational experiences, recognizing that the subject matter we handle requires the highest standards of discretion.",
       "We process your queries and documents exclusively to generate accurate, context aware, and source grounded responses. Your interactions are isolated within secure sessions and are never mined indiscriminately or sold to external marketing agencies, ensuring your specific inquiries remain strictly private.",
     ],
-    tldr: "Laura handles sensitive intellectual property and traditional knowledge with strict educational and privacy safeguards.",
+    tldr: "IP Shakti Sahayak handles sensitive intellectual property and traditional knowledge with strict educational and privacy safeguards.",
     tags: ["Overview", "Commitment"],
     metadata: {
       "Effective Date": "September 2026",
@@ -24,7 +24,7 @@ const policies = [
     id: "data-privacy",
     title: "Data & Privacy",
     paragraphs: [
-      "Laura is designed with a privacy first approach to ensure that user information is collected, processed, and protected responsibly. Since the platform deals with intellectual property, traditional knowledge, formulations, research related information, and regulatory queries, protecting user data is an important part of the system design.",
+      "IP Shakti Sahayak is designed with a privacy first approach to ensure that user information is collected, processed, and protected responsibly. Since the platform deals with intellectual property, traditional knowledge, formulations, research related information, and regulatory queries, protecting user data is an important part of the system design.",
       "We understand that the queries submitted to our platform often contain nuanced intellectual property considerations. Therefore, our data pipeline is structured to isolate individual sessions and prevent cross pollination of data between distinct user accounts. All processing occurs within secure environments that prioritize confidentiality at every operational layer.",
       "Our privacy protocols are continuously reviewed by dedicated security teams to ensure they meet modern standards. We employ advanced architectural safeguards to guarantee that your interaction history remains strictly confidential and is never exposed to unauthorized personnel or external entities.",
     ],
@@ -109,7 +109,7 @@ const policies = [
     title: "Responsible Use of AI Data",
     paragraphs: [
       "User conversations and submitted information are strictly isolated and are never automatically used for foundational AI model training or broader system improvement without explicit, granular permission and a clearly defined data use policy.",
-      "We recognize that the queries processed by Laura often contain proprietary contexts. Therefore, our agreements with underlying language model providers explicitly prohibit the retention or utilization of our users' input for their own model training regimens.",
+      "We recognize that the queries processed by IP Shakti Sahayak often contain proprietary contexts. Therefore, our agreements with underlying language model providers explicitly prohibit the retention or utilization of our users' input for their own model training regimens.",
       "When internal cache optimization is performed, it is done using completely anonymized and synthetic datasets. Your real world legal questions and intellectual property inquiries remain your exclusive property and are never commodified.",
     ],
     tldr: "User prompts are never used to train foundational AI models or shared with external language model providers.",
@@ -123,7 +123,7 @@ const policies = [
     id: "source-transparency",
     title: "Source Transparency",
     paragraphs: [
-      "Laura uses a sophisticated Retrieval Augmented Generation approach to provide source grounded responses. Relevant answers are directly supported by exact citations so that users can independently verify the underlying laws, rules, regulations, treaties, or official records.",
+      "IP Shakti Sahayak uses a sophisticated Retrieval Augmented Generation approach to provide source grounded responses. Relevant answers are directly supported by exact citations so that users can independently verify the underlying laws, rules, regulations, treaties, or official records.",
       "This mechanism ensures that the AI does not invent legal precedent. Every regulatory claim or procedural guideline presented by the platform can be traced back to a specific, verified legal document, providing a transparent chain of custody for the information.",
       "By surfacing these citations clearly alongside the generated text, we empower our users to move beyond merely trusting the AI. Users can confidently follow the provided references to read the raw legal statutes themselves, ensuring total confidence in their compliance strategies.",
     ],
@@ -231,11 +231,11 @@ const policies = [
     id: "not-legal-advice",
     title: "Not Legal Advice",
     paragraphs: [
-      "Laura is strictly an informational and educational AI assistant. The information provided by the platform does not constitute professional legal advice, and interacting with the system does not establish an attorney client relationship under any jurisdiction.",
+      "IP Shakti Sahayak is strictly an informational and educational AI assistant. The information provided by the platform does not constitute professional legal advice, and interacting with the system does not establish an attorney client relationship under any jurisdiction.",
       "While we strive for the utmost accuracy by grounding our responses in official statutes and records, the output generated by the platform should always be viewed as a preparatory research tool rather than a substitute for formal legal counsel.",
       "Users are strongly urged to consult qualified intellectual property attorneys, legal professionals, or certified regulatory authorities before making any binding decisions, filing official patents, or executing compliance strategies based on information retrieved from this platform.",
     ],
-    tldr: "Laura is an educational tool; its output does not constitute formal legal counsel or establish an attorney-client relationship.",
+    tldr: "IP Shakti Sahayak is an educational tool; its output does not constitute formal legal counsel or establish an attorney-client relationship.",
     tags: ["Disclaimer", "Educational"],
     metadata: { Status: "Informational", Liability: "Limited" },
   },
@@ -243,7 +243,7 @@ const policies = [
     id: "privacy-compliance",
     title: "Privacy & Compliance",
     paragraphs: [
-      "The comprehensive privacy and security architecture of Laura is specifically intended to align with India's Digital Personal Data Protection Act of 2023 and the subsequent Digital Personal Data Protection Rules of 2025.",
+      "The comprehensive privacy and security architecture of IP Shakti Sahayak is specifically intended to align with India's Digital Personal Data Protection Act of 2023 and the subsequent Digital Personal Data Protection Rules of 2025.",
       "We have meticulously integrated all applicable statutory requirements regarding data security, explicit user consent mechanisms, strict data retention limits, granular access controls, and comprehensive user rights frameworks directly into our technical infrastructure.",
       "By embedding these legal compliance mandates into our foundational code, we ensure that our platform not only assists you in navigating regulatory landscapes, but also stands as an operational benchmark for digital compliance and data sovereignty.",
     ],

@@ -48,19 +48,19 @@ export default function AboutPage() {
       title: "AI That Searches Before It Answers",
       icon: Search,
       content:
-        "Most chatbots just guess based on past training. Laura works differently using Retrieval-Augmented Generation (RAG). Before answering, she actually searches through our curated knowledge base of official documents, ensuring every response is grounded in facts.",
+        "Most chatbots just guess based on past training. IP Shakti Sahayak works differently using Retrieval-Augmented Generation (RAG). Before answering, she actually searches through our curated knowledge base of official documents, ensuring every response is grounded in facts.",
     },
     {
       title: "Built Specifically for Ayurveda",
       icon: BookOpen,
       content:
-        "Laura isn't a generic legal assistant. She was built specifically to tackle the unique challenges of the Ayurveda ecosystem, covering niche areas like Traditional Knowledge, Biodiversity, and Access and Benefit Sharing (ABS).",
+        "IP Shakti Sahayak isn't a generic legal assistant. She was built specifically to tackle the unique challenges of the Ayurveda ecosystem, covering niche areas like Traditional Knowledge, Biodiversity, and Access and Benefit Sharing (ABS).",
     },
     {
       title: "Product Classification Comes First",
       icon: Layers,
       content:
-        "Rules change completely depending on whether your product is a classical medicine, a new drug, or a nutraceutical. That's why Laura asks a few quick questions to figure out exactly what you're building before giving advice.",
+        "Rules change completely depending on whether your product is a classical medicine, a new drug, or a nutraceutical. That's why IP Shakti Sahayak asks a few quick questions to figure out exactly what you're building before giving advice.",
     },
     {
       title: "Clear Separation of Jurisdictions",
@@ -72,13 +72,13 @@ export default function AboutPage() {
       title: "ABS & Biodiversity Guidance",
       icon: Leaf,
       content:
-        "Working with plants and traditional knowledge often comes with extra responsibilities under the Access and Benefit Sharing (ABS) guidelines. Laura helps you figure out if these rules apply to you.",
+        "Working with plants and traditional knowledge often comes with extra responsibilities under the Access and Benefit Sharing (ABS) guidelines. IP Shakti Sahayak helps you figure out if these rules apply to you.",
     },
     {
       title: "Traditional Knowledge & Prior Art",
       icon: Library,
       content:
-        "Telling the difference between a genuinely new invention and existing traditional wisdom can be tricky. Laura points you toward relevant traditional knowledge databases (like the TKDL) to help you see if your idea is truly novel.",
+        "Telling the difference between a genuinely new invention and existing traditional wisdom can be tricky. IP Shakti Sahayak points you toward relevant traditional knowledge databases (like the TKDL) to help you see if your idea is truly novel.",
     },
     {
       title: "Multilingual by Design",
@@ -96,7 +96,7 @@ export default function AboutPage() {
       title: "Human Escalation",
       icon: Users,
       content:
-        "AI isn't perfect, and we know that. When a question is just too complex or highly sensitive, Laura won't guess. She'll respectfully step back and connect you with human IP facilitators who can help.",
+        "AI isn't perfect, and we know that. When a question is just too complex or highly sensitive, IP Shakti Sahayak won't guess. She'll respectfully step back and connect you with human IP facilitators who can help.",
     },
   ];
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
     },
     {
       title: "Understand & Classify",
-      desc: "Laura will ask a couple of quick questions to understand the exact context of your product.",
+      desc: "IP Shakti Sahayak will ask a couple of quick questions to understand the exact context of your product.",
     },
     {
       title: "Identify the Relevant Area",
@@ -119,7 +119,7 @@ export default function AboutPage() {
     },
     {
       title: "Generate a Simple Answer",
-      desc: "Laura breaks down the complex legal information into simple, understandable advice.",
+      desc: "IP Shakti Sahayak breaks down the complex legal information into simple, understandable advice.",
     },
     {
       title: "Show Sources & Confidence",
@@ -148,7 +148,7 @@ export default function AboutPage() {
               <Info size={36} />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-brand-accent mb-6 tracking-tight drop-shadow-sm leading-tight pb-2">
-              About Laura
+              About IP Shakti Sahayak
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed font-medium">
               Making Ayurveda IP and regulatory guidance simple, accessible, and
@@ -185,10 +185,10 @@ export default function AboutPage() {
                   <p>
                     If you don&apos;t have a legal background, figuring out what
                     rules apply to you can feel overwhelming. That&apos;s
-                    exactly why we built Laura.
+                    exactly why we built IP Shakti Sahayak.
                   </p>
                   <p>
-                    Laura is a multilingual AI assistant designed specifically
+                    IP Shakti Sahayak is a multilingual AI assistant designed specifically
                     for the Ayurveda ecosystem. We aren&apos;t trying to replace
                     your lawyers or regulatory experts. We just want to make
                     taking that crucial first step easier, clearer, and a lot
@@ -199,7 +199,7 @@ export default function AboutPage() {
 
               <div className="animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "100ms" }}>
                 <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Why We Built Laura
+                  Why We Built IP Shakti Sahayak
                 </h2>
                 <div className="formal-panel rounded-2xl p-8 relative overflow-hidden bg-brand-50/50 dark:bg-zinc-900/50">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-3xl -mr-10 -mt-10 z-0"></div>
@@ -227,7 +227,7 @@ export default function AboutPage() {
                     <p>
                       Normally, finding answers to these questions means hiring
                       expensive consultants or digging through complex legal
-                      texts. Laura brings all of this into one simple, guided
+                      texts. IP Shakti Sahayak brings all of this into one simple, guided
                       conversation.
                     </p>
                   </div>
@@ -310,7 +310,7 @@ export default function AboutPage() {
             <section className="animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "300ms" }}>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">
-                  What Makes Laura Different?
+                  What Makes IP Shakti Sahayak Different?
                 </h2>
                 <div className="h-1 w-24 bg-gradient-to-r from-brand-300 to-transparent rounded-full mx-auto opacity-50"></div>
               </div>
@@ -348,7 +348,7 @@ export default function AboutPage() {
                   Our Smart Approach
                 </h2>
                 <p className="text-brand-600 dark:text-brand-400 font-medium">
-                  How Laura Works
+                  How IP Shakti Sahayak Works
                 </p>
               </div>
 

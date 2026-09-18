@@ -28,14 +28,14 @@ export default function TermsAndConditionsPage() {
       title: "Purpose of the Platform",
       icon: Lightbulb,
       content:
-        "Laura is an AI-powered platform designed to provide informational and preliminary guidance on Ayurveda-related Intellectual Property Rights (IPR), regulatory requirements, Traditional Knowledge, Biodiversity, and Access and Benefit Sharing (ABS).",
+        "IP Shakti Sahayak is an AI-powered platform designed to provide informational and preliminary guidance on Ayurveda-related Intellectual Property Rights (IPR), regulatory requirements, Traditional Knowledge, Biodiversity, and Access and Benefit Sharing (ABS).",
     },
     {
       id: 2,
       title: "Not Legal or Professional Advice",
       icon: Scale,
       content:
-        "The information provided by Laura is for educational and informational purposes only. It does not constitute legal, regulatory, medical, or professional advice and does not replace a qualified lawyer, IP professional, or regulatory authority.",
+        "The information provided by IP Shakti Sahayak is for educational and informational purposes only. It does not constitute legal, regulatory, medical, or professional advice and does not replace a qualified lawyer, IP professional, or regulatory authority.",
     },
     {
       id: 3,
@@ -77,7 +77,7 @@ export default function TermsAndConditionsPage() {
       title: "Traditional Knowledge and Prior Art",
       icon: Library,
       content:
-        "Laura may provide pointers to relevant Traditional Knowledge and prior-art resources. However, the system does not make a final determination regarding patentability, novelty, or ownership of intellectual property.",
+        "IP Shakti Sahayak may provide pointers to relevant Traditional Knowledge and prior-art resources. However, the system does not make a final determination regarding patentability, novelty, or ownership of intellectual property.",
     },
     {
       id: 9,
@@ -119,7 +119,7 @@ export default function TermsAndConditionsPage() {
       title: "Responsible Use",
       icon: ShieldCheck,
       content:
-        "Users must use Laura only for lawful and responsible purposes and must not use the platform to violate intellectual-property rights, regulatory requirements, or applicable laws.",
+        "Users must use IP Shakti Sahayak only for lawful and responsible purposes and must not use the platform to violate intellectual-property rights, regulatory requirements, or applicable laws.",
     },
     {
       id: 15,
@@ -164,7 +164,7 @@ export default function TermsAndConditionsPage() {
               Terms & Conditions
             </h1>
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
-              Please review the terms guiding your use of the Laura platform.
+              Please review the terms guiding your use of the IP Shakti Sahayak platform.
               These terms ensure safe, responsible, and effective interactions
               with our AI guidance system.
             </p>
@@ -208,7 +208,7 @@ export default function TermsAndConditionsPage() {
           {/* Footer Note */}
           <div className="w-full max-w-3xl mx-auto mt-16 text-center text-sm text-slate-400 animate-in fade-in duration-1000 delay-500">
             Last updated: September 2026. <br />
-            By using Laura, you agree to these Terms & Conditions.
+            By using IP Shakti Sahayak, you agree to these Terms & Conditions.
           </div>
         </div>
       </div>

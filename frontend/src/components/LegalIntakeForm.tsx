@@ -24,7 +24,7 @@ interface LegalIntakeFormProps {
   onComplete: (data: Record<string, string | string[]>) => void;
 }
 
-interface LauraMessage {
+interface Message {
   id: string;
   type: "info" | "warning" | "success";
   text: string;
@@ -287,11 +287,11 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
     {},
   );
   const [isCompleted, setIsCompleted] = useState(false);
-  const [lauraMessages, setLauraMessages] = useState<LauraMessage[]>([
+  const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
       type: "info",
-      text: "Hi! I'm Laura, your AI regulatory co-pilot. I'll monitor your choices in real-time to prevent compliance risks. Let's build your product!",
+      text: "Hi! I'm IP Shakti Sahayak, your AI regulatory co-pilot. I'll monitor your choices in real-time to prevent compliance risks. Let's build your product!",
     },
   ]);
 
@@ -301,7 +301,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
 
   // Real-time AI Co-Pilot Logic
   useEffect(() => {
-    const newMessages: LauraMessage[] = [];
+    const newMessages: Message[] = [];
     const ingredients = formData["ingredients"] || [];
     const claims = formData["healthClaims"] || [];
 
@@ -336,7 +336,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
 
     // Deduplicate and append new messages
     if (newMessages.length > 0) {
-      setLauraMessages((prev) => {
+      setMessages((prev) => {
         const unique = newMessages.filter(
           (nm) => !prev.some((pm) => pm.id === nm.id),
         );
@@ -345,12 +345,12 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
     }
   }, [formData]);
 
-  // Auto-scroll Laura chat to bottom
+  // Auto-scroll IP Shakti Sahayak chat to bottom
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [lauraMessages]);
+  }, [messages]);
 
   const handleRadioChange = useCallback((fieldName: string, value: string) => {
     setFormData((prev) => ({ ...prev, [fieldName]: value }));
@@ -608,7 +608,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
         </div>
       </div>
 
-      {/* COLUMN 3: Right Panel (Laura Co-Pilot) */}
+      {/* COLUMN 3: Right Panel (IP Shakti Sahayak Co-Pilot) */}
       <div className="hidden xl:flex w-[350px] shrink-0 bg-brand-50/50 dark:bg-slate-900/50 border-l border-brand-200/50 dark:border-slate-800 flex-col z-20">
         {/* Header */}
         <div className="p-6 border-b border-brand-200/50 dark:border-slate-800 flex items-center gap-3 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
@@ -617,7 +617,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
           </div>
           <div>
             <h3 className="font-bold text-sm text-slate-900 dark:text-white leading-tight">
-              Laura AI
+              IP Shakti Sahayak AI
             </h3>
             <p className="text-xs text-brand-600 dark:text-brand-400 font-medium">
               Regulatory Co-Pilot
@@ -630,7 +630,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
           ref={scrollRef}
           className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth"
         >
-          {lauraMessages.map((msg, i) => (
+          {messages.map((msg, i) => (
             <div
               key={i}
               className="flex gap-3 animate-in slide-in-from-right-4 fade-in duration-300"

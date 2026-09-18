@@ -85,7 +85,7 @@ export default function ChatInterface({
     setIsTyping(true);
 
     const statuses = [
-      "Querying LAURA Legal Knowledge Graph...",
+      "Querying IP Shakti Sahayak Legal Knowledge Graph...",
       "Analyzing precedent case law...",
       "Synthesizing guidance...",
     ];
@@ -102,7 +102,7 @@ export default function ChatInterface({
       id: (Date.now() + 1).toString(),
       role: "assistant",
       content:
-        "This is a placeholder response. In the actual integration, LAURA will utilize the vector database and LLM to provide a highly accurate, cited response based specifically on the context of your question.",
+        "This is a placeholder response. In the actual integration, IP Shakti Sahayak will utilize the vector database and LLM to provide a highly accurate, cited response based specifically on the context of your question.",
     };
 
     setMessages((prev) => [...prev, newAssistantMsg]);
@@ -113,7 +113,7 @@ export default function ChatInterface({
       {/* Disclaimer Header */}
       <div className="bg-brand-50/50 px-4 py-2 border-b border-brand-100 flex items-center justify-center gap-2 text-xs text-brand-700 font-medium">
         <Info size={14} />
-        LAURA provides regulatory information, not legal advice.
+        IP Shakti Sahayak provides regulatory information, not legal advice.
       </div>
 
       {/* Messages Area */}
