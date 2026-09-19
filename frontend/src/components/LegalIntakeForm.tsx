@@ -147,7 +147,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col min-h-[calc(100vh-120px)] animate-in fade-in duration-700">
+    <div className="w-full flex flex-col min-h-[calc(100vh-120px)] animate-in fade-in duration-700">
       {/* Progress Header */}
       <div className="mb-10 lg:mb-16">
         <div className="flex items-center justify-between mb-4">
@@ -193,7 +193,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
                 {field.label}
                 <FieldHelper title={field.label} />
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-6">
                 {field.options.map((optionObj) => {
                   const isSelected =
                     field.type === "radio"

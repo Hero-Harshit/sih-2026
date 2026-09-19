@@ -57,7 +57,7 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-6 animate-in fade-in duration-700 pb-12">
+    <div className="w-full flex flex-col gap-6 animate-in fade-in duration-700 pb-12">
       {/* Top action row */}
       <div className="flex justify-end w-full animate-in slide-in-from-top-4 duration-700">
         <button
