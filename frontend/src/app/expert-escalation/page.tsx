@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import {
@@ -9,32 +8,12 @@ import {
   ShieldCheck,
   Scale,
   Building2,
-  Send,
-  Sparkles,
-  CheckCircle2,
-  Clock,
   MapPin,
   Mail,
-  BookOpenCheck,
-  Copy,
-  Check,
-  Loader2
+  BookOpenCheck
 } from "lucide-react";
 
 export default function ExpertEscalation() {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [referenceId, setReferenceId] = useState("");
-  const [copied, setCopied] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("General Legal Advisory");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    organization: "",
-    query: "",
-  });
-
   const officialPortals = [
     {
       name: "Bar Council of India Advocate Search",
@@ -100,41 +79,6 @@ export default function ExpertEscalation() {
       tags: ["Rule 158-B", "SLA License", "GMP Certification"],
     },
   ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-      const res = await fetch(`${apiUrl}/api/escalate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          category: selectedCategory,
-          ...formData,
-        }),
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        setReferenceId(data.referenceId);
-      } else {
-        setReferenceId(`LAURA-${Math.floor(100000 + Math.random() * 900000)}`);
-      }
-    } catch {
-      setReferenceId(`LAURA-${Math.floor(100000 + Math.random() * 900000)}`);
-    } finally {
-      setLoading(false);
-      setSubmitted(true);
-    }
-  };
-
-  const copyRefId = () => {
-    navigator.clipboard.writeText(referenceId);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <main className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950">
@@ -254,174 +198,9 @@ export default function ExpertEscalation() {
                         <Mail className="w-3.5 h-3.5 text-brand-500" />
                         <span className="font-mono text-xs">{cat.contact}</span>
                       </div>
-                      <button
-                        onClick={() => {
-                          setSelectedCategory(cat.badge);
-                          const formEl = document.getElementById("escalation-form");
-                          formEl?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                        className="text-xs font-bold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 flex items-center gap-1 transition-colors"
-                      >
-                        Request Consultation →
-                      </button>
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Interactive Direct Consultation Request Form */}
-            <div
-              id="escalation-form"
-              className="pt-8 border-t border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-4 fade-in duration-300"
-              style={{ animationDelay: "300ms" }}
-            >
-              <div className="rounded-3xl bg-gradient-to-br from-white via-white to-brand-50/50 dark:from-slate-900 dark:via-slate-900 dark:to-brand-950/20 border border-slate-200 dark:border-slate-800 p-8 lg:p-10 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
-
-                <div className="max-w-3xl">
-                  <div className="flex items-center gap-2 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-wider mb-2">
-                    <Sparkles className="w-4 h-4" />
-                    Direct Escalation Service
-                  </div>
-                  <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
-                    Request Legal Expert Assistance
-                  </h2>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed">
-                    Facing a patent rejection, FSSAI claim audit, or NBA approval query? Submit your details below and a qualified legal specialist will reach out within 24 business hours.
-                  </p>
-
-                  {submitted ? (
-                    <div className="p-8 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-center animate-in zoom-in-95 duration-300">
-                      <div className="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-500/30">
-                        <CheckCircle2 className="w-8 h-8" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mb-2">
-                        Escalation Request Received!
-                      </h3>
-                      
-                      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800/80 my-4 max-w-md mx-auto flex items-center justify-between">
-                        <div className="text-left">
-                          <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 block uppercase">Reference ID</span>
-                          <span className="font-mono font-bold text-lg text-emerald-600 dark:text-emerald-400">#{referenceId}</span>
-                        </div>
-                        <button
-                          onClick={copyRefId}
-                          className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
-                        >
-                          {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-                          {copied ? "Copied" : "Copy ID"}
-                        </button>
-                      </div>
-
-                      <p className="text-sm text-emerald-700 dark:text-emerald-300 max-w-md mx-auto mb-6 leading-relaxed">
-                        Your query regarding <span className="font-semibold">{selectedCategory}</span> has been transmitted to our legal backend API and queued for partner counsel review.
-                      </p>
-                      
-                      <button
-                        onClick={() => {
-                          setSubmitted(false);
-                          setFormData({ name: "", email: "", phone: "", organization: "", query: "" });
-                        }}
-                        className="px-6 py-2.5 rounded-full font-bold text-xs bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:scale-105 transition-all shadow-md"
-                      >
-                        Submit Another Query
-                      </button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                            Full Name *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Dr. Rajesh Sharma"
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:focus:ring-brand-900 outline-none transition-all"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                            Email Address *
-                          </label>
-                          <input
-                            type="email"
-                            required
-                            placeholder="rajesh@ayurveda-labs.com"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:focus:ring-brand-900 outline-none transition-all"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                            Phone Number
-                          </label>
-                          <input
-                            type="tel"
-                            placeholder="+91 98765 43210"
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:focus:ring-brand-900 outline-none transition-all"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                            Category of Help *
-                          </label>
-                          <select
-                            value={selectedCategory}
-                            onChange={(e) => setSelectedCategory(e.target.value)}
-                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:focus:ring-brand-900 outline-none transition-all"
-                          >
-                            <option value="TKDL & Patent Law">Ayurvedic Patent & TKDL Defense</option>
-                            <option value="Food Safety & Claims">FSSAI & Nutraceutical Claims</option>
-                            <option value="Access & Benefit Sharing">NBA Bio-Resource & ABS Approval</option>
-                            <option value="Ayurveda & Unani SLA">ASU Licensing & SLA Compliance</option>
-                            <option value="General Legal Advisory">General Legal Advisory</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                          Describe your Problem / Compliance Objection *
-                        </label>
-                        <textarea
-                          rows={4}
-                          required
-                          placeholder="Provide details about your formulation, patent application number, or specific SLA/FSSAI notice received..."
-                          value={formData.query}
-                          onChange={(e) => setFormData({ ...formData, query: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:focus:ring-brand-900 outline-none transition-all"
-                        />
-                      </div>
-
-                      <div className="flex items-center justify-between pt-2">
-                        <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
-                          <Clock className="w-3.5 h-3.5 text-brand-500" />
-                          <span>Average Response Time: &lt; 24 hrs</span>
-                        </div>
-
-                        <button
-                          type="submit"
-                          disabled={loading}
-                          className="px-8 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-brand-600 to-brand-accent text-white hover:opacity-90 transition-all shadow-lg shadow-brand-500/20 flex items-center gap-2 active:scale-95 disabled:opacity-60"
-                        >
-                          {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-                          {loading ? "Transmitting to Backend..." : "Submit Escalation Request"}
-                        </button>
-                      </div>
-                    </form>
-                  )}
-                </div>
               </div>
             </div>
 
