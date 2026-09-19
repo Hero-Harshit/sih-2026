@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import {
   ShieldAlert,
@@ -67,6 +67,7 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
       pdf.save("Compliance_Report.pdf");
     } catch (err) {
       console.error("Failed to generate PDF", err);
+      alert("Failed to generate PDF. Check console for details.");
     } finally {
       setIsExporting(false);
     }
