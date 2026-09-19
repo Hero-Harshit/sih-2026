@@ -81,7 +81,7 @@ export default function ExpertEscalation() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950">
+    <main className="min-h-screen flex flex-col">
       <Header />
 
       <div className="flex flex-1 w-full max-w-[1600px] mx-auto relative">

@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <main className="h-screen w-full flex flex-col overflow-hidden bg-slate-50 dark:bg-slate-950">
+    <main className="h-screen w-full flex flex-col overflow-hidden">
       <Header />
 
       <div className="flex flex-1 w-full mx-auto relative h-[calc(100vh-64px)]">
