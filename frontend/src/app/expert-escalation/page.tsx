@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import {
@@ -10,7 +11,9 @@ import {
   Building2,
   MapPin,
   Mail,
-  BookOpenCheck
+  BookOpenCheck,
+  MessageCircle,
+  UserPlus
 } from "lucide-react";
 
 export default function ExpertEscalation() {
@@ -45,13 +48,40 @@ export default function ExpertEscalation() {
     },
   ];
 
+  const expertProfiles = [
+    {
+      name: "Tanvi Durude",
+      email: "durgudetanvi231@gmail.com",
+      mobile: "9699735734",
+      role: "Legal & Regulatory Expert",
+      desc: "Specialized in providing expert consultations and legal insights for regulatory compliance. Dedicated to solving your legal queries efficiently.",
+      image: "/experts/tanvi.jpeg",
+    },
+    {
+      name: "Swamini Pure",
+      email: "swamini129@gmail.com",
+      mobile: "8793203588",
+      role: "IP & Compliance Advisor",
+      desc: "Dedicated legal advisor with expertise in intellectual property and compliance strategies. Available for direct guidance and issue resolution.",
+      image: "/experts/swamini.jpeg",
+    },
+    {
+      name: "Mamta Biradar",
+      email: "biradarmamta24@gmail.com",
+      mobile: "9422126589",
+      role: "Licensing Specialist",
+      desc: "Regulatory specialist focusing on resolving complex legal hurdles and licensing issues. Contact directly for immediate assistance.",
+      image: "/experts/mamta.jpeg",
+    },
+  ];
+
   const expertCategories = [
     {
       title: "Ayurvedic Patent & GI Attorneys",
       badge: "TKDL & Patent Law",
       location: "New Delhi / Chennai / Online",
       desc: "Specialists in overcoming Section 3(p) TKDL objections, drafting Ayurvedic patent claims, and Geographical Indication filings.",
-      contact: "ip-counsel@laura-legal.org",
+      contact: "ip-counsel@expert-legal.in",
       tags: ["Patents", "TKDL", "Objection Defense"],
     },
     {
@@ -59,7 +89,7 @@ export default function ExpertEscalation() {
       badge: "Food Safety & Claims",
       location: "Mumbai / Bengaluru / Online",
       desc: "Legal experts specializing in Proprietary Food regulations, health claim approvals, and FSSR 2017 compliance audits.",
-      contact: "fssai-experts@laura-legal.org",
+      contact: "fssai-experts@expert-legal.in",
       tags: ["FSSAI", "Labeling", "Health Claims"],
     },
     {
@@ -67,7 +97,7 @@ export default function ExpertEscalation() {
       badge: "Access & Benefit Sharing",
       location: "Chennai / Hyderabad / Online",
       desc: "Practitioners helping domestic and foreign entities file Form 1, 2, 3 for commercial utilization of Indian bio-resources.",
-      contact: "nba-advisory@laura-legal.org",
+      contact: "nba-advisory@expert-legal.in",
       tags: ["Bio-Resources", "Form 1/2/3", "ABS Compliance"],
     },
     {
@@ -75,7 +105,7 @@ export default function ExpertEscalation() {
       badge: "Ayurveda & Unani SLA",
       location: "Haridwar / Kerala / Online",
       desc: "State Licensing Authority (SLA) experts for Rule 158-B approvals, Good Manufacturing Practice (GMP) audit support, and clinical trial defense.",
-      contact: "asu-licensing@laura-legal.org",
+      contact: "asu-licensing@expert-legal.in",
       tags: ["Rule 158-B", "SLA License", "GMP Certification"],
     },
   ];
@@ -141,6 +171,75 @@ export default function ExpertEscalation() {
                       </div>
                     </div>
                   </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Direct Expert Profiles */}
+            <div className="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "150ms" }}>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                  <UserPlus className="w-6 h-6 text-brand-500" />
+                  Direct Expert Consultation
+                </h2>
+                <span className="text-xs font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800 px-3 py-1 rounded-full w-fit">
+                  Talk to them directly
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {expertProfiles.map((profile, idx) => (
+                  <div
+                    key={idx}
+                    className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+                  >
+                    <div className="flex-1 text-center md:text-left">
+                      {profile.image ? (
+                        <div className="w-20 h-20 mx-auto md:mx-0 rounded-full overflow-hidden mb-5 shadow-inner border-2 border-brand-100 dark:border-brand-900/50">
+                          <Image
+                            src={profile.image}
+                            alt={profile.name}
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 mx-auto md:mx-0 rounded-full bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-5 text-brand-600 dark:text-brand-400 text-3xl font-bold uppercase shadow-inner">
+                          {profile.name.charAt(0)}
+                        </div>
+                      )}
+                      
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
+                        {profile.name}
+                      </h3>
+                      <p className="text-sm font-semibold text-brand-600 dark:text-brand-400 mb-3">
+                        {profile.role}
+                      </p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        {profile.desc}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col gap-3 pt-5 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
+                      <a
+                        href={`mailto:${profile.email}`}
+                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold transition-all hover:scale-[1.02]"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Email
+                      </a>
+                      <a
+                        href={`https://wa.me/91${profile.mobile}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] dark:text-[#25D366] text-sm font-bold transition-all hover:scale-[1.02]"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

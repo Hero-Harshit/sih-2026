@@ -16,7 +16,7 @@ class Settings(BaseSettings):
 #     print(f"Warning: Could not load environment variables from .env file. Error: {e}")
 
 app = FastAPI(
-    title="Laura API",
+    title="SIH API",
     description="Backend API for Legal Assessment and RAG",
     version="0.1.0"
 )
@@ -34,7 +34,7 @@ from routers import assess, escalate
 
 @app.get("/ping")
 async def ping():
-    return {"status": "ok", "message": "Pong! Laura Backend is running."}
+    return {"status": "ok", "message": "Pong! SIH Backend is running."}
 
 # Include routers
 app.include_router(assess.router, prefix="/api")

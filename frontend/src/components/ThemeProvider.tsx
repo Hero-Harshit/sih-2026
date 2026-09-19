@@ -31,7 +31,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Load theme from localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("laura-theme") as Theme;
+    const savedTheme = localStorage.getItem("sih-theme") as Theme;
     if (savedTheme) {
       // eslint-disable-next-line
       setThemeState(savedTheme);
@@ -43,7 +43,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem("laura-theme", newTheme);
+    localStorage.setItem("sih-theme", newTheme);
     applyTheme(newTheme);
   };
 

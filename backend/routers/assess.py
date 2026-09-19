@@ -102,7 +102,7 @@ async def process_assessment(req: AssessmentRequest):
 
     # 4. Generate response via LLM
     prompt = f"""
-You are Laura, a premium Ayurvedic legal assistant. 
+You are a premium Ayurvedic legal assistant. 
 Review the user's product parameters and use ONLY the provided legal text context to generate a compliance report.
 If a claim or parameter is not addressed in the provided context, state that it requires further legal review instead of guessing or hallucinating.
 Ensure you cite specific Acts and Rules from the context.

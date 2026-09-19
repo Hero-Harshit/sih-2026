@@ -19,7 +19,7 @@ async def process_escalation(req: EscalationRequest):
     if not req.name or not req.email or not req.query:
         raise HTTPException(status_code=400, detail="Name, email, and query details are required.")
     
-    reference_id = f"LAURA-{random.randint(100000, 999999)}"
+    reference_id = f"AYUR-{random.randint(100000, 999999)}"
     
     print(f"[ESCALATION LOG] Received request #{reference_id} from {req.name} ({req.email})")
     print(f"[ESCALATION LOG] Category: {req.category} | Phone: {req.phone}")

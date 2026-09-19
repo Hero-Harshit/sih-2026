@@ -7,18 +7,18 @@ Instead of standard MCQs, the UI utilizes a gamified approach to extract accurat
 
 ---
 
-##  The "Laura" Form Co-Pilot (Real-Time AI Assistance)
-To make the Assessment Wizard feel truly intelligent, the UI features a dedicated **"Laura Co-Pilot Column"** (a persistent sidebar or floating mascot) that talks to the user in real-time as they fill out the form. 
+##  The "SIH" Form Co-Pilot (Real-Time AI Assistance)
+To make the Assessment Wizard feel truly intelligent, the UI features a dedicated **"SIH Co-Pilot Column"** (a persistent sidebar or floating mascot) that talks to the user in real-time as they fill out the form. 
 
-Laura actively assists the user using low-latency micro-queries:
+The assistant actively assists the user using low-latency micro-queries:
 
 1. **AI Ingredient Recommendations (Formulation Assist)**: 
-   - When a user selects a primary ingredient (e.g., *Ashwagandha*), Laura's column instantly updates: *"I see you selected Ashwagandha! Classical texts often pair this with Brahmi or Shatavari. Want to add them?"*
+   - When a user selects a primary ingredient (e.g., *Ashwagandha*), the assistant's column instantly updates: *"I see you selected Ashwagandha! Classical texts often pair this with Brahmi or Shatavari. Want to add them?"*
    - These appear as glowing "AI Suggested" chips that the user can one-click add to their formulation.
 2. **AI Compliance Substitutions**: 
-   - If the user selects a heavily restricted or endangered herb (e.g., *Jatamansi*), Laura intercepts: *"Wait! Jatamansi requires strict NBA approval. Consider substituting it with [Safe Alternative] to avoid compliance delays."*
+   - If the user selects a heavily restricted or endangered herb (e.g., *Jatamansi*), the assistant intercepts: *"Wait! Jatamansi requires strict NBA approval. Consider substituting it with [Safe Alternative] to avoid compliance delays."*
 3. **The "Magic Document" Auto-Fill**:
-   - Instead of manually selecting ingredients, users can drag and drop a photo of a product label to Laura. Vision AI extracts the text, identifies the herbs, and auto-fills the entire ingredient multi-select instantly.
+   - Instead of manually selecting ingredients, users can drag and drop a photo of a product label to the assistant. Vision AI extracts the text, identifies the herbs, and auto-fills the entire ingredient multi-select instantly.
 
 ---
 

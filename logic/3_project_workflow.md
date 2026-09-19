@@ -19,7 +19,7 @@ The system connects to the Vector Database where the 65+ legal PDFs are stored a
 - It pulls the top 5 most relevant legal text chunks that directly address the user's specific product parameters.
 
 ### Step 4: AI Synthesis & Final Output
-The retrieved text chunks are injected into the context window of a Large Language Model (LLM) along with a strict system prompt: *"You are Laura, a premium Ayurvedic legal assistant. Use the following text to guide the user. You MUST cite the specific Act and Rule."*
+The retrieved text chunks are injected into the context window of a Large Language Model (LLM) along with a strict system prompt: *"You are a premium Ayurvedic legal assistant. Use the following text to guide the user. You MUST cite the specific Act and Rule."*
 - The AI synthesizes the heavy legal jargon into plain, actionable English.
 - The frontend displays the final "Compliance Report" to the user, complete with beautiful UI cards, risk thermometers, and direct PDF citations.
 
