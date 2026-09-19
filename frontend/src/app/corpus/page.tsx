@@ -41,7 +41,7 @@ export default function CorpusPage() {
     },
   ];
 
-  const placeholderDocs: { title: string; date: string }[] = [];
+
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -105,44 +105,7 @@ export default function CorpusPage() {
               </div>
             </div>
 
-            {/* Google Docs List Placeholder */}
-            <div className="space-y-6 pt-8 border-t border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "200ms" }}>
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                  <FileText className="w-6 h-6 text-brand-500" />
-                  Internal Documents
-                </h2>
-                <span className="text-sm font-medium text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
-                  Google Docs
-                </span>
-              </div>
 
-              <div className="grid grid-cols-1 gap-4">
-                {placeholderDocs.map((doc, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-brand-200 transition-all duration-300 cursor-pointer group"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <FileText className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-700 dark:text-slate-200 group-hover:text-slate-900 transition-colors">
-                          {doc.title}
-                        </h4>
-                        <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
-                          Uploaded: {doc.date}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-950 flex items-center justify-center text-slate-400 dark:text-slate-500 group-hover:bg-brand-50 group-hover:text-brand-600 transition-colors">
-                      <ExternalLink className="w-4 h-4" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
