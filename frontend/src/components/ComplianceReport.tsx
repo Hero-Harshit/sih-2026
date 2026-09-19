@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import {
   ShieldAlert,
   ShieldCheck,
@@ -10,7 +12,8 @@ import {
   BookOpen,
   Quote,
   Sparkles,
-  Scale
+  Scale,
+  Download
 } from "lucide-react";
 
 export interface ComplianceData {
@@ -34,6 +37,40 @@ interface ComplianceReportProps {
 
 export default function ComplianceReport({ data, onRestart }: ComplianceReportProps) {
   const { riskScore, summary, citations, actionPlan } = data;
+  const reportRef = useRef<HTMLDivElement>(null);
+  const [isExporting, setIsExporting] = useState(false);
+
+  const handleDownloadPDF = async () => {
+    if (!reportRef.current) return;
+    setIsExporting(true);
+    try {
+      const canvas = await html2canvas(reportRef.current, { scale: 2, useCORS: true });
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      
+      let heightLeft = pdfHeight;
+      let position = 0;
+      
+      pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
+      heightLeft -= pdf.internal.pageSize.getHeight();
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - pdfHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
+        heightLeft -= pdf.internal.pageSize.getHeight();
+      }
+      
+      pdf.save("Compliance_Report.pdf");
+    } catch (err) {
+      console.error("Failed to generate PDF", err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   // Determine risk level coloring and icons
   let riskColor = "text-emerald-500";
@@ -59,7 +96,15 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
   return (
     <div className="w-full flex flex-col gap-6 animate-in fade-in duration-700 pb-12">
       {/* Top action row */}
-      <div className="flex justify-end w-full animate-in slide-in-from-top-4 duration-700">
+      <div className="flex justify-end w-full animate-in slide-in-from-top-4 duration-700 gap-3">
+        <button
+          onClick={handleDownloadPDF}
+          disabled={isExporting}
+          className="flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-bold shadow-sm transition-all hover:shadow-md active:scale-95 disabled:opacity-70 disabled:hover:scale-100"
+        >
+          <Download size={16} strokeWidth={2.5} />
+          {isExporting ? "Exporting..." : "Download PDF"}
+        </button>
         <button
           onClick={onRestart}
           className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full font-bold shadow-sm transition-all hover:shadow-md active:scale-95"
@@ -69,8 +114,9 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
         </button>
       </div>
 
-      {/* Header Section */}
-      <div className={`relative overflow-hidden rounded-3xl border ${riskBorder} ${riskLightBg} shadow-sm p-8 md:p-12 animate-in slide-in-from-bottom-4 duration-700`}>
+      <div ref={reportRef} className="flex flex-col gap-6 bg-transparent rounded-3xl p-1 md:p-2">
+        {/* Header Section */}
+        <div className={`relative overflow-hidden rounded-3xl border ${riskBorder} ${riskLightBg} shadow-sm p-8 md:p-12 animate-in slide-in-from-bottom-4 duration-700`}>
         <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
           <Scale size={300} />
         </div>
@@ -194,6 +240,7 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
               </div>
             )}
           </div>
+        </div>
         </div>
       </div>
     </div>
