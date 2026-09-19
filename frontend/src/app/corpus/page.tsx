@@ -32,6 +32,13 @@ export default function CorpusPage() {
       icon: <Search className="w-6 h-6 mb-3 text-brand-600" />,
       desc: "Patents, Trade Marks, Designs & GI Registry.",
     },
+    {
+      name: "Internal Documents Drive",
+      acronym: "Drive Database",
+      url: "https://drive.google.com/drive/folders/1GbY-el4SGrOmSisolK4dkfU9Lmeo1CBJ?usp=drive_link",
+      icon: <Database className="w-6 h-6 mb-3 text-brand-600" />,
+      desc: "Access the internal database of regulatory documents and legal files.",
+    },
   ];
 
   const placeholderDocs: { title: string; date: string }[] = [];
@@ -62,7 +69,7 @@ export default function CorpusPage() {
                 <Database className="w-6 h-6 text-brand-500" />
                 Official Sources
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {officialSources.map((source, idx) => (
                   <a
                     key={idx}
