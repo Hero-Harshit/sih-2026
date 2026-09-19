@@ -17,10 +17,15 @@ if not url or not key:
     print("Warning: Missing Supabase credentials in .env")
 
 # Initialize clients
+print("Debug: Starting initialization...")
 try:
+    print("Debug: Initializing supabase...")
     supabase: Client = create_client(url, key) if url and key else None
+    print("Debug: Initializing GoogleGenerativeAIEmbeddings...")
     embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004") if os.getenv("GEMINI_API_KEY") else None
+    print("Debug: Initializing genai.Client...")
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY")) if os.getenv("GEMINI_API_KEY") else None
+    print("Debug: Initialization complete!")
 except Exception as e:
     print(f"Warning: Initialization error: {e}")
 
