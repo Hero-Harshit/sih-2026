@@ -1,0 +1,12 @@
+fastapi[standard]
+uvicorn
+supabase
+google-genai
+langchain
+langchain-google-genai
+langchain-community
+pydantic
+pydantic-settings
+python-dotenv
+PyMuPDF
+unstructured
