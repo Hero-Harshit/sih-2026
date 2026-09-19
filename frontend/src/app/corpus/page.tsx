@@ -3,7 +3,6 @@ import Sidebar from "@/components/Sidebar";
 import {
   Database,
   ExternalLink,
-  FileText,
   Search,
   Library,
   Scale,

@@ -5,7 +5,6 @@ import {
   ShieldAlert,
   ShieldCheck,
   AlertTriangle,
-  CheckCircle2,
   ListTodo,
   RefreshCcw,
   BookOpen,
@@ -38,7 +37,6 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
 
   // Determine risk level coloring and icons
   let riskColor = "text-emerald-500";
-  let riskBg = "bg-emerald-500";
   let riskLightBg = "bg-emerald-50 dark:bg-emerald-950/20";
   let riskBorder = "border-emerald-200 dark:border-emerald-900/50";
   let RiskIcon = ShieldCheck;
@@ -46,14 +44,12 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
 
   if (riskScore > 75) {
     riskColor = "text-rose-500";
-    riskBg = "bg-rose-500";
     riskLightBg = "bg-rose-50 dark:bg-rose-950/20";
     riskBorder = "border-rose-200 dark:border-rose-900/50";
     RiskIcon = ShieldAlert;
     riskLabel = "High Risk";
   } else if (riskScore > 35) {
     riskColor = "text-amber-500";
-    riskBg = "bg-amber-500";
     riskLightBg = "bg-amber-50 dark:bg-amber-950/20";
     riskBorder = "border-amber-200 dark:border-amber-900/50";
     RiskIcon = AlertTriangle;
@@ -152,7 +148,7 @@ export default function ComplianceReport({ data, onRestart }: ComplianceReportPr
                       <Scale size={16} /> {cite.law}
                     </h4>
                     <p className="text-lg text-slate-800 dark:text-slate-200 leading-relaxed font-serif italic">
-                      "{cite.text}"
+                      &quot;{cite.text}&quot;
                     </p>
                   </div>
                 </div>

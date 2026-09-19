@@ -5,7 +5,6 @@ import os
 import json
 from dotenv import load_dotenv
 from supabase import create_client, Client
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from google import genai
 from google.genai import types
 
@@ -21,8 +20,7 @@ print("Debug: Starting initialization...")
 try:
     print("Debug: Initializing supabase...")
     supabase: Client = create_client(url, key) if url and key else None
-    print("Debug: Initializing GoogleGenerativeAIEmbeddings...")
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004") if os.getenv("GEMINI_API_KEY") else None
+
     print("Debug: Initializing genai.Client...")
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY")) if os.getenv("GEMINI_API_KEY") else None
     print("Debug: Initialization complete!")
