@@ -6,16 +6,22 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-load_dotenv()
+from pathlib import Path
+
+env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(dotenv_path=env_path)
 
 router = APIRouter()
 
-# Initialize Gemini client
-try:
-    client = genai.Client(api_key=os.getenv("GEMINI_API_KEY")) if os.getenv("GEMINI_API_KEY") else None
-except Exception as e:
-    print(f"Warning: Initialization error for Gemini client: {e}")
-    client = None
+def get_gemini_client():
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        return None
+    try:
+        return genai.Client(api_key=api_key)
+    except Exception as e:
+        print(f"Warning: Initialization error for Gemini client: {e}")
+        return None
 
 class Message(BaseModel):
     role: str
@@ -26,6 +32,7 @@ class ChatRequest(BaseModel):
 
 @router.post("/chat")
 async def chat_endpoint(req: ChatRequest):
+    client = get_gemini_client()
     if not client:
         raise HTTPException(status_code=500, detail="Gemini client not initialized. Check API key.")
     

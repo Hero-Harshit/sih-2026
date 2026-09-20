@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Send, Loader2, Info } from "lucide-react";
 import CitationCard from "./CitationCard";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   id: string;
@@ -130,8 +131,29 @@ export default function ChatInterface({
                   : "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 text-slate-800 dark:text-slate-100 rounded-tl-sm"
               }`}
             >
-              <div className="whitespace-pre-wrap leading-relaxed text-[15px] prose prose-slate">
-                {msg.content}
+              <div className="leading-relaxed text-[15px]">
+                {msg.role === "user" ? (
+                  <div className="whitespace-pre-wrap">{msg.content}</div>
+                ) : (
+                  <div className="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-100">
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => <p className="mb-3 last:mb-0 leading-relaxed">{children}</p>,
+                        strong: ({ children }) => <strong className="font-bold text-slate-900 dark:text-white">{children}</strong>,
+                        em: ({ children }) => <em className="italic font-semibold text-slate-700 dark:text-slate-300">{children}</em>,
+                        ul: ({ children }) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
+                        ol: ({ children }) => <ol className="list-decimal pl-5 mb-3 space-y-1">{children}</ol>,
+                        li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                        h1: ({ children }) => <h1 className="text-xl font-bold mb-2 mt-4 text-slate-900 dark:text-white">{children}</h1>,
+                        h2: ({ children }) => <h2 className="text-lg font-bold mb-2 mt-3 text-slate-900 dark:text-white">{children}</h2>,
+                        h3: ({ children }) => <h3 className="text-base font-bold mb-1 mt-2 text-slate-900 dark:text-white">{children}</h3>,
+                        code: ({ children }) => <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>,
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  </div>
+                )}
               </div>
 
               {/* Citations block */}
