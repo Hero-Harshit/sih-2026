@@ -1,19 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic_settings import BaseSettings
-
-class Settings(BaseSettings):
-    gemini_api_key: str
-    supabase_url: str
-    supabase_key: str
-
-    class Config:
-        env_file = ".env"
-
-# try:
-#     settings = Settings()
-# except Exception as e:
-#     print(f"Warning: Could not load environment variables from .env file. Error: {e}")
 
 app = FastAPI(
     title="SIH API",

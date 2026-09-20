@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:8001/api/chat"
+url = "http://127.0.0.1:8000/api/chat"
 payload = {
     "messages": [
         {"role": "user", "content": "What is a patent?"}
