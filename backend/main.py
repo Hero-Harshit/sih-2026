@@ -30,7 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from routers import assess, escalate
+from routers import assess, escalate, chat
 
 @app.get("/ping")
 async def ping():
@@ -39,4 +39,5 @@ async def ping():
 # Include routers
 app.include_router(assess.router, prefix="/api")
 app.include_router(escalate.router, prefix="/api")
+app.include_router(chat.router, prefix="/api")
 

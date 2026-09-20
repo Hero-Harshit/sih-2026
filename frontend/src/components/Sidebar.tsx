@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserPlus } from "lucide-react";
+import { UserPlus, MessageSquare } from "lucide-react";
 export default function Sidebar() {
   const pathname = usePathname();
 
@@ -77,6 +77,11 @@ export default function Sidebar() {
       name: "Expert Escalation",
       href: "/expert-escalation",
       icon: <UserPlus size={22} className="shrink-0" />,
+    },
+    {
+      name: "AI Assistant",
+      href: "/ai-assistant",
+      icon: <MessageSquare size={22} className="shrink-0" />,
     },
   ];
 
