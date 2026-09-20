@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import {
   ArrowLeft,
   ChevronRight,
@@ -102,10 +102,26 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<Record<string, string | string[]>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const topRef = useRef<HTMLDivElement>(null);
 
   const currentModule = MODULES[currentStep];
   const isLastStep = currentStep === MODULES.length - 1;
   const progress = ((currentStep + 1) / MODULES.length) * 100;
+
+  const scrollToTop = useCallback(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const scrollParent = topRef.current.closest(".overflow-y-auto");
+      if (scrollParent) {
+        scrollParent.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [currentStep, scrollToTop]);
 
   const handleRadioChange = useCallback((fieldName: string, value: string) => {
     setFormData((prev) => ({ ...prev, [fieldName]: value }));
@@ -137,17 +153,17 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
       }, 600);
     } else {
       setCurrentStep((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTop();
     }
   };
 
   const handleBack = () => {
     setCurrentStep((prev) => Math.max(0, prev - 1));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTop();
   };
 
   return (
-    <div className="w-full flex flex-col min-h-[calc(100vh-120px)] animate-in fade-in duration-700">
+    <div ref={topRef} className="w-full flex flex-col min-h-[calc(100vh-120px)] animate-in fade-in duration-700">
       {/* Progress Header */}
       <div className="mb-10 lg:mb-16">
         <div className="flex items-center justify-between mb-4">
