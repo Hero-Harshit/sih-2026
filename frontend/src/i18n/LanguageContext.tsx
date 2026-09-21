@@ -24,7 +24,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         savedLanguage === "ta" ||
         savedLanguage === "te" ||
         savedLanguage === "bn" ||
-        savedLanguage === "kn")
+        savedLanguage === "kn" ||
+        savedLanguage === "sa")
     ) {
       setLanguageState(savedLanguage);
       document.documentElement.lang = savedLanguage;

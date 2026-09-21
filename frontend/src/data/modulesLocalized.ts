@@ -2714,6 +2714,455 @@ export const KANNADA_MODULES: LocalizedModule[] = [
   },
 ];
 
+const SANSKRIT_MODULES: LocalizedModule[] = [
+  {
+    id: 1,
+    title: "संरचना सक्रियाङ्गाश्च",
+    description: "स्वोत्पादस्य मुख्यानां सक्रियाङ्गानां पारम्परिकज्ञानस्रोतानां च परिभाषां कुर्वन्तु।",
+    fields: [
+      {
+        name: "ingredients",
+        label: "मुख्याः सक्रियाङ्गाः (द्रव्याणि)",
+        type: "checkbox",
+        options: [
+          {
+            value: "Ashwagandha (Withania somnifera)",
+            label: "अश्वगन्धा (विथानिया सोम्निफेरा)",
+            description: "सामान्य-रसायनम्। आयुष-मानक-नियमानाम् अन्तः प्रायः सुरक्षितम्।",
+          },
+          {
+            value: "Tulsi (Ocimum sanctum)",
+            label: "तुलसी (ओसीमम् सैंक्टम्)",
+            description: "पवित्रा तुलसी। व्यापकरूपेण उत्पादिता, न्यूनतम-नियामक-जोखिमः।",
+          },
+          {
+            value: "Red Sanders (Pterocarpus santalinus)",
+            label: "रक्तचन्दनम् (टेरोकार्पस् सैन्टालिनस्)",
+            description: "अतिसंकटापन्नम्। सीआईटीईएस (CITES) तथा राष्ट्रिय-जैवविविधताप्राधिकरणस्य (NBA) कठोर-निरीक्षणम्।",
+          },
+          {
+            value: "Jatamansi (Nardostachys jatamansi)",
+            label: "जटामांसी (नार्डोस्टैचिस् जटामांसी)",
+            description: "संकटापन्ना हिमालया वनस्पतिः। कठोर-प्रवेश-लाभ-वितरणस्य (ABS) अनुपालनम् अनिवार्यम्।",
+          },
+          {
+            value: "Purified Chemical Extract (e.g., Curcumin 95%)",
+            label: "शुद्ध-रासायनिक-सारः (यथा कुर्कुमिन् ९५%)",
+            description: "न तु समग्र-वनस्पतिः। फाइटोफार्मास्युटिकल-नियमाः प्रवर्तन्ते।",
+          },
+          {
+            value: "Neem (Azadirachta indica)",
+            label: "निम्बः (अज़ाडिराक्टा इण्डिका)",
+            description: "शास्त्रीयं कृमिघ्नं द्रव्यम्। ईपीओ-पेटेण्ट-निरसन-निदर्शनम्; टीकेडीएल-संरक्षणम्।",
+          },
+          {
+            value: "Turmeric / Haridra (Curcuma longa)",
+            label: "हरिद्रा (कुर्कुमा लोङ्गा)",
+            description: "व्रणरोपण-शोथहर-गुणाः। सीएसआईआर अमेरिकन-पेटेण्ट-निरसन-निदर्शनम् (TKDL)।",
+          },
+          {
+            value: "Kashmiri Saffron (Crocus sativus)",
+            label: "काश्मीर-केसरम् (क्रोकस् सैटाइवस्)",
+            description: "भौगोलिक-उपदर्शन (GI) संरक्षितं मूल्यवत् द्रव्यम्। कठोर-शुद्धता-मानकाः।",
+          },
+          {
+            value: "Guggulu (Commiphora mukul)",
+            label: "गुग्गुलुः (कॉमिफोरा मुकुल्)",
+            description: "विनियमितः निर्यासः। आयुर्वेदिक-फार्माकोपिया (API) गुग्गुलस्टेरोन्-मानकानुसारी।",
+          },
+          {
+            value: "Kutki (Picrorhiza kurroa)",
+            label: "कटुकी (पिक्रोरिज़ा कुरोआ)",
+            description: "सीआईटीईएस परिशिष्ट II तथा जैवविविधता-अधिनियमस्य धारा ३८ संकटापन्न-सूचौ अन्तर्भूता।",
+          },
+          {
+            value: "Sarpgandha (Rauvolfia serpentina)",
+            label: "सर्पगन्धा (राउवोल्फिया सर्पेण्टीना)",
+            description: "रेसर्पिन्-युक्ता वनस्पतिः। अनुसूची E(1) तथा धारा ३८ जैवविविधता-प्रतिबन्ध-सूचौ अन्तर्भूता।",
+          },
+          {
+            value: "Vatsanabha / Indian Aconite (Aconitum ferox)",
+            label: "वत्सनाभः / मीठविषम् (एकोनिटम् फेराक्स)",
+            description: "अनुसूची E(1) विषद्रव्यम्। अनिवार्यं शास्त्रीय-शोधनम् रक्त-लेबल-चेतावनी च आवश्यकी।",
+          },
+          {
+            value: "Bhang / Vijaya (Cannabis sativa)",
+            label: "विजया / भाङ्गा (कैनबिस सैटाइवा)",
+            description: "अनुसूची E(1) मादकद्रव्यम्। एनडीपीएस-अधिनियमः तथा राज्य-आबकारी-अनुज्ञापत्राधीनम्।",
+          },
+          {
+            value: "Brahmi (Bacopa monnieri)",
+            label: "ब्राह्मी (बाकोपा मोन्निएरी)",
+            description: "शास्त्रीयं मेध्य-रसायनम्। बाकोसाइड-परीक्षणं तथा गुरुधातु-मर्यादाधीना।",
+          },
+          {
+            value: "Triphala (Amalaki, Haritaki, Bibhitaki)",
+            label: "त्रिफला (आमलकी, हरीतकी, विभीतकी)",
+            description: "शास्त्रीय-बहुमूलिका-योगः। पेटेण्ट-अधिनियमस्य धारा ३(p) पारम्परिक-ज्ञानरूपेण संरक्षिता।",
+          },
+          {
+            value: "Swarna Bhasma (Incinerated Gold Ash)",
+            label: "स्वर्णभस्म (संस्करित-स्वर्ण-भस्म)",
+            description: "हर्बो-मैटालिक रसौषधिः। अनुसूची T भाग I-F जीएमपी तथा अशुद्धि-मर्यादाधीना।",
+          },
+        ],
+      },
+      {
+        name: "knowledgeSource",
+        label: "योगज्ञानस्य स्रोतः",
+        type: "radio",
+        options: [
+          {
+            value: "Classical Text (e.g., Charaka Samhita, Sushruta Samhita)",
+            label: "शास्त्रीयग्रन्थाः (यथा चरकसंहिता, सुश्रुतसंहिता)",
+            description: "नियम १५८B(I)(A) अनुसृत्य नूतन-सुरक्षा-क्लिनिकल-दत्तांशात् विमुक्तिः।",
+          },
+          {
+            value: "Proprietary Mix (Patent & Proprietary - P&P)",
+            label: "स्वामित्व-मिश्रणम् (पेटेण्ट एवं प्रोप्राइटरी - P&P)",
+            description: "धारा ३(h) तथा नियम १५८B(II) अनुसृत्य मानक-पेटेण्ट-नियमाः प्रवर्तन्ते।",
+          },
+          {
+            value: "Tribal / Traditional Community Knowledge",
+            label: "जनजातीयं / पारम्परिक-सामुदायिकं ज्ञानम्",
+            description: "स्थानिक-समुदायैः जैवविविधता-प्रबन्धन-समितिभिः (BMC) च सह अनिवार्य-लाभ-साझाकरण-अनुबन्धः।",
+          },
+          {
+            value: "Ayurvedic Pharmacopoeia of India (API) / AFI Standards",
+            label: "भारतीय-आयुर्वेदिक-फार्माकोपिया (API) / AFI मानकाः",
+            description: "औषध-प्रसाधन-अधिनियमस्य द्वितीय-अनुसूची-अन्तर्गताः आधिकारिक-मानक-ग्रन्थाः।",
+          },
+          {
+            value: "Siddha or Unani Classical Treatises",
+            label: "सिद्ध- अथवा यूनानी-शास्त्रीयग्रन्थाः",
+            description: "सिद्ध- अथवा यूनानी-पद्धत्योः प्रथम-अनुसूची-अन्तर्गताः मान्याः ग्रन्थाः।",
+          },
+          {
+            value: "Novel In-House R&D / Innovative Formulation",
+            label: "नवीनम् आन्तरिक-अनुसन्धानम् / अभिनव-योगः",
+            description: "सम्पूर्णतया नवीना वानस्पतिक-रचना; यदि धारा ३(p)/३(e) वर्जिता न स्यात् तर्हि पेटेण्ट-योग्या।",
+          },
+          {
+            value: "Uncodified Ethnobotanical Field Collections (PBR)",
+            label: "असंहिताबद्ध-नृवंशवानस्पतिक-सङ्ग्रहः (PBR)",
+            description: "लोक-जैवविविधता-पञ्जिकासु प्रलेखीकृता; अनिवार्य-ABS-स्वीकृतिः।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "उत्पादनं प्रसंस्करणं च",
+    description: "उत्पादस्य निर्माण-प्रक्रियायाः अन्तिम-भौतिक-स्वरूपस्य च विवरणं प्रदर्शयन्तु।",
+    fields: [
+      {
+        name: "processingMethod",
+        label: "विनिर्माण-प्रक्रिया",
+        type: "radio",
+        options: [
+          {
+            value: "Raw / Crushed / Water-Boiled (Aqueous)",
+            label: "आर्द्रम् / चूर्णितम् / क्वाथितम् (जलीय-निष्कर्षणम्)",
+            description: "मानक-शास्त्रीय-आयुर्वेदिक-निर्माणम् (कषाय / क्वाथ प्रक्रिया)।",
+          },
+          {
+            value: "Solvent Extraction (Alcohol, Hexane)",
+            label: "द्रावक-निष्कर्षणम् (अल्कोहल्, हेक्सेन्)",
+            description: "अवशिष्ट-द्रावक-प्रकटनम्, टीएलसी-फिङ्गरप्रिण्टिङ्गं तथा गुरुधातु-परीक्षणम् अनिवार्यम्।",
+          },
+          {
+            value: "Advanced Chemical Isolation",
+            label: "उन्नत-रासायनिक-पृथक्करणम् (आइसोलेशन)",
+            description: "फाइटोफार्मास्युटिकल-वर्गीकरणम्। सीडीएससीओ-अनुमोदनं क्लिनिकल-परीक्षणं च आवश्यकम्।",
+          },
+          {
+            value: "Classical Fermentation (Asava & Arishta)",
+            label: "शास्त्रीयं सन्धानम् (आसवाः अरिष्टाश्च)",
+            description: "स्वयं-जातः मद्यसारः (<१२%); नियम १५१ मद्य-आबकारी-नियमाधीना।",
+          },
+          {
+            value: "Medicated Ghee / Oil Processing (Sneha Kalpana)",
+            label: "सिद्ध-घृत-तैल-निर्माणम् (स्नेह-कल्पना)",
+            description: "शास्त्रीयं स्नेह-निष्कर्षणम्; विकृतगन्धता, पेरोक्साइड-मान-परीक्षणम् आवश्यकम्।",
+          },
+          {
+            value: "Classical Calcinated Ash / Bhasma (Shodhana & Marana)",
+            label: "शास्त्रीय-भस्म-निर्माणम् (शोधनं मारणं च)",
+            description: "रसशास्त्र-विषापहारः मारणं च; अनुसूची T सुरक्षा-मानकानुपालनम्।",
+          },
+          {
+            value: "Supercritical Fluid CO2 Extraction (SCFE)",
+            label: "सुपरक्रिटिकल-द्रव-CO2-निष्कर्षणम् (SCFE)",
+            description: "हरित-द्रावक-मुक्त-निष्कर्षणम्; पेटेण्ट-अधिनियमस्य धारा ५ प्रक्रिया-पेटेण्ट-योग्या।",
+          },
+          {
+            value: "Nano-Liposomal / Novel Herbal Drug Delivery (NDDS)",
+            label: "नैनो-लिपोसोमल् / नवीन-हर्बल-ड्रग-डिलिवरी (NDDS)",
+            description: "जैव-उपलब्धता-वर्धनम्; सीडीएससीओ नूतनौषध-नियमान् आकर्षति।",
+          },
+        ],
+      },
+      {
+        name: "finalForm",
+        label: "अन्तिम-उत्पाद-स्वरूपम्",
+        type: "radio",
+        options: [
+          {
+            value: "Oral Solid (Tablets, Capsules, Vati, Gutika)",
+            label: "मौखिकं ठोसम् (गुलिकाः, कैप्सूल, वटी, गुटिका)",
+            description: "आभ्यन्तरौषधयः गुरुधातु-मानक-विघटन-सूक्ष्मजीव-मर्यादाधीनाः।",
+          },
+          {
+            value: "Oral Liquid (Fermented Asava, Arishta, Syrup)",
+            label: "मौखिकं द्रवम् (सन्धान-आसव-अरिष्ट-सिरप)",
+            description: "विशिष्ट-गुरुत्व-मद्यसार-मर्यादा-सत्यापनं (<१२%) सूक्ष्मजीव-परीक्षणं च।",
+          },
+          {
+            value: "Oral Powder / Granules (Churna, Kwatha Churna)",
+            label: "मौखिकं चूर्णम् / कणिकाः (चूर्णम्, क्वाथ-चूर्णम्)",
+            description: "एपीआई-अन्तर्गतानि कण-परिमाण-जाल-मानकानि आर्द्रता-मर्यादाश्च।",
+          },
+          {
+            value: "Classical Semi-Solid (Avaleha, Lehyam, Chyawanprash)",
+            label: "शास्त्रीयम् अर्ध-ठोसम् (अवलेहः, लेह्यम्, च्यवनप्राशः)",
+            description: "शर्करा/मधु-आधारितम्; कुल-ठोस-पदार्थाः शर्करा-सहिष्णुता-परीक्षणम्।",
+          },
+          {
+            value: "Medicated Oil / Ghee (Taila, Ghrita)",
+            label: "सिद्धं तैलम् / घृतम् (तैलम्, घृतम्)",
+            description: "मौखिकम् अथवा बाह्यम् उपयोजनम्; विकृतगन्धता-परीक्षणं साबुनीकरण-मानकाश्च।",
+          },
+          {
+            value: "Topical / External Semi-Solid (Cream, Gel, Lepa, Balm)",
+            label: "स्थानिकम् / बाह्यम् अर्ध-ठोसम् (क्रीम, जेल, लेपः, बाम)",
+            description: "अनुसूची M-II सौन्दर्यप्रसाधनम् अथवा एएसयू बाह्योपयोजनरूपेण सरलं विधानम्।",
+          },
+          {
+            value: "Sterile Drops: Nasal / Ophthalmic (Nasya, Netra Bindu)",
+            label: "निर्जन्तुकाः बिन्दवः: नासिका / नेत्रम् (नस्यम्, नेत्रबिन्दुः)",
+            description: "कठोर-निर्जन्तुकता-मानकाः सूक्ष्मकण-परीक्षणं संरक्षकाविष्करणं च अनिवार्यम्।",
+          },
+          {
+            value: "Ayurveda Aahar / Ready-to-Consume Herbal Food",
+            label: "आयुर्वेद-आहारः / उपयोगाय सज्जम् आहारद्रव्यम्",
+            description: "खाद्य-सुरक्षा-मानक (आयुर्वेद-आहार) विनियम २०२२ अनुसृत्य विनियमितम्।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "स्रोतांसि संस्था-स्वामित्वं च",
+    description: "जैविक-संसाधनानाम् उत्पत्ति-क्षेत्रं संस्थायाः स्वामित्व-संरचनां च निर्दिशन्तु।",
+    fields: [
+      {
+        name: "sourcingRegion",
+        label: "मुख्य-स्रोतः-क्षेत्रम्",
+        type: "radio",
+        options: [
+          {
+            value: "Kerala (e.g., Navara Rice, Malabar Pepper)",
+            label: "केरलम् (यथा नवारा-तण्डुलः, मलबार-मरीचम्)",
+            description: "भौगोलिक-उपदर्शनस्य (GI) संरक्षणस्य उच्च-सम्भावना।",
+          },
+          {
+            value: "Himalayan Belt",
+            label: "हिमालय-मण्डलम्",
+            description: "उच्च-तुङ्गतायाः वनस्पतयः। राज्य-वन-विभागस्य कठोर-निरीक्षणम्।",
+          },
+          {
+            value: "Imported from outside India",
+            label: "भारतस्य बहिः आयातीतम्",
+            description: "भारत-जैवविविधता-अधिनियमात् मुक्तम्, किन्तु पादप-सङ्गरोध-अनुज्ञापत्राधीनम्।",
+          },
+          {
+            value: "Western Ghats Biodiversity Hotspot",
+            label: "पश्चिम-घट्ट-जैवविविधता-हॉटस्पॉट्",
+            description: "स्थानिक-जातयः; राज्य-जैवविविधता-मण्डलस्य (SBB) कठोर-जाँचः धारा ७ पूर्व-सूचना च।",
+          },
+          {
+            value: "Central & Eastern Tribal Belts (Bastar, Chota Nagpur, Odisha)",
+            label: "मध्य-पूर्व-जनजातीय-मण्डलम् (बस्तर, छोटानागपुर, ओडिशा)",
+            description: "जनजातीय-ज्ञान-बहुलम्; जैवविविधता-प्रबन्धन-समितिभिः सह धारा ४१ ABS।",
+          },
+          {
+            value: "Certified Cultivated Farmland / Agro-Forestry",
+            label: "प्रमाणीकृता कृषि-भूमिः / कृषि-वानिकी",
+            description: "जैवविविधता (संशोधन) अधिनियम २०२३ अनुसृत्य ABS-नियमेभ्यः मुक्ता प्रमाणीकृता कृषिः।",
+          },
+          {
+            value: "Normally Traded Commodities (NTC under Section 40)",
+            label: "सामान्यतया व्यापृतानि वस्तूनि (धारा ४० अन्तर्गतानि NTC)",
+            description: "यथा हरिद्रा, शुण्ठी; विशुद्ध-वाणिज्यिक-वस्तूनां निर्याते ABS-विमुक्तिः।",
+          },
+        ],
+      },
+      {
+        name: "companyStructure",
+        label: "संस्था-स्वामित्व-संरचना",
+        type: "radio",
+        options: [
+          {
+            value: "100% Indian Citizens / Indian-Owned Entity",
+            label: "१००% भारतीय-नागरिकाः / भारतीय-स्वामित्व-युक्ता संस्था",
+            description: "जैवविविधता-अधिनियमस्य धारा ७ प्रवर्तते (राज्य-मण्डलाय पूर्व-सूचना)।",
+          },
+          {
+            value: "Contains Foreign Equity / FDI / NRI Shareholding",
+            label: "वैदेशिक-इक्विटी / FDI / NRI भागधारिता-युक्ता",
+            description: "जैवविविधता-अधिनियमस्य धारा ३(२) प्रवर्तते (प्रपत्र-१ द्वारा NBA अनिवार्य-स्वीकृतिः)।",
+          },
+          {
+            value: "Foreign Corporation / Multinational Company (Outside India)",
+            label: "वैदेशिक-निगमः / बहुराष्ट्रीया संस्था (भारतस्य बहिः)",
+            description: "धारा ३(१) पूर्ण-प्रतिबन्धाः; NBA पूर्व-स्वीकृतिः कठोर-ABS-अनुबन्धश्च आवश्यकः।",
+          },
+          {
+            value: "Registered AYUSH Practitioner (Vaidya / Traditional Healer)",
+            label: "पञ्जीकृतः आयुष-चिकित्सकः (वैद्यः / पारम्परिक-उपचारकः)",
+            description: "संशोधित-जैवविविधता-अधिनियम २०२३ अनुसृत्य वैयक्तिक-अभ्यासाय SBB-सूचनातः विमुक्तिः।",
+          },
+          {
+            value: "Farmer Producer Organization (FPO) / Local Village Grower Co-op",
+            label: "कृषक-उत्पादक-सङ्घटनम् (FPO) / ग्राम्य-सहकारी-समितिः",
+            description: "संशोधित-विधेः धारा ७ परन्तुकानुसृत्य स्थानिक-उत्पादकाः ABS-मुक्ताः।",
+          },
+          {
+            value: "Collaborative Research with Indian Government / CSIR / ICMR",
+            label: "भारत-सर्वकारेण / CSIR / ICMR सह सहयोगी-अनुसन्धानम्",
+            description: "केन्द्रीय-सर्वकारस्यानुमोदनाधीनम् धारा ५ सहयोगी-अनुसन्धान-विमुक्तये योग्यम्।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "नामाङ्कनं स्वास्थ्य-प्रतिपादनानि च",
+    description: "उत्पादस्य विपणन-पत्रे नामाङ्कन-फलके च प्रदर्शितानि प्रतिपादनानि चिनुत।",
+    fields: [
+      {
+        name: "healthClaims",
+        label: "लक्षितानि स्वास्थ्य-प्रतिपादनानि",
+        type: "checkbox",
+        options: [
+          {
+            value: "Boosts Immunity & General Wellness",
+            label: "रोगप्रतिरोधक-क्षमतायाः सामान्य-स्वास्थ्यस्य च संवर्धनम्",
+            description: "सुरक्षितं प्रतिपादनम्। एएससीआई (ASCI) संहिता-अनुरूपम्।",
+          },
+          {
+            value: 'Improves Skin Glow / Radiance ("Varnya")',
+            label: 'त्वचः दीप्तेः कान्तेश्च वर्धनम् ("वर्ण्यम्")',
+            description: "त्वक्-स्वास्थ्यस्य सामयिक-योगानां च कृते सुरक्षितं सौन्दर्य-प्रतिपादनम्।",
+          },
+          {
+            value: "Cures Diabetes / Cancer / Blindness",
+            label: "प्रमेहस्य / कर्कटस्य / अन्धतायाः पूर्ण-उपचारः",
+            description: "कठोरतया निषिद्धम्। औषधि-चमत्कारिक-उपचार-अधिनियमस्य (DMR) अनुसूची-J उल्लङ्घनम्।",
+          },
+          {
+            value: "Clinically Proven / CTRI Registered Trial",
+            label: "क्लिनिकली प्रमाणितम् / सीटीआरआई पञ्जीकृत-परीक्षणम्",
+            description: "सीटीआरआई पञ्जीकृत-मानव-चिकित्सीय-परीक्षणस्य अभिलेखः अनिवार्यः।",
+          },
+          {
+            value: 'Classical Rejuvenation & Vitality ("Rasayana" / "Balya")',
+            label: 'शास्त्रीयं कायाकल्पं बलवर्धनं च ("रसायनम्" / "बल्यम्")',
+            description: "प्रथम-अनुसूची-ग्रन्थैः मान्यानि शास्त्रीयाणि औषध-लक्षणानि; परीक्षणं न अनिवार्यम्।",
+          },
+          {
+            value: 'Digestive & Metabolic Health ("Deepana" / "Pachana")',
+            label: 'पाचनं चयापचय-स्वास्थ्यं च ("दीपनम्" / "पाचनम्")',
+            description: "आयुष तथा आयुर्वेद-आहार-नियमान्तर्गतं ग्राह्यं संरचना-कार्य-प्रतिपादनम्।",
+          },
+          {
+            value: "Joint Mobility & Pain Relief (Symptomatic Relief)",
+            label: "सन्धि-सञ्चालनं शूल-निवारणं च (लक्षणात्मक-शान्तिः)",
+            description: "ग्राह्यं लक्षणात्मकं प्रतिपादनम्; सन्धिशूलस्य स्थायी-उपचार-कथनं DMR-अधिनियमे निषिद्धम्।",
+          },
+          {
+            value: 'Stress Relief, Memory & Sleep Support ("Medhya")',
+            label: 'तनाव-मुक्तिः, स्मृति-निद्रा-साहाय्यं च ("मेध्यम्")',
+            description: "ग्रन्थोक्त-प्रमाणेन पुष्टं चेत् एएससीआई-मार्गदर्शिकानुसृत्य ग्राह्यम्।",
+          },
+          {
+            value: '"100% Natural / Pure Ayurvedic / Zero Side Effects"',
+            label: '"१००% प्राकृतिकम् / शुद्ध-आयुर्वेदिकम् / शून्य-दुष्प्रभावम्"',
+            description: "एएससीआई-जाँच-विषयः: कस्मैचित् अपि स्वास्थ्योत्पादाय 'शून्य-दुष्प्रभावम्' इति पूर्णतया निषिद्धम्।",
+          },
+          {
+            value: '"Permanent Cure for Obesity / Hypertension / Heart Disease"',
+            label: '"स्थौल्यस्य / उच्चरक्तचापस्य / हृद्रोगस्य स्थायी-उपचारः"',
+            description: "औषधि-चमत्कारिक-उपचार-अधिनियमस्य अनुसूची-अन्तर्गतं कठोरतया निषिद्धम्।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "लक्षिताः वैश्विक-विपणि-क्षेत्राणि",
+    description: "उत्पाद-वितरणाय बौद्धिक-सम्पदा-संरक्षणाय च लक्षिताः विपणीः चिनुत।",
+    fields: [
+      {
+        name: "targetMarkets",
+        label: "लक्षिताः विपणयः अनुज्ञापत्राणि च",
+        type: "checkbox",
+        options: [
+          {
+            value: "Domestic India: Classical AYUSH Drug (License on Form 25D)",
+            label: "घरेलु-भारतम्: शास्त्रीय-आयुष-औषधम् (प्रपत्र 25D अनुज्ञापत्रम्)",
+            description: "नियम १५८B(I) अनुसृत्य शास्त्रीय-ग्रन्थ-सन्दर्भेण अनुसूची T जीएमपी अन्तर्गतं निर्माणम्।",
+          },
+          {
+            value: "Domestic India: Patent or Proprietary (P&P) Medicine",
+            label: "घरेलु-भारतम्: पेटेण्ट अथवा प्रोप्राइटरी (P&P) औषधम्",
+            description: "नियम १५८B(II) अनुशासितम्; प्रकाशित-साहित्यं लघु-क्लिनिकल-दत्तांशो वा आवश्यकः।",
+          },
+          {
+            value: "Domestic India: Ayurveda Aahar / FSSAI Nutraceutical",
+            label: "घरेलु-भारतम्: आयुर्वेद-आहारः / FSSAI न्यूट्रास्युटिकल्",
+            description: "खाद्य-सुरक्षा-मानक विनियम २०२२ अनुसारं विनियमितम्; रोगनिवारण-दावा न शक्यते।",
+          },
+          {
+            value: "United States: FDA Dietary Supplement (DSHEA 1994)",
+            label: "संयुक्त-राज्य-अमेरिका: यूएस FDA आहारीय-परिपूरकम् (DSHEA)",
+            description: "21 CFR भाग 111 cGMP तथा अनिवार्य-FDA-अस्वीकरण-कथनम् आवश्यकम्।",
+          },
+          {
+            value: "United States: MoCRA Topical Cosmetic",
+            label: "संयुक्त-राज्य-अमेरिका: MoCRA सामयिक-प्रसाधनम्",
+            description: "MoCRA 2022 अन्तर्गतम् अनिवार्य-FDA-पञ्जीकरणम्, उत्पाद-सूची, सुरक्षा-प्रमाणीकरणं च।",
+          },
+          {
+            value: "European Union: Traditional Herbal Medicinal Products (THMPD 2004/24/EC)",
+            label: "यूरोपीय-सङ्घः: पारम्परिक-हर्बल-औषधयः (THMPD)",
+            description: "३० वर्षाणां पारम्परिकौषधोपयोगस्य प्रलेखनम् आवश्यकम् (EU मध्ये १५ वर्षसहितम्)।",
+          },
+          {
+            value: "European Union: Novel Food Regulation (EU 2015/2283)",
+            label: "यूरोपीय-सङ्घः: नोवेल्-फूद्-विनियमनम् (EU 2015/2283)",
+            description: "मई १९९७ पूर्वात् पूर्वम् उपयोगस्य इतिहास-विहीनाभ्यः वनस्पतिभ्यः आवश्यकम्।",
+          },
+          {
+            value: "Filing for Indian Patent (IPO)",
+            label: "भारतीय-पेटेण्ट् (IPO) कृते आवेदनम्",
+            description: "धारा ६ अनुसृत्य NBA-तः प्रपत्र-III पूर्व-अनुमोदनम् आवश्यकम्; धारा ३(p) TKDL परीक्षाधीना।",
+          },
+          {
+            value: "Filing for Global Patents (PCT / International Offices)",
+            label: "वैश्विक-पेटेण्ट् (PCT / अन्ताराष्ट्रिय-कार्यालयाः) आवेदनम्",
+            description: "धारा ६ अनुसृत्य अनिवार्यं पूर्व-NBA-अनुमोदनम्; आनुवंशिक-स्रोताविष्कार-WIPO-सन्ध्यानुपालनम्।",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export function getLocalizedModules(lang: Language): LocalizedModule[] {
   if (lang === "hi") {
     return HINDI_MODULES;
@@ -2732,6 +3181,9 @@ export function getLocalizedModules(lang: Language): LocalizedModule[] {
   }
   if (lang === "kn") {
     return KANNADA_MODULES;
+  }
+  if (lang === "sa") {
+    return SANSKRIT_MODULES;
   }
 
   // Map English MODULES into LocalizedModule structure
