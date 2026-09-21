@@ -1,4 +1,5 @@
 import { MODULES, Module } from "./modules";
+import { Language } from "../i18n/translations";
 
 export interface LocalizedOption {
   value: string; // Canonical value for form state and backend
@@ -918,12 +919,464 @@ const MARATHI_MODULES: LocalizedModule[] = [
   },
 ];
 
-export function getLocalizedModules(lang: "en" | "hi" | "mr"): LocalizedModule[] {
+const TAMIL_MODULES: LocalizedModule[] = [
+  {
+    id: 1,
+    title: "கலவை மற்றும் செயல்படு மூலப்பொருட்கள்",
+    description: "உங்கள் தயாரிப்பின் முக்கிய மூலப்பொருட்கள் மற்றும் சூத்திரத்தின் பாரம்பரிய அறிவு மூலத்தை வரையறுக்கவும்.",
+    fields: [
+      {
+        name: "ingredients",
+        label: "முக்கிய செயல்படு மூலப்பொருட்கள் (பொருட்கள்)",
+        type: "checkbox",
+        options: [
+          {
+            value: "Ashwagandha (Withania somnifera)",
+            label: "அஸ்வகந்தா (விதானியா சோம்னிஃபெரா)",
+            description: "பொதுவான அடாப்டோஜென். நிலையான ஆயுஷ் விதிகளின் கீழ் பொதுவாக பாதுகாப்பானது.",
+          },
+          {
+            value: "Tulsi (Ocimum sanctum)",
+            label: "துளசி (ஓசிமம் சாங்டம்)",
+            description: "புனித துளசி. பரவலாக பயிரிடப்படுகிறது, குறைந்த ஒழுங்குமுறை ஆபத்து.",
+          },
+          {
+            value: "Red Sanders (Pterocarpus santalinus)",
+            label: "செஞ்சந்தனம் (டெரோகார்பஸ் சாண்டலினஸ்)",
+            description: "அதிக அச்சுறுத்தலுக்கு உள்ளானது. CITES மற்றும் தேசிய பல்லுயிர் ஆணையத்தின் (NBA) கடுமையான ஆய்வுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Jatamansi (Nardostachys jatamansi)",
+            label: "ஜடாமாஞ்சில் (நார்டோஸ்டாச்சிஸ் ஜடாமாஞ்சி)",
+            description: "அழிந்துவரும் இமயமலை மூலிகை. கடுமையான அணுகல் மற்றும் பயன் பகிர்வு (ABS) இணக்கம் கட்டாயம்.",
+          },
+          {
+            value: "Purified Chemical Extract (e.g., Curcumin 95%)",
+            label: "சுத்திகரிக்கப்பட்ட இரசாயன சாறு (எ.கா. குர்குமின் 95%)",
+            description: "முழு மூலிகை அல்ல. பைட்டோபார்மாசூட்டிகல் விதிமுறைகள் பொருந்தக்கூடும்.",
+          },
+          {
+            value: "Neem (Azadirachta indica)",
+            label: "வேம்பு (அசாடிராக்டா இண்டிகா)",
+            description: "செம்மொழி நுண்ணுயிர் எதிர்ப்பு மூலிகை. வரலாற்று சிறப்புமிக்க EPO காப்புரிமை ரத்து முன்னுதாரணம்; TKDL முந்தைய கலை பாதுகாப்பு.",
+          },
+          {
+            value: "Turmeric / Haridra (Curcuma longa)",
+            label: "மஞ்சள் / ஹரித்ரா (குர்குமா லோங்கா)",
+            description: "காயம் குணப்படுத்தும் மற்றும் அழற்சி எதிர்ப்பு பண்புகள். CSIR அமெரிக்க காப்புரிமை ரத்து முன்னுதாரணம் (TKDL).",
+          },
+          {
+            value: "Kashmiri Saffron (Crocus sativus)",
+            label: "காஷ்மீரி குங்குமப்பூ (குரோக்கஸ் சட்டைவஸ்)",
+            description: "பாதுகாக்கப்பட்ட புவிசார் குறியீடு (GI) கொண்ட மதிப்புமிக்க மசாலா. கடுமையான நம்பகத்தன்மை மற்றும் தூய்மை தரநிலைகள்.",
+          },
+          {
+            value: "Guggulu (Commiphora mukul)",
+            label: "குக்குலு (கொம்மிஃபோரா முகுல்)",
+            description: "ஒழுங்குபடுத்தப்பட்ட பிசின். ஆயுர்வேத பார்மகோபியா (API) கீழ் தரப்படுத்தப்பட்ட குக்குல்ஸ்டிரோன்களுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Kutki (Picrorhiza kurroa)",
+            label: "கட்கி (பிக்ரோரைசா குரோவா)",
+            description: "CITES இணைப்பு II மற்றும் பல்லுயிர் சட்டத்தின் பிரிவு 38-ன் ஆபத்தான உயிரினங்கள் பட்டியலில் சேர்க்கப்பட்டுள்ளது.",
+          },
+          {
+            value: "Sarpgandha (Rauvolfia serpentina)",
+            label: "சர்ப்பகந்தி (ராவோல்ஃபியா சர்பென்டினா)",
+            description: "ரெசர்பைன் கொண்ட தாவரம். அட்டவணை E(1) மற்றும் பிரிவு 38 பல்லுயிர் சட்டத்தின் தடைசெய்யப்பட்ட பட்டியலில் உள்ளது.",
+          },
+          {
+            value: "Vatsanabha / Indian Aconite (Aconitum ferox)",
+            label: "வத்ஸநாபி / வசநாபி (அகோனிட்டம் ஃபெராக்ஸ்)",
+            description: "அட்டவணை E(1) விஷ மூலிகை. கட்டாய பாரம்பரிய சுத்திகரிப்பு (சோதனை) மற்றும் சிவப்பு எச்சரிக்கை லேபிள் தேவை.",
+          },
+          {
+            value: "Bhang / Vijaya (Cannabis sativa)",
+            label: "கஞ்சா / விஜயா (கன்னாபிஸ் சட்டைவா)",
+            description: "அட்டவணை E(1) போதைப்பொருள் தாவரம். NDPS சட்டம், மாநில கலால் உரிமம் மற்றும் ஆயுஷ் அறிவிப்புகளுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Brahmi (Bacopa monnieri)",
+            label: "பிராமி / வல்லாரை வகை (பாகோபா மோனியேரி)",
+            description: "செம்மொழி மேத்ய ரசாயனம் (நினைவாற்றல் ஊக்கி). தரப்படுத்தப்பட்ட பாகோசைடு சோதனை மற்றும் கனரக உலோக வரம்புகளுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Triphala (Amalaki, Haritaki, Bibhitaki)",
+            label: "திரிபலா (நெல்லிக்காய், கடுக்காய், தான்றிக்காய்)",
+            description: "பாரம்பரிய பாலிஹெர்பல் கலவை. காப்புரிமைச் சட்டம் பிரிவு 3(p)-ன் கீழ் பாரம்பரிய அறிவாக பாதுகாக்கப்படுகிறது.",
+          },
+          {
+            value: "Swarna Bhasma (Incinerated Gold Ash)",
+            label: "சுவர்ண பஸ்மம் (சுத்திகரிக்கப்பட்ட தங்க பஸ்மம்)",
+            description: "மூலிகை-உலோக ரசௌஷதம். அட்டவணை T பகுதி I-F GMP மற்றும் தனிம தூய்மையின்மை வரம்புகளுக்கு உட்பட்டது.",
+          },
+        ],
+      },
+      {
+        name: "knowledgeSource",
+        label: "சூத்திர அறிவின் மூலம்",
+        type: "radio",
+        options: [
+          {
+            value: "Classical Text (e.g., Charaka Samhita, Sushruta Samhita)",
+            label: "செம்மொழி நூல்கள் (எ.கா. சரக சம்ஹிதை, சுஸ்ருத சம்ஹிதை)",
+            description: "விதி 158B(I)(A) கீழ் புதிய பாதுகாப்பு/செயல்திறன் மருத்துவத் தரவுத் தேவைகளிலிருந்து விலக்கு அளிக்கப்பட்டுள்ளது.",
+          },
+          {
+            value: "Proprietary Mix (Patent & Proprietary - P&P)",
+            label: "உரிமக் கலவை (Patent & Proprietary - P&P)",
+            description: "பிரிவு 3(h) மற்றும் விதி 158B(II) கீழ் நிலையான காப்புரிமை மற்றும் தனியுரிம மருந்து விதிகள் பொருந்தும்.",
+          },
+          {
+            value: "Tribal / Traditional Community Knowledge",
+            label: "பழங்குடியினர் / பாரம்பரிய சமூக அறிவு",
+            description: "உள்ளூர் சமூகங்கள் மற்றும் பல்லுயிர் மேலாண்மைக் குழுக்களுடன் (BMC) கட்டாய பயன் பகிர்வு ஒப்பந்தம்.",
+          },
+          {
+            value: "Ayurvedic Pharmacopoeia of India (API) / AFI Standards",
+            label: "இந்திய ஆயுர்வேத பார்மகோபியா (API) / AFI தரநிலைகள்",
+            description: "மருந்துகள் மற்றும் அழகுசாதனப் பொருட்கள் சட்டத்தின் இரண்டாவது அட்டவணையின் கீழ் அங்கீகரிக்கப்பட்ட பார்மகோபியல் மோனோகிராஃப்கள்.",
+          },
+          {
+            value: "Siddha or Unani Classical Treatises",
+            label: "சித்த அல்லது யுனானி செம்மொழி நூல்கள்",
+            description: "சித்த அல்லது யுனானி மருத்துவ முறைகளின் முதல் அட்டவணையில் பட்டியலிடப்பட்டுள்ள அதிகாரப்பூர்வ நூல்கள்.",
+          },
+          {
+            value: "Novel In-House R&D / Innovative Formulation",
+            label: "புதிய உள்நாட்டு R&D / புதுமையான உருவாக்கம்",
+            description: "முற்றிலும் புதிய தாவரவியல் கலவை; பிரிவு 3(p)/3(e) மூலம் தடைசெய்யப்படாவிட்டால் காப்புரிமை பெற தகுதியுடையது.",
+          },
+          {
+            value: "Uncodified Ethnobotanical Field Collections (PBR)",
+            label: "குறியீடு செய்யப்படாத இனத்தாவரவியல் சேகரிப்புகள் (PBR)",
+            description: "மக்கள் பல்லுயிர் பதிவேடுகளில் ஆவணப்படுத்தப்பட்டுள்ளது; கட்டாய அணுகல் மற்றும் பயன் பகிர்வு (ABS) ஒப்பந்தம்.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "உற்பத்தி மற்றும் செயலாக்கம்",
+    description: "தயாரிப்பின் உற்பத்தி செயலாக்க முறைகள் மற்றும் இறுதி உடல் வடிவத்தை விவரிக்கவும்.",
+    fields: [
+      {
+        name: "processingMethod",
+        label: "உற்பத்தி செயல்முறை",
+        type: "radio",
+        options: [
+          {
+            value: "Raw / Crushed / Water-Boiled (Aqueous)",
+            label: "மூல / நொறுக்கப்பட்ட / நீரில் கொதிக்கவைத்த (நீர்மக் கரைசல்)",
+            description: "நிலையான பாரம்பரிய ஆயுர்வேத உற்பத்தி (கஷாயம் / குடிநீர் செயல்முறை).",
+          },
+          {
+            value: "Solvent Extraction (Alcohol, Hexane)",
+            label: "கரைப்பான் பிரித்தெடுத்தல் (ஆல்கஹால், ஹெக்ஸேன்)",
+            description: "மீதமுள்ள கரைப்பான் வெளிப்பாடு, TLC கைரேகை மற்றும் கனரக உலோக சோதனை கட்டாயம்.",
+          },
+          {
+            value: "Advanced Chemical Isolation",
+            label: "மேம்பட்ட இரசாயனப் பிரித்தெடுத்தல் (ஐசோலேஷன்)",
+            description: "பைட்டோபார்மாசூட்டிகல் என வகைப்படுத்தப்படுகிறது. CDSCO ஒப்புதல் மற்றும் மருத்துவ பரிசோதனைகள் தேவை.",
+          },
+          {
+            value: "Classical Fermentation (Asava & Arishta)",
+            label: "பாரம்பரிய நொதித்தல் (ஆசவம் & அரிஷ்டம்)",
+            description: "சுயமாக உருவாகும் ஆல்கஹால் (<12% v/v); விதி 151 ஆல்கஹால் கலால் மற்றும் மருத்துவ தயாரிப்புகள் சட்டத்தின் கீழ் வருகிறது.",
+          },
+          {
+            value: "Medicated Ghee / Oil Processing (Sneha Kalpana)",
+            label: "மருந்து நெய் / எண்ணெய் செயலாக்கம் (சினேக கல்பனை)",
+            description: "பாரம்பரிய கொழுப்புப் பிரித்தெடுத்தல்; பெராக்சைடு மதிப்பு மற்றும் அமில மதிப்பு சோதனைகள் தேவை.",
+          },
+          {
+            value: "Classical Calcinated Ash / Bhasma (Shodhana & Marana)",
+            label: "பாரம்பரிய பஸ்மம் / சாம்பல் (சோதனை & மாரணம்)",
+            description: "ரசசாஸ்திர நச்சுநீக்கம்; அட்டவணை T நானோ துகள்கள் மற்றும் கனரக உலோக பாதுகாப்பு இணக்கம்.",
+          },
+          {
+            value: "Supercritical Fluid CO2 Extraction (SCFE)",
+            label: "சூப்பர்கிரிட்டிகல் ஃப்ளூயிட் CO2 பிரித்தெடுத்தல் (SCFE)",
+            description: "பசுமை கரைப்பான் இல்லாத பிரித்தெடுத்தல்; காப்புரிமைச் சட்டம் பிரிவு 5-ன் கீழ் செயல்முறை காப்புரிமைக்கு தகுதியானது.",
+          },
+          {
+            value: "Nano-Liposomal / Novel Herbal Drug Delivery (NDDS)",
+            label: "நானோ-லிபோசோமால் / புதிய மூலிகை மருந்து வழங்கல் (NDDS)",
+            description: "உயிரியல் கிடைக்கும் தன்மையை மேம்படுத்துதல்; CDSCO புதிய மருந்து / பைட்டோபார்மாசூட்டிகல் விதிகளை ஈர்க்கிறது.",
+          },
+        ],
+      },
+      {
+        name: "finalForm",
+        label: "இறுதி தயாரிப்பு வடிவம்",
+        type: "radio",
+        options: [
+          {
+            value: "Oral Solid (Tablets, Capsules, Vati, Gutika)",
+            label: "வாய்வழி திடப்பொருள் (மாத்திரைகள், காப்ஸ்யூல்கள், வதி, குளிகைகள்)",
+            description: "உள்நாட்டு மருந்து கனரக உலோக தரநிலைகள், கரைதல் மற்றும் நுண்ணுயிர் வரம்புகளுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Oral Liquid (Fermented Asava, Arishta, Syrup)",
+            label: "வாய்வழி திரவம் (நொதித்த ஆசவம், அரிஷ்டம், சிரப்)",
+            description: "குறிப்பிட்ட அடர்த்தி, ஆல்கஹால் வரம்பு சரிபார்ப்பு (<12%), மற்றும் நுண்ணுயிர் சோதனைக்கு உட்பட்டது.",
+          },
+          {
+            value: "Oral Powder / Granules (Churna, Kwatha Churna)",
+            label: "வாய்வழி தூள் / துகள்கள் (சூர்ணம், கஷாய சூர்ணம்)",
+            description: "API கீழ் துகள் அளவு மற்றும் ஈரப்பத வரம்புகள்.",
+          },
+          {
+            value: "Classical Semi-Solid (Avaleha, Lehyam, Chyawanprash)",
+            label: "பாரம்பரிய அரை-திடப்பொருள் (அவலேகம், லேகியம், சியவன்பிரஷ்)",
+            description: "சர்க்கரை/தேன் அடிப்படை; மொத்த திடப்பொருட்கள், HMF மற்றும் சர்க்கரை சகிப்புத்தன்மை சோதனை.",
+          },
+          {
+            value: "Medicated Oil / Ghee (Taila, Ghrita)",
+            label: "மருந்து எண்ணெய் / நெய் (தைலம், கிருதம்)",
+            description: "வாய்வழி அல்லது வெளிப்புற பயன்பாடு; அயோடின் மதிப்பு மற்றும் சோப்பாக்கத் தரநிலைகள்.",
+          },
+          {
+            value: "Topical / External Semi-Solid (Cream, Gel, Lepa, Balm)",
+            label: "வெளிப்புற அரை-திடப்பொருள் (கிரீம், ஜெல், லேபம், பாம்)",
+            description: "அட்டவணை M-II கீழ் அழகுசாதனம் அல்லது ASU வெளிப்புற பயன்பாடாக எளிய இணக்கம்.",
+          },
+          {
+            value: "Sterile Drops: Nasal / Ophthalmic (Nasya, Netra Bindu)",
+            label: "மலட்டு சொட்டு மருந்துகள்: மூக்கு / கண் (நசியம், நேத்ர பிந்து)",
+            description: "கடுமையான மலட்டுத்தன்மை தரநிலைகள், துகள் பொருள் சோதனை மற்றும் பாதுகாப்பாளர் வெளிப்பாடு கட்டாயம்.",
+          },
+          {
+            value: "Ayurveda Aahar / Ready-to-Consume Herbal Food",
+            label: "ஆயுர்வேத ஆஹார் / நுகரக்கூடிய மூலிகை உணவு",
+            description: "உணவுப் பாதுகாப்பு மற்றும் தரநிலைகள் (ஆயுர்வேத ஆஹார்) விதிமுறைகள், 2022-ன் கீழ் ஒழுங்குபடுத்தப்படுகிறது.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "மூலப்பொருள் ஆதாரம் மற்றும் நிறுவன உரிமை",
+    description: "உயிரியல் வளங்களின் தோற்றப் பகுதி மற்றும் நிறுவனத்தின் உரிமை கட்டமைப்பைக் குறிப்பிடவும்.",
+    fields: [
+      {
+        name: "sourcingRegion",
+        label: "முக்கிய மூலப்பொருள் ஆதாரம் பெறும் பகுதி",
+        type: "radio",
+        options: [
+          {
+            value: "Kerala (e.g., Navara Rice, Malabar Pepper)",
+            label: "கேரளா (எ.கா. ஞவர அரிசி, மலபார் மிளகு)",
+            description: "புவிசார் குறியீடு (GI) பாதுகாப்பிற்கான அதிக வாய்ப்பு.",
+          },
+          {
+            value: "Himalayan Belt",
+            label: "இமயமலைப் பகுதி",
+            description: "உயர் உயர தாவரங்கள். மாநில வனத்துறையின் கடுமையான கண்காணிப்பு.",
+          },
+          {
+            value: "Imported from outside India",
+            label: "இந்தியாவிற்கு வெளியிலிருந்து இறக்குமதி செய்யப்பட்டது",
+            description: "இந்திய பல்லுயிர் சட்டத்திலிருந்து விலக்கு பெற்றது, ஆனால் தாவர தனிமைப்படுத்தல் மற்றும் இறக்குமதி அனுமதிக்கு உட்பட்டது.",
+          },
+          {
+            value: "Western Ghats Biodiversity Hotspot",
+            label: "மேற்குத் தொடர்ச்சி மலை பல்லுயிர் மையம்",
+            description: "பிராந்தியத்திற்கே உரிய சிறப்பு இனங்கள்; மாநில பல்லுயிர் வாரியத்தின் (SBB) கடுமையான ஆய்வு மற்றும் பிரிவு 7 முன் அறிவிப்பு.",
+          },
+          {
+            value: "Central & Eastern Tribal Belts (Bastar, Chota Nagpur, Odisha)",
+            label: "மத்திய மற்றும் கிழக்கு பழங்குடியினர் பகுதிகள் (பஸ்தர், சோட்டா நாக்பூர், ஒடிசா)",
+            description: "பழங்குடியினர் அறிவு நிறைந்த பகுதி; பல்லுயிர் மேலாண்மைக் குழுக்களுடன் (BMC) பிரிவு 41 ABS.",
+          },
+          {
+            value: "Certified Cultivated Farmland / Agro-Forestry",
+            label: "சான்றளிக்கப்பட்ட விவசாய நிலம் / வேளாண் காடுகள்",
+            description: "பல்லுயிர் (திருத்த) சட்டம் 2023-ன் கீழ் சில ABS விதிகளிலிருந்து விலக்கு அளிக்கப்பட்ட சான்றளிக்கப்பட்ட விவசாயம்.",
+          },
+          {
+            value: "Normally Traded Commodities (NTC under Section 40)",
+            label: "பொதுவாக வர்த்தகம் செய்யப்படும் பொருட்கள் (பிரிவு 40 கீழ் NTC)",
+            description: "எ.கா. வணிகப் பொருளாக மட்டுமே உள்ள மஞ்சள், இஞ்சி; பொருட்கள் ஏற்றுமதிக்கு ABS-லிருந்து விலக்கு.",
+          },
+        ],
+      },
+      {
+        name: "companyStructure",
+        label: "நிறுவன உரிமை கட்டமைப்பு",
+        type: "radio",
+        options: [
+          {
+            value: "100% Indian Citizens / Indian-Owned Entity",
+            label: "100% இந்திய குடிமக்கள் / இந்தியருக்குச் சொந்தமான நிறுவனம்",
+            description: "பல்லுயிர் சட்டம் பிரிவு 7 பொருந்தும் (மாநில பல்லுயிர் வாரியத்திற்கு முன் தகவல் அளித்தல்).",
+          },
+          {
+            value: "Contains Foreign Equity / FDI / NRI Shareholding",
+            label: "வெளிநாட்டு பங்குகள் / FDI / NRI பங்குகளைக் கொண்டது",
+            description: "பல்லுயிர் சட்டம் பிரிவு 3(2) பொருந்தும் (படிவம் 1 மூலம் NBA-ன் கட்டாய முன் அனுமதி).",
+          },
+          {
+            value: "Foreign Corporation / Multinational Company (Outside India)",
+            label: "வெளிநாட்டு நிறுவனம் / பன்னாட்டு நிறுவனம் (இந்தியாவிற்கு வெளியே)",
+            description: "பிரிவு 3(1)-ன் முழுமையான கட்டுப்பாடுகள்; NBA முன் அனுமதியும் கடுமையான ABS ஒப்பந்தமும் தேவை.",
+          },
+          {
+            value: "Registered AYUSH Practitioner (Vaidya / Traditional Healer)",
+            label: "பதிவுசெய்த ஆயுஷ் மருத்துவர் (வைத்தியர் / பாரம்பரிய மருத்துவர்)",
+            description: "திருத்தப்பட்ட பல்லுயிர் சட்டம் 2023-ன் கீழ் தனிப்பட்ட நடைமுறைக்கு SBB தகவல் மற்றும் ABS-லிருந்து விலக்கு.",
+          },
+          {
+            value: "Farmer Producer Organization (FPO) / Local Village Grower Co-op",
+            label: "விவசாய உற்பத்தியாளர் அமைப்பு (FPO) / கிராம கூட்டுறவு சங்கம்",
+            description: "திருத்தப்பட்ட சட்டத்தின் பிரிவு 7-ன் கீழ் உள்ளூர் விவசாயிகள் ABS-லிருந்து விலக்கு பெற்றுள்ளனர்.",
+          },
+          {
+            value: "Collaborative Research with Indian Government / CSIR / ICMR",
+            label: "இந்திய அரசு / CSIR / ICMR உடன் கூட்டு ஆராய்ச்சி",
+            description: "மத்திய அரசின் ஒப்புதலுக்கு உட்பட்டு பிரிவு 5 கூட்டு ஆராய்ச்சி விலக்குக்கு தகுதியுடையது.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "லேபிளிங் மற்றும் சுகாதார உரிமைகோரல்கள்",
+    description: "தயாரிப்பு சந்தைப்படுத்தல் மற்றும் லேபிளில் குறிப்பிடப்படும் உரிமைகோரல்களைத் தேர்ந்தெடுக்கவும்.",
+    fields: [
+      {
+        name: "healthClaims",
+        label: "இலக்கு சுகாதார உரிமைகோரல்கள்",
+        type: "checkbox",
+        options: [
+          {
+            value: "Boosts Immunity & General Wellness",
+            label: "நோய் எதிர்ப்பு சக்தி மற்றும் பொது ஆரோக்கியத்தை மேம்படுத்துகிறது",
+            description: "பாதுகாப்பான உரிமைகோரல். ASCI விதிகளுக்கு உட்பட்டது.",
+          },
+          {
+            value: 'Improves Skin Glow / Radiance ("Varnya")',
+            label: 'சரும பொலிவு மற்றும் பிரகாசத்தை மேம்படுத்துகிறது ("வர்ண்யம்")',
+            description: "தோல் ஆரோக்கியம் மற்றும் வெளிப்புற தயாரிப்புகளுக்கான பாதுகாப்பான அழகுசாதன உரிமைகோரல்.",
+          },
+          {
+            value: "Cures Diabetes / Cancer / Blindness",
+            label: "நீரிழிவு / புற்றுநோய் / பார்வை இழப்பை முழுமையாகக் குணப்படுத்துகிறது",
+            description: "கடுமையாக தடைசெய்யப்பட்டுள்ளது. மருந்துகள் மற்றும் மாய தீர்வுகள் சட்டம் (DMR) மற்றும் அட்டவணை J மீறல்.",
+          },
+          {
+            value: "Clinically Proven / CTRI Registered Trial",
+            label: "மருத்துவ ரீதியாக நிரூபிக்கப்பட்டது / CTRI பதிவுசெய்த சோதனை",
+            description: "CTRI பதிவுசெய்யப்பட்ட மனித மருத்துவ பரிசோதனைத் தரவு ஆவணங்கள் கட்டாயம் இருக்க வேண்டும்.",
+          },
+          {
+            value: 'Classical Rejuvenation & Vitality ("Rasayana" / "Balya")',
+            label: 'செம்மொழி புத்துணர்ச்சி மற்றும் வலிமை ("ரசாயனம்" / "பல்யம்")',
+            description: "முதல் அட்டவணை நூல்களின் கீழ் அங்கீகரிக்கப்பட்ட பாரம்பரிய மருத்துவக் குறியீடுகள்; சோதனை கட்டாயமில்லை.",
+          },
+          {
+            value: 'Digestive & Metabolic Health ("Deepana" / "Pachana")',
+            label: 'செரிமானம் மற்றும் வளர்சிதை மாற்ற ஆரோக்கியம் ("தீபனம்" / "பாசனம்")',
+            description: "ஆயுஷ் மற்றும் ஆயுர்வேத ஆஹார் விதிகளின் கீழ் ஏற்றுக்கொள்ளக்கூடிய கட்டமைப்பு-செயல்பாட்டு உரிமைகோரல்.",
+          },
+          {
+            value: "Joint Mobility & Pain Relief (Symptomatic Relief)",
+            label: "மூட்டு இயக்கம் மற்றும் வலி நிவாரணம் (அறிகுறி நிவாரணம்)",
+            description: "ஏற்றுக்கொள்ளக்கூடிய அறிகுறி நிவாரண உரிமைகோரல்; மூட்டுவலியை நிரந்தரமாகக் குணப்படுத்துவதாகக் கூறுவது DMR சட்டத்தில் தடைசெய்யப்பட்டுள்ளது.",
+          },
+          {
+            value: 'Stress Relief, Memory & Sleep Support ("Medhya")',
+            label: 'மன அழுத்த நிவாரணம், நினைவாற்றல் மற்றும் தூக்க ஆதரவு ("மேத்யம்")',
+            description: "மோனோகிராஃப்களால் ஆதரிக்கப்படும் போது ASCI வழிகாட்டுதல்களின் கீழ் ஏற்றுக்கொள்ளக்கூடிய உரிமைகோரல்.",
+          },
+          {
+            value: '"100% Natural / Pure Ayurvedic / Zero Side Effects"',
+            label: '"100% இயற்கையானது / தூய ஆயுர்வேதம் / பக்கவிளைவுகள் இல்லை"',
+            description: "ASCI ஆய்வுக்கு உட்பட்டது: எந்தவொரு சுகாதார தயாரிப்புக்கும் 'பக்கவிளைவுகள் இல்லை' எனக் கூறுவது முற்றிலும் தடைசெய்யப்பட்டுள்ளது.",
+          },
+          {
+            value: '"Permanent Cure for Obesity / Hypertension / Heart Disease"',
+            label: '"உடல் பருமன் / உயர் இரத்த அழுத்தம் / இதய நோய்க்கு நிரந்தர தீர்வு"',
+            description: "மருந்துகள் மற்றும் மாய தீர்வுகள் சட்டத்தின் அட்டவணை (வரிசை 18, 27, 41) கீழ் கடுமையாக தடைசெய்யப்பட்டுள்ளது.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "இலக்கு உலகளாவிய சந்தைகள்",
+    description: "தயாரிப்பு விநியோகம் மற்றும் அறிவுசார் சொத்துரிமை பாதுகாப்பிற்கான இலக்கு சந்தைகளைத் தேர்ந்தெடுக்கவும்.",
+    fields: [
+      {
+        name: "targetMarkets",
+        label: "இலக்கு சந்தைகள் மற்றும் உரிமங்கள்",
+        type: "checkbox",
+        options: [
+          {
+            value: "Domestic India: Classical AYUSH Drug (License on Form 25D)",
+            label: "உள்நாட்டு இந்தியா: பாரம்பரிய ஆயுஷ் மருந்து (படிவம் 25D உரிமம்)",
+            description: "விதி 158B(I) கீழ் பாரம்பரிய உரை குறிப்புடன் அட்டவணை T GMP கீழ் உற்பத்தி செய்யப்படுகிறது.",
+          },
+          {
+            value: "Domestic India: Patent or Proprietary (P&P) Medicine",
+            label: "உள்நாட்டு இந்தியா: காப்புரிமை அல்லது தனியுரிம (P&P) மருந்து",
+            description: "விதி 158B(II) ஆல் நிர்வகிக்கப்படுகிறது; வெளியிடப்பட்ட இலக்கியம் அல்லது ஆரம்ப மருத்துவத் தரவு தேவை.",
+          },
+          {
+            value: "Domestic India: Ayurveda Aahar / FSSAI Nutraceutical",
+            label: "உள்நாட்டு இந்தியா: ஆயுர்வேத ஆஹார் / FSSAI நியூட்ராசூட்டிகல்",
+            description: "உணவுப் பாதுகாப்பு மற்றும் தரநிலைகள் ஒழுங்குமுறை 2022 கீழ் கட்டுப்படுத்தப்படுகிறது; நோயைக் குணப்படுத்துவதாகக் கூற முடியாது.",
+          },
+          {
+            value: "United States: FDA Dietary Supplement (DSHEA 1994)",
+            label: "அமெரிக்கா: US FDA உணவு துணைப்பொருள் (DSHEA 1994)",
+            description: "21 CFR பகுதி 111 cGMP மற்றும் கட்டாய FDA மறுப்பு அறிக்கை தேவை.",
+          },
+          {
+            value: "United States: MoCRA Topical Cosmetic",
+            label: "அமெரிக்கா: MoCRA வெளிப்புற அழகுசாதனப் பொருள்",
+            description: "MoCRA 2022 கீழ் கட்டாய FDA வசதி பதிவு, தயாரிப்பு பட்டியல் மற்றும் பாதுகாப்பு சான்றளிப்பு.",
+          },
+          {
+            value: "European Union: Traditional Herbal Medicinal Products (THMPD 2004/24/EC)",
+            label: "ஐரோப்பிய ஒன்றியம்: பாரம்பரிய மூலிகை மருத்துவப் பொருட்கள் (THMPD)",
+            description: "30 வருட பாரம்பரிய மருத்துவ பயன்பாட்டு ஆவணங்கள் தேவை (ஐரோப்பிய ஒன்றியத்தில் 15 ஆண்டுகள் உட்பட).",
+          },
+          {
+            value: "European Union: Novel Food Regulation (EU 2015/2283)",
+            label: "ஐரோப்பிய ஒன்றியம்: நாவல் உணவு ஒழுங்குமுறை",
+            description: "மே 1997-க்கு முன் ஐரோப்பிய ஒன்றியத்தில் பயன்பாட்டு வரலாறு இல்லாத தாவர இனங்களுக்கு தேவை.",
+          },
+          {
+            value: "Filing for Indian Patent (IPO)",
+            label: "இந்திய காப்புரிமைக்கு (IPO) விண்ணப்பித்தல்",
+            description: "பிரிவு 6-ன் கீழ் NBA-விடமிருந்து படிவம் III முன் ஒப்புதல் தேவை; பிரிவு 3(p) TKDL ஆய்வுக்கு உட்பட்டது.",
+          },
+          {
+            value: "Filing for Global Patents (PCT / International Offices)",
+            label: "உலகளாவிய காப்புரிமை (PCT / சர்வதேச அலுவலகங்கள்) விண்ணப்பம்",
+            description: "பிரிவு 6-ன் கீழ் கட்டாய முன் NBA ஒப்புதல்; மரபணு மூல வெளிப்படுத்தல் மீதான WIPO ஒப்பந்த இணக்கம்.",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export function getLocalizedModules(lang: Language): LocalizedModule[] {
   if (lang === "hi") {
     return HINDI_MODULES;
   }
   if (lang === "mr") {
     return MARATHI_MODULES;
+  }
+  if (lang === "ta") {
+    return TAMIL_MODULES;
   }
 
   // Map English MODULES into LocalizedModule structure

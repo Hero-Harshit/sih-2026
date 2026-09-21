@@ -27,6 +27,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
             ? "नियामक इंजन संदर्भ"
             : language === "mr"
             ? "नियामक इंजिन संदर्भ"
+            : language === "ta"
+            ? "ஒழுங்குமுறை இயந்திர சூழல்"
             : "Regulatory Engine Context"}
         </div>
 
@@ -40,6 +42,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? `यह फ़ील्ड "${title}" के लिए नियामक मार्ग निर्धारित करता है। इंजन अनुपालन ट्रिगर्स का पता लगाने के लिए इसका विश्लेषण करता है।`
               : language === "mr"
               ? `हे फील्ड "${title}" साठी नियामक मार्ग निश्चित करते. इंजिन अनुपालन ट्रिगर्स शोधण्यासाठी याचे विश्लेषण करते.`
+              : language === "ta"
+              ? `இந்த புலம் "${title}"-க்கான ஒழுங்குமுறை பாதையை தீர்மானிக்கிறது. இணக்க தூண்டுதல்களைக் கண்டறிய இயந்திரம் இதை பகுப்பாய்வு செய்கிறது.`
               : `This field determines the regulatory pathway for "${title}". The engine analyzes this to detect compliance triggers.`}
           </p>
         </div>
@@ -50,6 +54,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? "सक्रिय कानून एवं संविधियां"
               : language === "mr"
               ? "सक्रिय कायदे आणि संविधाने"
+              : language === "ta"
+              ? "செயலில் உள்ள சட்டங்கள்"
               : "Active Statutes"}
           </h5>
           <ul className="space-y-3 text-[13px] text-slate-600 dark:text-slate-300 font-medium">
@@ -60,6 +66,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "ड्रग्स एंड कॉस्मेटिक्स एक्ट, 1940"
                   : language === "mr"
                   ? "ड्रग्ज अँड कॉस्मेटिक्स कायदा, १९४०"
+                  : language === "ta"
+                  ? "மருந்துகள் மற்றும் அழகுசாதனப் பொருட்கள் சட்டம், 1940"
                   : "Drugs & Cosmetics Act, 1940"}
               </span>
             </li>
@@ -70,6 +78,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "जैविक विविधता अधिनियम, 2002"
                   : language === "mr"
                   ? "जैविक विविधता कायदा, २००२"
+                  : language === "ta"
+                  ? "உயிரியல் பன்முகத்தன்மை சட்டம், 2002"
                   : "Biological Diversity Act, 2002"}
               </span>
             </li>

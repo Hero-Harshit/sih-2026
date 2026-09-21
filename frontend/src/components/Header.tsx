@@ -61,7 +61,13 @@ export default function Header() {
             >
               <Globe size={16} className="text-brand-600 dark:text-brand-400 shrink-0" />
               <span className="hidden sm:inline">
-                {language === "hi" ? "हिन्दी" : language === "mr" ? "मराठी" : "English"}
+                {language === "hi"
+                  ? "हिन्दी"
+                  : language === "mr"
+                  ? "मराठी"
+                  : language === "ta"
+                  ? "தமிழ்"
+                  : "English"}
               </span>
               <span className="inline sm:hidden uppercase font-mono text-xs font-bold text-brand-600">
                 {language}
@@ -133,6 +139,25 @@ export default function Header() {
                     <span>मराठी (Marathi)</span>
                   </div>
                   {language === "mr" && (
+                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
+                  )}
+                </button>
+
+                <button
+                  onClick={() => handleSelectLanguage("ta")}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
+                    language === "ta"
+                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
+                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300">
+                      TA
+                    </span>
+                    <span>தமிழ் (Tamil)</span>
+                  </div>
+                  {language === "ta" && (
                     <Check size={16} className="text-brand-600 dark:text-brand-400" />
                   )}
                 </button>

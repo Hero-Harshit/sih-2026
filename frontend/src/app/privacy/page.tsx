@@ -31,6 +31,8 @@ export default function PrivacyPolicyPage() {
                   ? "सामग्री सूची"
                   : language === "mr"
                   ? "अनुक्रमणिका"
+                  : language === "ta"
+                  ? "பொருளடக்கம்"
                   : "Table of Contents"}
               </div>
               <nav className="flex flex-col space-y-1 border-l-2 border-brand-100 dark:border-white/10">
@@ -106,6 +108,8 @@ export default function PrivacyPolicyPage() {
                     ? "मुख्य शब्द"
                     : language === "mr"
                     ? "महत्त्वाचे शब्द"
+                    : language === "ta"
+                    ? "முக்கிய வார்த்தைகள்"
                     : "Keywords"}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -128,6 +132,8 @@ export default function PrivacyPolicyPage() {
                     ? "मेटाडेटा"
                     : language === "mr"
                     ? "मेटाडेटा"
+                    : language === "ta"
+                    ? "மெட்டாடேட்டா"
                     : "Metadata"}
                 </div>
                 <div className="bg-brand-50/30 dark:bg-white/5 border border-brand-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-sm">
@@ -163,6 +169,8 @@ export default function PrivacyPolicyPage() {
                     ? "सहायता से संपर्क करें"
                     : language === "mr"
                     ? "मदत केंद्राशी संपर्क साधा"
+                    : language === "ta"
+                    ? "ஆதரவைத் தொடர்பு கொள்ளவும்"
                     : "Contact Support"}
                   <ArrowRight
                     size={18}
