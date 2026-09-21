@@ -2268,6 +2268,452 @@ export const BENGALI_MODULES: LocalizedModule[] = [
   },
 ];
 
+export const KANNADA_MODULES: LocalizedModule[] = [
+  {
+    id: 1,
+    title: "ಘಟಕಾಂಶಗಳು ಮತ್ತು ಸಕ್ರಿಯ ವಸ್ತುಗಳು",
+    description:
+      "ನಿಮ್ಮ ಉತ್ಪನ್ನದ ಪ್ರಮುಖ ಸಕ್ರಿಯ ಪದಾರ್ಥಗಳು ಮತ್ತು ಸೂತ್ರೀಕರಣದ ಸಾಂಪ್ರದಾಯಿಕ ಜ್ಞಾನದ ಮೂಲವನ್ನು ವಿವರಿಸಿ.",
+    fields: [
+      {
+        name: "ingredients",
+        label: "ಪ್ರಮುಖ ಸಕ್ರಿಯ ಘಟಕಾಂಶಗಳು (ಪದಾರ್ಥಗಳು)",
+        type: "checkbox",
+        options: [
+          {
+            value: "Ashwagandha (Withania somnifera)",
+            label: "ಅಶ್ವಗಂಧ (ವಿತಾನಿಯಾ ಸೊಮ್ನಿಫೆರಾ)",
+            description: "ಸಾಮಾನ್ಯ ಅಡಾಪ್ಟೋಜೆನ್. ಪ್ರಮಾಣಿತ ಆಯುಷ್ ನಿಯಮಗಳ ಅಡಿಯಲ್ಲಿ ಸುರಕ್ಷಿತವಾಗಿದೆ.",
+          },
+          {
+            value: "Tulsi (Ocimum sanctum)",
+            label: "ತುಳಸಿ (ಓಸಿಮಮ್ ಸ್ಯಾಂಕ್ಟಮ್)",
+            description: "ಪವಿತ್ರ ತುಳಸಿ. ವ್ಯಾಪಕವಾಗಿ ಬೆಳೆಯಲಾಗುತ್ತದೆ, ಕಡಿಮೆ ನಿಯಂತ್ರಕ ಅಪಾಯ.",
+          },
+          {
+            value: "Red Sanders (Pterocarpus santalinus)",
+            label: "ರಕ್ತಚಂದನ (ಟೆರೋಕಾರ್ಪಸ್ ಸ್ಯಾಂಟಲಿನಸ್)",
+            description: "ತೀವ್ರ ಅಳಿವಿನಂಚಿನಲ್ಲಿರುವ ಪ್ರಭೇದ. CITES ಮತ್ತು ರಾಷ್ಟ್ರೀಯ ಜೈವಿಕ ವೈವಿಧ್ಯ ಪ್ರಾಧಿಕಾರದ (NBA) ಕಟ್ಟುನಿಟ್ಟಿನ ಪರಿಶೀಲನೆಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+          {
+            value: "Jatamansi (Nardostachys jatamansi)",
+            label: "ಜಟಾಮಾಂಸಿ (ನಾರ್ಡೋಸ್ಟಾಚಿಸ್ ಜಟಾಮಾನ್ಸಿ)",
+            description: "ಅಳಿವಿನಂಚಿನಲ್ಲಿರುವ ಹಿಮಾಲಯನ್ ಮೂಲಿಕೆ. ಕಡ್ಡಾಯ ಪ್ರವೇಶ ಮತ್ತು ಪ್ರಯೋಜನ ಹಂಚಿಕೆ (ABS) ನಿಯಮಗಳ ಅನುಸರಣೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Purified Chemical Extract (e.g., Curcumin 95%)",
+            label: "ಶುದ್ಧೀಕರಿಸಿದ ರಾಸಾಯನಿಕ ಸಾರ (ಉದಾ. ಕರ್ಕ್ಯುಮಿನ್ 95%)",
+            description: "ಸಂಪೂರ್ಣ ಸಸ್ಯಜನ್ಯವಲ್ಲ. ಫೈಟೊಫಾರ್ಮಾಸ್ಯುಟಿಕಲ್ ನಿಯಮಗಳು ಅನ್ವಯಿಸಬಹುದು.",
+          },
+          {
+            value: "Neem (Azadirachta indica)",
+            label: "ಬೇವು (ಅಜಾದಿರಾಕ್ಟಾ ಇಂಡಿಕಾ)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಆಂಟಿಮೈಕ್ರೊಬಿಯಲ್ ಮೂಲಿಕೆ. ಐತಿಹಾಸಿಕ EPO ಪೇಟೆಂಟ್ ರದ್ದತಿಯ ಮುನ್ನಿದರ್ಶನ; TKDL ಸಾಂಪ್ರದಾಯಿಕ ಜ್ಞಾನ ರಕ್ಷಣೆ.",
+          },
+          {
+            value: "Turmeric / Haridra (Curcuma longa)",
+            label: "ಅರಿಶಿನ / ಹರಿದ್ರಾ (ಕರ್ಕ್ಯುಮಾ ಲಾಂಗಾ)",
+            description: "ಗಾಯ ವಾಸಿಮಾಡುವ ಮತ್ತು ಉರಿಯೂತ ನಿವಾರಕ ಗುಣಗಳು. CSIR ಯುಎಸ್ ಪೇಟೆಂಟ್ ರದ್ದತಿ ಮುನ್ನಿದರ್ಶನ (TKDL).",
+          },
+          {
+            value: "Kashmiri Saffron (Crocus sativus)",
+            label: "ಕಾಶ್ಮೀರಿ ಕೇಸರಿ (ಕ್ರೋಕಸ್ ಸಟೈವಸ್)",
+            description: "ರಕ್ಷಿತ ಭೌಗೋಳಿಕ ಸೂಚ್ಯಂಕ (GI) ಹೊಂದಿರುವ ಮೌಲ್ಯಯುತ ಮಸಾಲೆ. ಕಟ್ಟುನಿಟ್ಟಾದ ಶುದ್ಧತೆ ಮತ್ತು ಗುಣಮಟ್ಟದ ಮಾನದಂಡಗಳು.",
+          },
+          {
+            value: "Guggulu (Commiphora mukul)",
+            label: "ಗುಗ್ಗುಳು (ಕಾಮ್ಮಿಫೋರಾ ಮುಕುಲ್)",
+            description: "ನಿಯಂತ್ರಿತ ಸಸ್ಯ ಅಂಟು. ಆಯುರ್ವೇದ ಫಾರ್ಮಾಕೋಪಿಯಾ (API) ಮಾನದಂಡಗಳ ಪ್ರಕಾರ ಪ್ರಮಾಣೀಕೃತ ಗುಗ್ಗುಲ್‌ಸ್ಟೆರಾನ್‌ಗಳ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "Kutki (Picrorhiza kurroa)",
+            label: "ಕುಟ್ಕಿ (ಪಿಕ್ರೋರೈಜಾ ಕುರ್ರೋವಾ)",
+            description: "CITES ಅನುಬಂಧ II ಮತ್ತು ಜೈವಿಕ ವೈವಿಧ್ಯತಾ ಕಾಯ್ದೆಯ ಸೆಕ್ಷನ್ 38 ರ ಅಡಿಯಲ್ಲಿ ಅಳಿವಿನಂಚಿನಲ್ಲಿರುವ ಪ್ರಭೇದಗಳ ಪಟ್ಟಿಯಲ್ಲಿದೆ.",
+          },
+          {
+            value: "Sarpgandha (Rauvolfia serpentina)",
+            label: "ಸರ್ಪಗಂಧ (ರೌವೋಲ್ಫಿಯಾ ಸರ್ಪೆಂಟಿನಾ)",
+            description: "ರಿಸರ್ಪಿನ್ ಸಮೃದ್ಧ ಸಸ್ಯ. ಶೆಡ್ಯೂಲ್ E(1) ಮತ್ತು ಸೆಕ್ಷನ್ 38 ಜೈವಿಕ ವೈವಿಧ್ಯತಾ ಕಾಯ್ದೆಯ ನಿಯಂತ್ರಿತ ಪಟ್ಟಿಯಲ್ಲಿದೆ.",
+          },
+          {
+            value: "Vatsanabha / Indian Aconite (Aconitum ferox)",
+            label: "ವತ್ಸನಾಭ / ವತ್ಸನಾಭಿ (ಅಕೋನಿಟಮ್ ಫೆರಾಕ್ಸ್)",
+            description: "ಶೆಡ್ಯೂಲ್ E(1) ವಿಷಕಾರಿ ಸಸ್ಯ. ಕಡ್ಡಾಯ ಸಾಂಪ್ರದಾಯಿಕ ಶುದ್ಧೀಕರಣ (ಶೋಧನ) ಮತ್ತು ಕೆಂಪು ಎಚ್ಚರಿಕೆ ಲೇಬಲ್ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Bhang / Vijaya (Cannabis sativa)",
+            label: "ಭಾಂಗ್ / ವಿಜಯಾ (ಕ್ಯಾನಬಿಸ್ ಸಟೈವಾ)",
+            description: "ಶೆಡ್ಯೂಲ್ E(1) ನಿಯಂತ್ರಿತ ಮಾದಕ ಸಸ್ಯ. NDPS ಕಾಯ್ದೆ, ರಾಜ್ಯ ಅಬಕಾರಿ ಪರವಾನಗಿ ಮತ್ತು ಆಯುಷ್ ಅಧಿಸೂಚನೆಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+          {
+            value: "Brahmi (Bacopa monnieri)",
+            label: "ಬ್ರಾಹ್ಮಿ (ಬಕೋಪಾ ಮೊನ್ನಿಯೇರಿ)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಮೇಧ್ಯ ರಸಾಯನ (ನೆನಪಿನ ಶಕ್ತಿ ವರ್ಧಕ). ಪ್ರಮಾಣೀಕೃತ ಬ್ಯಾಕೋಸೈಡ್ ಪರೀಕ್ಷೆ ಮತ್ತು ಭಾರಲೋಹಗಳ ಮಿತಿ ಪರೀಕ್ಷೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Amla / Amalaki (Phyllanthus emblica)",
+            label: "ನೆಲ್ಲಿಕಾಯಿ / ಆಮಲಕಿ (ಫಿಲಾಂಥಸ್ ಎಂಬ್ಲಿಕಾ)",
+            description: "ನೈಸರ್ಗಿಕ ವಿಟಮಿನ್ ಸಿ ಮತ್ತು ಆಂಟಿಆಕ್ಸಿಡೆಂಟ್. ಕಡಿಮೆ ನಿಯಂತ್ರಕ ಅಪಾಯ, ಸಾಮಾನ್ಯ ಆಯುಷ್ ಉತ್ಪನ್ನ.",
+          },
+          {
+            value: "Shatavari (Asparagus racemosus)",
+            label: "ಶತಾವರಿ (ಅಸ್ಪ್ಯಾರಗಸ್ ರೇಸ್ಮೋಸಸ್)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಮಹಿಳಾ ಆರೋಗ್ಯ ರಸಾಯನ. ಕೃಷಿ ಮೂಲದ ದೃಢೀಕರಣ ಮತ್ತು ಸುಸ್ಥಿರ ಕೊಯ್ಲು ಪ್ರಮಾಣೀಕರಣ ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ.",
+          },
+          {
+            value: "Guduchi / Giloy (Tinospora cordifolia)",
+            label: "ಅಮೃತಬಳ್ಳಿ / ಗುಡೂಚಿ (ಟಿನೋಸ್ಪೊರಾ ಕಾರ್ಡಿಫೋಲಿಯಾ)",
+            description: "ರೋಗನಿರೋಧಕ ಶಕ್ತಿ ವರ್ಧಕ. ಸರಿಯಾದ ಸಸ್ಯ ಪ್ರಭೇದ ದೃಢೀಕರಣ (ಟಿನೋಸ್ಪೊರಾ ಕ್ರಿಸ್ಪಾ ಜೊತೆ ಕಲಬೆರಕೆ ತಪ್ಪಿಸಲು) ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Haritaki (Terminalia chebula)",
+            label: "ಅಳಲೆಕಾಯಿ / ಹರೀತಕಿ (ಟರ್ಮಿನಾಲಿಯಾ ಚೆಬುಲಾ)",
+            description: "ತ್ರಿಫಲಾದ ಪ್ರಮುಖ ಘಟಕ. ಜೀರ್ಣಕ್ರಿಯೆ ಮತ್ತು ಡಿಟಾಕ್ಸ್ ಸೂತ್ರೀಕರಣಗಳಲ್ಲಿ ವ್ಯಾಪಕವಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ.",
+          },
+          {
+            value: "Bibhitaki (Terminalia bellirica)",
+            label: "ತಾರೆಕಾಯಿ / ಬಿಭೀತಕಿ (ಟರ್ಮಿನಾಲಿಯಾ ಬೆಲ್ಲೆರಿಕಾ)",
+            description: "ತ್ರಿಫಲಾ ಘಟಕ. ನಿಯಮಿತ ಗುಣಮಟ್ಟದ ನಿಯಂತ್ರಣ ಮತ್ತು ಶೇಖರಣಾ ತಪಾಸಣೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Yashtimadhu / Mulethi (Glycyrrhiza glabra)",
+            label: "ಜ್ಯೇಷ್ಠಮಧು (ಗ್ಲೈಸಿರೈಜಾ ಗ್ಲಾಬ್ರಾ)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಕಂಠ ಶುದ್ಧಿಕಾರಕ. ಗ್ಲೈಸಿರೈಜಿನ್ ಅಂಶದ ಮಿತಿ ಮತ್ತು ರಕ್ತದೊತ್ತಡದ ಎಚ್ಚರಿಕೆ ಲೇಬಲಿಂಗ್ ನಿಯಂತ್ರಣಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+          {
+            value: "Shilajit (Asphaltum punjabianum)",
+            label: "ಶಿಲಾಜಿತ್ (ಆಸ್ಫಾಲ್ಟಮ್ ಪಂಜಾಬಿಯಾನಮ್)",
+            description: "ಖನಿಜ ಪಿಚ್ ಸಾರ. ಕಟ್ಟುನಿಟ್ಟಾದ ಶುದ್ಧೀಕರಣ (ಶೋಧನ), ಭಾರಲೋಹ ಪರೀಕ್ಷೆ ಮತ್ತು ಫುಲ್ವಿಕ್ ಆಮ್ಲ ಪ್ರಮಾಣೀಕರಣ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Shankhpushpi (Convolvulus pluricaulis)",
+            label: "ಶಂಖಪುಷ್ಪಿ (ಕಾನ್ವೋಲ್ವುಲಸ್ ಪ್ಲುರಿಕಾಲಿಸ್)",
+            description: "ನರಗಳ ಟಾನಿಕ್. ಕಲಬೆರಕೆ ತಡೆಗಟ್ಟಲು ಬೊಟಾನಿಕಲ್ ಐಡೆಂಟಿಟಿ ಪರೀಕ್ಷೆ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Swarna Bhasma (Incinerated Gold Ash)",
+            label: "ಸ್ವರ್ಣ ಭಸ್ಮ (ಸಂಸ್ಕರಿಸಿದ ಚಿನ್ನದ ಭಸ್ಮ)",
+            description: "ಸೂಕ್ಷ್ಮ ಚಿನ್ನದ ಭಸ್ಮ. ಕಠಿಣ ಶೆಡ್ಯೂಲ್ E(1) ಮತ್ತು ಆಯುರ್ವೇದ ಫಾರ್ಮಾಕೋಪಿಯಾ ನ್ಯಾನೊ-ಕಣ ಸುರಕ್ಷತಾ ಪರೀಕ್ಷೆ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Rajata Bhasma (Incinerated Silver Ash)",
+            label: "ರಜತ ಭಸ್ಮ (ಸಂಸ್ಕರಿಸಿದ ಬೆಳ್ಳಿಯ ಭಸ್ಮ)",
+            description: "ಶುದ್ಧೀಕರಿಸಿದ ಬೆಳ್ಳಿಯ ಭಸ್ಮ. ಕಡ್ಡಾಯ ಶೋಧನ, ಮಾರಣ ಪ್ರಕ್ರಿಯೆ ದಾಖಲೆಗಳು ಮತ್ತು ಭಾರಲೋಹ ವಿಶ್ಲೇಷಣೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Tamra Bhasma (Incinerated Copper Ash)",
+            label: "ತಾಮ್ರ ಭಸ್ಮ (ಸಂಸ್ಕರಿಸಿದ ತಾಮ್ರದ ಭಸ್ಮ)",
+            description: "ಸಂಸ್ಕರಿಸಿದ ತಾಮ್ರದ ಭಸ್ಮ. ವಿಷತ್ವ ಪರೀಕ್ಷೆ ಮತ್ತು ನಿಯಮಿತ ಪ್ರಯೋಗಾಲಯ ಅನುಮೋದನೆ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Bhasma Preparation (Incinerated Metals/Minerals - General)",
+            label: "ಭಸ್ಮ ಸಿದ್ಧತೆ (ಸಾಮಾನ್ಯ ಲೋಹ/ಖನಿಜ ಭಸ್ಮಗಳು)",
+            description: "ಲೋಹ/ಖನಿಜ ಭಸ್ಮಗಳು. ಕಡ್ಡಾಯ ಶೆಡ್ಯೂಲ್ T (GMP) ನಿಯಮಗಳು, ಶೋಧನ ದೃಢೀಕರಣ ಮತ್ತು ಮುನ್ನೆಚ್ಚರಿಕೆ ಲೇಬಲಿಂಗ್ ಅಗತ್ಯ.",
+          },
+        ],
+      },
+      {
+        name: "source_origin",
+        label: "ಕಚ್ಚಾ ವಸ್ತುಗಳ ಮೂಲ ಮತ್ತು ಪ್ರಾಪ್ತಿ",
+        type: "radio",
+        options: [
+          {
+            value: "Wild-Harvested from Indian Forests",
+            label: "ಭಾರತೀಯ ಅರಣ್ಯಗಳಿಂದ ಕಾಡು-ಸಂಗ್ರಹಿಸಲಾಗಿದೆ",
+            description: "ಜೈವಿಕ ವೈವಿಧ್ಯತಾ ಕಾಯ್ದೆಯಡಿ ರಾಜ್ಯ ಜೈವಿಕ ವೈವಿಧ್ಯ ಮಂಡಳಿ (SBB) ಗೆ ಮುನ್ಸೂಚನೆ ಮತ್ತು ಅನುಮೋದನೆ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Cultivated / Contract Farming on Private Lands",
+            label: "ಖಾಸಗಿ ಭೂಮಿಗಳಲ್ಲಿ ಕೃಷಿ / ಒಪ್ಪಂದದ ಬೇಸಾಯ",
+            description: "ಕಡಿಮೆ ಜೈವಿಕ ವೈವಿಧ್ಯತಾ ಅಪಾಯ; ಕೃಷಿ ಮೂಲದ ದಾಖಲೆಗಳು ಮತ್ತು ಉತ್ತಮ ಕೃಷಿ ಪದ್ಧತಿಗಳು (GACP) ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ.",
+          },
+          {
+            value: "Imported from Outside India",
+            label: "ಭಾರತದ ಹೊರಗಿನಿಂದ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲಾಗಿದೆ",
+            description: "ಕಸ್ಟಮ್ಸ್ ಕ್ಲಿಯರೆನ್ಸ್, ಸಸ್ಯ ನೈರ್ಮಲ್ಯ ಪ್ರಮಾಣಪತ್ರ ಮತ್ತು ವಿದೇಶಿ ವಾಣಿಜ್ಯ ಮಹಾನಿರ್ದೇಶನಾಲಯದ (DGFT) ನಿಯಮಗಳು ಅನ್ವಯಿಸುತ್ತವೆ.",
+          },
+          {
+            value: "Exclusively from Local Mandis (Trader Channel)",
+            label: "ಕೇವಲ ಸ್ಥಳೀಯ ಮಂಡಿಗಳಿಂದ (ವ್ಯಾಪಾರಿಗಳ ಮೂಲಕ)",
+            description: "ಮೂಲದ ಪತ್ತೆಹಚ್ಚುವಿಕೆ ಕಡ್ಡಾಯ; ಜೈವಿಕ ವೈವಿಧ್ಯ ಮಂಡಳಿಯ ಅನುಸರಣೆಗಾಗಿ ಸರಬರಾಜುದಾರರ ಜಿಎಸ್‌ಟಿ ಇನ್‌ವಾಯ್ಸ್‌ಗಳು ಅಗತ್ಯ.",
+          },
+        ],
+      },
+      {
+        name: "formulation_type",
+        label: "ಸೂತ್ರೀಕರಣ ವರ್ಗೀಕರಣ",
+        type: "radio",
+        options: [
+          {
+            value: "Classical Formulation (As cited in Schedule 1 authoritative texts)",
+            label: "ಶಾಸ್ತ್ರೀಯ ಸೂತ್ರೀಕರಣ (ಅನುಸೂಚಿ 1 ರ ಅಧಿಕೃತ ಗ್ರಂಥಗಳಲ್ಲಿ ಉಲ್ಲೇಖಿಸಿದಂತೆ)",
+            description: "ಔಷಧಿಗಳು ಮತ್ತು ಸೌಂದರ್ಯವರ್ಧಕಗಳ ನಿಯಮ 158B ಅಡಿಯಲ್ಲಿ ಕನಿಷ್ಠ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳ ವಿನಾಯಿತಿ ಲಭ್ಯವಿದೆ.",
+          },
+          {
+            value: "Proprietary / Patent Ayurvedic Formulation (New combination or novel excipient)",
+            label: "ಸ್ವಾಮ್ಯದ / ಪೇಟೆಂಟ್ ಆಯುರ್ವೇದ ಸೂತ್ರೀಕರಣ (ಹೊಸ ಸಂಯೋಜನೆ)",
+            description: "ನಿಯಮ 158B(iv) ಅಡಿಯಲ್ಲಿ ಸುರಕ್ಷತಾ ಅಧ್ಯಯನಗಳು, ಸ್ಥಿರತೆ ಡೇಟಾ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ಪುರಾವೆಗಳು ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Pure Plant Extract / Isolated Phytochemical Molecule",
+            label: "ಶುದ್ಧ ಸಸ್ಯ ಸಾರ / ಪ್ರತ್ಯೇಕಿಸಲ್ಪಟ್ಟ ಫೈಟೊಕೆಮಿಕಲ್ ಅಣು",
+            description: "ಹೊಸ ಔಷಧ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ನಿಯಮಗಳು 2019 ರ ಅಡಿಯಲ್ಲಿ ಫೈಟೊಫಾರ್ಮಾಸ್ಯುಟಿಕಲ್ ಅನುಮೋದನೆ ಅಗತ್ಯವಿರಬಹುದು.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "ಉತ್ಪಾದನೆ ಮತ್ತು ಸೌಲಭ್ಯಗಳ ಸಿದ್ಧತೆ",
+    description: "ನಿಮ್ಮ ಉತ್ಪಾದನಾ ಮೂಲಸೌಕರ್ಯ, ಜಿಎಂಪಿ (GMP) ಪ್ರಮಾಣೀಕರಣ ಮತ್ತು ಉದ್ದೇಶಿತ ಔಷಧ ರೂಪಗಳನ್ನು ನಿರ್ಧರಿಸಿ.",
+    fields: [
+      {
+        name: "facility_status",
+        label: "ಉತ್ಪಾದನಾ ಸೌಲಭ್ಯದ ಸ್ಥಿತಿ",
+        type: "radio",
+        options: [
+          {
+            value: "Dedicated Ayurvedic Facility with GMP (Schedule T) Compliance",
+            label: "ಶೆಡ್ಯೂಲ್ T (GMP) ಅನುಸರಣೆಯೊಂದಿಗೆ ಮೀಸಲಾದ ಆಯುರ್ವೇದ ಘಟಕ",
+            description: "ರಾಜ್ಯ ಆಯುಷ್ ಪ್ರಾಧಿಕಾರದಿಂದ ಫಾರ್ಮ್ 25D ಅಡಿಯಲ್ಲಿ ಪೂರ್ಣ ಉತ್ಪಾದನಾ ಪರವಾನಗಿಗೆ ಅರ್ಹವಾಗಿದೆ.",
+          },
+          {
+            value: "Existing Cosmetic / Food Facility Adding AYUSH Line",
+            label: "ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಸೌಂದರ್ಯವರ್ಧಕ/ಆಹಾರ ಘಟಕಕ್ಕೆ ಆಯುಷ್ ವಿಭಾಗ ಸೇರ್ಪಡೆ",
+            description: "ಆಯುಷ್ ತಯಾರಿಕೆಗಾಗಿ ಪ್ರತ್ಯೇಕ ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ತಪಾಸಣೆಯೊಂದಿಗೆ ಶೆಡ್ಯೂಲ್ T ಪ್ರಮಾಣೀಕರಣ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "Contract Manufacturing (Loan License on Third-Party GMP Facility)",
+            label: "ಗುತ್ತಿಗೆ ಉತ್ಪಾದನೆ (ಮೂರನೇ ವ್ಯಕ್ತಿಯ GMP ಘಟಕದಲ್ಲಿ ಲೋನ್ ಲೈಸೆನ್ಸ್)",
+            description: "ಫಾರ್ಮ್ 25E ಲೋನ್ ಲೈಸೆನ್ಸ್ ಅಡಿಯಲ್ಲಿ ಪರವಾನಗಿ ಪಡೆದ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಘಟಕವನ್ನು ಬಳಸಿಕೊಳ್ಳುವುದು.",
+          },
+          {
+            value: "Early Stage / R&D Pilot Laboratory Only",
+            label: "ಆರಂಭಿಕ ಹಂತ / ಕೇವಲ ಆರ್ & ಡಿ ಪೈಲಟ್ ಪ್ರಯೋಗಾಲಯ",
+            description: "ವಾಣಿಜ್ಯ ಮಾರಾಟಕ್ಕೆ ಅನುಮತಿಯಿಲ್ಲ; ಕೇವಲ ಸಂಶೋಧನೆ ಮತ್ತು ಪರೀಕ್ಷೆಗೆ ಸೀಮಿತ.",
+          },
+        ],
+      },
+      {
+        name: "intended_dosage_form",
+        label: "ಉದ್ದೇಶಿತ ಔಷಧ ರೂಪಗಳು",
+        type: "checkbox",
+        options: [
+          {
+            value: "Solid (Tablets / Vati / Gutika / Capsules)",
+            label: "ಘನ ರೂಪ (ಮಾತ್ರೆಗಳು / ವಟಿ / ಗುಟಿಕಾ / ಕ್ಯಾಪ್ಸುಲ್‌ಗಳು)",
+            description: "ವಿಘಟನೆ ಪರೀಕ್ಷೆ, ತೂಕ ವ್ಯತ್ಯಾಸ ಮತ್ತು ತೇವಾಂಶ ಮಿತಿಗಳ ಪರೀಕ್ಷೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Liquid (Asava / Arishta / Kwath / Syrups)",
+            label: "ದ್ರವ ರೂಪ (ಆಸವ / ಅರಿಷ್ಟ / ಕ್ವಾಥ / ಸಿರಪ್‌ಗಳು)",
+            description: "ಸ್ವಯಂ-ಉತ್ಪನ್ನ ಆಲ್ಕೋಹಾಲ್ ಮಿತಿಗಳು (ಗರಿಷ್ಠ 12% v/v) ಮತ್ತು ಕಟ್ಟುನಿಟ್ಟಾದ ನಿರ್ದಿಷ್ಟ ಸಾಂದ್ರತೆಯ ಪರೀಕ್ಷೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Semisolid (Avaleha / Lepa / Creams / Ointments)",
+            label: "ಅರೆಘನ ರೂಪ (ಅವಲೇಹ / ಲೇಪ / ಕ್ರೀಮ್‌ಗಳು / ಮುಲಾಮುಗಳು)",
+            description: "ಸ್ನಿಗ್ಧತೆ, pH ಮೌಲ್ಯ ಮತ್ತು ಕಣಗಳ ಸೂಕ್ಷ್ಮತೆ ಪರೀಕ್ಷೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Medicated Oils (Taila / Ghrita)",
+            label: "ಔಷಧೀಯ ತೈಲಗಳು (ತೈಲ / ಘೃತ)",
+            description: "ಆಮ್ಲ ಮೌಲ್ಯ, ಅಯೋಡಿನ್ ಮೌಲ್ಯ ಮತ್ತು ಸಪೋನಿಫಿಕೇಶನ್ ಮೌಲ್ಯ ಪರೀಕ್ಷೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Powder (Churna / Kwath Churna)",
+            label: "ಪುಡಿ ರೂಪ (ಚೂರ್ಣ / ಕ್ವಾಥ ಚೂರ್ಣ)",
+            description: "ಜರಡಿ ಪರೀಕ್ಷೆ, ತೇವಾಂಶ ಮತ್ತು ಬೂದಿ ಮೌಲ್ಯಗಳ ಮಾನದಂಡ ಪಾಲನೆ ಕಡ್ಡಾಯ.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "ಕ್ಲಿನಿಕಲ್ ಡೇಟಾ ಮತ್ತು ಸುರಕ್ಷತಾ ಮೌಲ್ಯಮಾಪನ",
+    description: "ನಿಮ್ಮ ಸೂತ್ರೀಕರಣದ ಸುರಕ್ಷತಾ ಅಧ್ಯಯನಗಳು, ಪ್ರಯೋಗಾಲಯ ಪರೀಕ್ಷೆಗಳು ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ಪುರಾವೆಗಳನ್ನು ತಿಳಿಸಿ.",
+    fields: [
+      {
+        name: "safety_study_status",
+        label: "ಸುರಕ್ಷತಾ ಅಧ್ಯಯನಗಳ ಸ್ಥಿತಿ",
+        type: "radio",
+        options: [
+          {
+            value: "Published Clinical Trial in Peer-Reviewed Journal",
+            label: "ಪರಿಶೀಲಿತ ಜರ್ನಲ್‌ನಲ್ಲಿ ಪ್ರಕಟವಾದ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ",
+            description: "ಉನ್ನತ ಮಟ್ಟದ ಪುರಾವೆ; ಆಯುಷ್ ಸಚಿವಾಲಯ ಮತ್ತು ಅಂತರರಾಷ್ಟ್ರೀಯ ನಿಯಂತ್ರಕ ಅನುಮೋದನೆಗಳಿಗೆ ಅತ್ಯುತ್ತಮ.",
+          },
+          {
+            value: "In-House Pilot Safety & Toxicity Data (Pre-Clinical)",
+            label: "ಆಂತರಿಕ ಪೈಲಟ್ ಸುರಕ್ಷತೆ ಮತ್ತು ವಿಷತ್ವ ಡೇಟಾ (ಪೂರ್ವ-ಕ್ಲಿನಿಕಲ್)",
+            description: "ತೀವ್ರ ಮತ್ತು ಉಪ-ತೀವ್ರ ವಿಷತ್ವ ಡೇಟಾ ಲಭ್ಯವಿದೆ; ರಾಜ್ಯ ಪರವಾನಗಿಗಾಗಿ ಸ್ವೀಕಾರಾರ್ಹ.",
+          },
+          {
+            value: "Relying Exclusively on Classical Textual Citation (Rule 158B)",
+            label: "ಕೇವಲ ಶಾಸ್ತ್ರೀಯ ಗ್ರಂಥಗಳ ಉಲ್ಲೇಖಗಳ ಮೇಲೆ ಅವಲಂಬಿತ (ನಿಯಮ 158B)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಔಷಧಿಗಳಿಗೆ ಮಾನ್ಯವಾಗಿದೆ; ಆದರೆ ಹೊಸ ಸ್ವಾಮ್ಯದ ಸಂಯೋಜನೆಗಳಿಗೆ ಹೆಚ್ಚುವರಿ ಪುರಾವೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "No Formal Safety or Toxicity Studies Conducted",
+            label: "ಯಾವುದೇ ಔಪಚಾರಿಕ ಸುರಕ್ಷತೆ ಅಥವಾ ವಿಷತ್ವ ಅಧ್ಯಯನಗಳು ನಡೆದಿಲ್ಲ",
+            description: "ಹೆಚ್ಚಿನ ನಿಯಂತ್ರಕ ಅಪಾಯ; ಸ್ವಾಮ್ಯದ ಪರವಾನಗಿ ಪಡೆಯಲು ಆರಂಭಿಕ ಪ್ರಯೋಗಾಲಯ ಪರೀಕ್ಷೆ ಕಡ್ಡಾಯ.",
+          },
+        ],
+      },
+      {
+        name: "heavy_metal_testing",
+        label: "ಭಾರಲೋಹಗಳು ಮತ್ತು ಸೂಕ್ಷ್ಮಜೀವಿ ಪರೀಕ್ಷೆ",
+        type: "radio",
+        options: [
+          {
+            value: "Batch-wise Heavy Metal Testing Implemented (Lead, Cadmium, Arsenic, Mercury)",
+            label: "ಬ್ಯಾಚ್-ವಾರು ಭಾರಲೋಹ ಪರೀಕ್ಷೆ ಅಳವಡಿಸಲಾಗಿದೆ (ಸೀಸ, ಕ್ಯಾಡ್ಮಿಯಮ್, ಆರ್ಸೆನಿಕ್, ಪಾದರಸ)",
+            description: "ಆಯುಷ್ ಗೆಜೆಟ್ ಅಧಿಸೂಚನೆಗಳ ಅಡಿಯಲ್ಲಿ ಸಂಪೂರ್ಣವಾಗಿ ಅನುಗುಣವಾಗಿದೆ.",
+          },
+          {
+            value: "Testing Planned but Not Yet Operational",
+            label: "ಪರೀಕ್ಷೆ ಯೋಜಿಸಲಾಗಿದೆ ಆದರೆ ಇನ್ನೂ ಕಾರ್ಯರೂಪಕ್ಕೆ ಬಂದಿಲ್ಲ",
+            description: "ವಾಣಿಜ್ಯ ಉತ್ಪಾದನೆ ಪ್ರಾರಂಭವಾಗುವ ಮೊದಲು NABL ಮಾನ್ಯತೆ ಪಡೆದ ಪ್ರಯೋಗಾಲಯದೊಂದಿಗೆ ಒಪ್ಪಂದ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "No Testing Mechanism in Place",
+            label: "ಯಾವುದೇ ಪರೀಕ್ಷಾ ವ್ಯವಸ್ಥೆ ಜಾರಿಯಲ್ಲಿಲ್ಲ",
+            description: "ತೀವ್ರ ನಿಯಂತ್ರಕ ಉಲ್ಲಂಘನೆ; ಮಾರುಕಟ್ಟೆ ತಡೆ ಮತ್ತು ದಂಡದ ಅಪಾಯವಿದೆ.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "ಲೇಬಲಿಂಗ್ ಮತ್ತು ಜಾಹೀರಾತು ಹಕ್ಕುಗಳು",
+    description: "ನಿಮ್ಮ ಉತ್ಪನ್ನದ ಕ್ಲೈಮ್‌ಗಳು, ಜಾಹೀರಾತುಗಳು ಮತ್ತು ಲೇಬಲಿಂಗ್ ಸಿದ್ಧತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ.",
+    fields: [
+      {
+        name: "therapeutic_claims",
+        label: "ಉದ್ದೇಶಿತ ಚಿಕಿತ್ಸಕ ಮತ್ತು ಆರೋಗ್ಯ ಹಕ್ಕುಗಳು",
+        type: "checkbox",
+        options: [
+          {
+            value: "General Wellness / Immunity Booster / Rasayana",
+            label: "ಸಾಮಾನ್ಯ ಯೋಗಕ್ಷೇಮ / ರೋಗನಿರೋಧಕ ಶಕ್ತಿ / ರಸಾಯನ",
+            description: "ಕಡಿಮೆ ನಿಯಂತ್ರಕ ಅಪಾಯ; ನಿಯಮಾವಳಿಗಳ ಪ್ರಕಾರ ಸುಲಭವಾಗಿ ಅನುಮೋದನೆ ಪಡೆಯಬಹುದು.",
+          },
+          {
+            value: "Direct Disease Cure Claim (e.g., Diabetes, Hypertension, Cancer)",
+            label: "ನೇರ ರೋಗ ನಿವಾರಣೆ ಹಕ್ಕು (ಉದಾ. ಮಧುಮೇಹ, ಅಧಿಕ ರಕ್ತದೊತ್ತಡ, ಕ್ಯಾನ್ಸರ್)",
+            description: "ಔಷಧಿಗಳು ಮತ್ತು ಮ್ಯಾಜಿಕ್ ಪರಿಹಾರಗಳ (ಆಕ್ಷೇಪಾರ್ಹ ಜಾಹೀರಾತುಗಳು) ಕಾಯ್ದೆ 1954 ರ ಅಡಿಯಲ್ಲಿ ನಿಷೇಧಿತ ಅಥವಾ ಕಟ್ಟುನಿಟ್ಟಾದ ತನಿಖೆಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+          {
+            value: "Symptomatic Relief (e.g., Pain relief, Cough, Digestive support)",
+            label: "ರೋಗಲಕ್ಷಣದ ಉಪಶಮನ (ಉದಾ. ನೋವು ನಿವಾರಣೆ, ಕೆಮ್ಮು, ಜೀರ್ಣಕಾರಿ ಬೆಂಬಲ)",
+            description: "ಶಾಸ್ತ್ರೀಯ ಗ್ರಂಥದ ಪುರಾವೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಡೇಟಾದೊಂದಿಗೆ ಮಾನ್ಯವಾಗಿದೆ.",
+          },
+          {
+            value: "Cosmetic Enhancement (e.g., Skin whitening, Anti-aging)",
+            label: "ಸೌಂದರ್ಯವರ್ಧಕ ಸುಧಾರಣೆ (ಉದಾ. ತ್ವಚೆಯ ಕಾಂತಿ, ವಯಸ್ಸಾಗುವಿಕೆ ತಡೆ)",
+            description: "ಸೌಂದರ್ಯವರ್ಧಕ ಮಾನದಂಡಗಳು ಮತ್ತು ಗ್ರಾಹಕ ಸಂರಕ್ಷಣಾ ಕಾಯ್ದೆಯ ತಪ್ಪುದಾರಿಗೆಳೆಯುವ ಜಾಹೀರಾತು ನಿಯಮಗಳಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+        ],
+      },
+      {
+        name: "labeling_readiness",
+        label: "ಪ್ಯಾಕೇಜಿಂಗ್ ಮತ್ತು ಲೇಬಲ್ ಅನುಸರಣೆ",
+        type: "radio",
+        options: [
+          {
+            value: "Bilingual Label with Complete Ingredients, Batch No, Expiry, and Warning Statements",
+            label: "ಸಂಪೂರ್ಣ ಪದಾರ್ಥಗಳು, ಬ್ಯಾಚ್ ಸಂಖ್ಯೆ, ಮುಕ್ತಾಯ ದಿನಾಂಕ ಮತ್ತು ಎಚ್ಚರಿಕೆ ಹೇಳಿಕೆಗಳೊಂದಿಗೆ ದ್ವಿಭಾಷಾ ಲೇಬಲ್",
+            description: "ಔಷಧಿಗಳು ಮತ್ತು ಸೌಂದರ್ಯವರ್ಧಕಗಳ ನಿಯಮಗಳ ರೂಲ್ 161 ರ ಅಡಿಯಲ್ಲಿ ಸಂಪೂರ್ಣ ಅನುಗುಣವಾಗಿದೆ.",
+          },
+          {
+            value: "English-Only Label without Classical Text Reference",
+            label: "ಶಾಸ್ತ್ರೀಯ ಗ್ರಂಥದ ಉಲ್ಲೇಖವಿಲ್ಲದೆ ಕೇವಲ ಇಂಗ್ಲಿಷ್ ಲೇಬಲ್",
+            description: "ಸ್ಥಳೀಯ ಭಾಷೆಯ ನಿಯಮಗಳು ಮತ್ತು ಆಯುರ್ವೇದ ಗ್ರಂಥಗಳ ಉಲ್ಲೇಖದ ಕೊರತೆಯಿಂದಾಗಿ ತಿದ್ದುಪಡಿ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "Preliminary Packaging Mockup Only",
+            label: "ಕೇವಲ ಪ್ರಾಥಮಿಕ ಪ್ಯಾಕೇಜಿಂಗ್ ಮಾದರಿ ಮಾತ್ರ",
+            description: "ಅಧಿಕೃತ ಸಲ್ಲಿಕೆಗೆ ಮೊದಲು ನಿಯಂತ್ರಕ ತಜ್ಞರಿಂದ ಸಂಪೂರ್ಣ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "ಮಾರುಕಟ್ಟೆ ವಿಸ್ತರಣೆ ಮತ್ತು ರಫ್ತು ಚಟುವಟಿಕೆಗಳು",
+    description: "ನಿಮ್ಮ ಉದ್ದೇಶಿತ ಮಾರಾಟ ಮಾರ್ಗಗಳು, ರಫ್ತು ನಿಯಮಗಳು ಮತ್ತು ಜಾಗತಿಕ ಪೇಟೆಂಟ್ ತಂತ್ರವನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    fields: [
+      {
+        name: "commercial_intent",
+        label: "ವಾಣಿಜ್ಯೀಕರಣ ಮತ್ತು ವಿತರಣಾ ಮಾರ್ಗಗಳು",
+        type: "checkbox",
+        options: [
+          {
+            value: "Domestic Sale in India via Pharmacies & Clinics",
+            label: "ಔಷಧಾಲಯಗಳು ಮತ್ತು ಚಿಕಿತ್ಸಾಲಯಗಳ ಮೂಲಕ ಭಾರತದಲ್ಲಿ ದೇಶೀಯ ಮಾರಾಟ",
+            description: "ಪ್ರಮಾಣಿತ ರಾಜ್ಯ ಆಯುಷ್ ಪರವಾನಗಿ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ನೋಂದಣಿ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "E-Commerce / Direct-to-Consumer (D2C) Across India",
+            label: "ಭಾರತದಾದ್ಯಂತ ಇ-ಕಾಮರ್ಸ್ / ಡಿ2ಸಿ (D2C) ನೇರ ಮಾರಾಟ",
+            description: "ಗ್ರಾಹಕ ಸಂರಕ್ಷಣಾ (ಇ-ಕಾಮರ್ಸ್) ನಿಯಮಗಳು 2020 ಮತ್ತು ಸರಿಯಾದ ಲೇಬಲ್ ಪ್ರದರ್ಶನ ಕಡ್ಡಾಯ.",
+          },
+          {
+            value: "Export to Stringent Regulatory Markets (US FDA, EU EMA)",
+            label: "ಕಠಿಣ ನಿಯಂತ್ರಕ ಮಾರುಕಟ್ಟೆಗಳಿಗೆ ರಫ್ತು (US FDA, EU EMA)",
+            description: "ಕಡ್ಡಾಯ CoPP ಪ್ರಮಾಣಪತ್ರ, WHO-GMP ಮತ್ತು ಅಂತರರಾಷ್ಟ್ರೀಯ ಭಾರಲೋಹ ಮಿತಿಗಳ ಪಾಲನೆ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Export to Southeast Asia, Middle East, or Africa",
+            label: "ಆಗ್ನೇಯ ಏಷ್ಯಾ, ಮಧ್ಯಪ್ರಾಚ್ಯ ಅಥವಾ ಆಫ್ರಿಕಾಕ್ಕೆ ರಫ್ತು",
+            description: "ಆಯುಷ್ ರಫ್ತು ಪ್ರಚಾರ ಮಂಡಳಿ (AYUEXCIL) ನೋಂದಣಿ ಮತ್ತು ಆಯಾ ದೇಶಗಳ ನೋಂದಣಿ ಅಗತ್ಯ.",
+          },
+          {
+            value: "Third-Party Institutional Supply (Government / Hospital Tenders)",
+            label: "ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಸಾಂಸ್ಥಿಕ ಪೂರೈಕೆ (ಸರ್ಕಾರಿ / ಆಸ್ಪತ್ರೆ ಟೆಂಡರ್‌ಗಳು)",
+            description: "ಕಟ್ಟುನಿಟ್ಟಾದ ಗುಣಮಟ್ಟದ ಆಡಿಟ್‌ಗಳು, NABL ಪರೀಕ್ಷಾ ವರದಿಗಳು ಮತ್ತು ಸ್ಥಿರತೆಯ ಡೇಟಾ ಅಗತ್ಯ.",
+          },
+        ],
+      },
+      {
+        name: "cross_border_compliance",
+        label: "ಗಡಿಯಾಚೆಗಿನ ನಿಯಂತ್ರಕ ಮತ್ತು ಬೌದ್ಧಿಕ ಆಸ್ತಿ ಅನುಸರಣೆ",
+        type: "checkbox",
+        options: [
+          {
+            value: "WHO-GMP Certification Completed",
+            label: "WHO-GMP ಪ್ರಮಾಣೀಕರಣ ಪೂರ್ಣಗೊಂಡಿದೆ",
+            description: "ಅಧಿಕೃತ ಆಯುಷ್ CoPP ಪ್ರಮಾಣಪತ್ರ ಮತ್ತು ರಫ್ತು ಅರ್ಹತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ.",
+          },
+          {
+            value: "US FDA Dietary Supplement cGMP (21 CFR Part 111) Audited",
+            label: "US FDA ಆಹಾರ ಪೂರಕ cGMP (21 CFR ಭಾಗ 111) ಆಡಿಟ್ ಮಾಡಲಾಗಿದೆ",
+            description: "ಯುಎಸ್ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ವಿತರಣೆಗೆ ಅಗತ್ಯವಾದ ಅನುಸರಣೆ.",
+          },
+          {
+            value: "European Union: Novel Food Regulation (EU 2015/2283)",
+            label: "ಯುರೋಪಿಯನ್ ಯೂನಿಯನ್: ನಾವೆಲ್ ಫುಡ್ ನಿಯಂತ್ರಣ (EU 2015/2283)",
+            description: "ಮೇ 1997 ಕ್ಕಿಂತ ಮೊದಲು ಇಯುನಲ್ಲಿ ಬಳಕೆಯ ಇತಿಹಾಸವಿಲ್ಲದ ಸಸ್ಯ ಪ್ರಭೇದಗಳಿಗೆ ಅಗತ್ಯವಿದೆ.",
+          },
+          {
+            value: "Filing for Indian Patent (IPO)",
+            label: "ಭಾರತೀಯ ಪೇಟೆಂಟ್ (IPO) ಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+            description: "ಸೆಕ್ಷನ್ 6 ರ ಅಡಿಯಲ್ಲಿ NBA ಯಿಂದ ಫಾರ್ಮ್ III ಮುನ್ನನುಮೋದನೆ ಕಡ್ಡಾಯ; ಸೆಕ್ಷನ್ 3(p) TKDL ಪರಿಶೀಲನೆಗೆ ಒಳಪಟ್ಟಿರುತ್ತದೆ.",
+          },
+          {
+            value: "Filing for Global Patents (PCT / International Offices)",
+            label: "ಜಾಗತಿಕ ಪೇಟೆಂಟ್‌ಗಳ (PCT / ಅಂತರರಾಷ್ಟ್ರೀಯ ಕಚೇರಿಗಳು) ಫೈಲಿಂಗ್",
+            description: "ಸೆಕ್ಷನ್ 6 ರ ಅಡಿಯಲ್ಲಿ ಕಡ್ಡಾಯ ಪೂರ್ವ NBA ಅನುಮೋದನೆ; ಜೈವಿಕ ಮೂಲದ ಬಹಿರಂಗಪಡಿಸುವಿಕೆ ಅಂತರರಾಷ್ಟ್ರೀಯ ಒಪ್ಪಂದಗಳ ಅನುಸರಣೆ.",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export function getLocalizedModules(lang: Language): LocalizedModule[] {
   if (lang === "hi") {
     return HINDI_MODULES;
@@ -2283,6 +2729,9 @@ export function getLocalizedModules(lang: Language): LocalizedModule[] {
   }
   if (lang === "bn") {
     return BENGALI_MODULES;
+  }
+  if (lang === "kn") {
+    return KANNADA_MODULES;
   }
 
   // Map English MODULES into LocalizedModule structure

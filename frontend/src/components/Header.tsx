@@ -71,6 +71,8 @@ export default function Header() {
                   ? "తెలుగు"
                   : language === "bn"
                   ? "বাংলা"
+                  : language === "kn"
+                  ? "ಕನ್ನಡ"
                   : "English"}
               </span>
               <span className="inline sm:hidden uppercase font-mono text-xs font-bold text-brand-600">
@@ -200,6 +202,25 @@ export default function Header() {
                     <span>বাংলা (Bengali)</span>
                   </div>
                   {language === "bn" && (
+                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
+                  )}
+                </button>
+
+                <button
+                  onClick={() => handleSelectLanguage("kn")}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
+                    language === "kn"
+                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
+                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300">
+                      KN
+                    </span>
+                    <span>ಕನ್ನಡ (Kannada)</span>
+                  </div>
+                  {language === "kn" && (
                     <Check size={16} className="text-brand-600 dark:text-brand-400" />
                   )}
                 </button>

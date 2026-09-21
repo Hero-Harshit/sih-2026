@@ -37,6 +37,8 @@ export default function PrivacyPolicyPage() {
                   ? "విషయ సూచిక"
                   : language === "bn"
                   ? "সূচিপত্র"
+                  : language === "kn"
+                  ? "ಪರಿವಿಡಿ"
                   : "Table of Contents"}
               </div>
               <nav className="flex flex-col space-y-1 border-l-2 border-brand-100 dark:border-white/10">
@@ -118,6 +120,8 @@ export default function PrivacyPolicyPage() {
                     ? "కీలక పదాలు"
                     : language === "bn"
                     ? "মূল শব্দাবলী"
+                    : language === "kn"
+                    ? "ಪ್ರಮುಖ ನಿಯಮಗಳು"
                     : "Keywords"}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -146,6 +150,8 @@ export default function PrivacyPolicyPage() {
                     ? "మెటాడేటా"
                     : language === "bn"
                     ? "মেটাডেটা"
+                    : language === "kn"
+                    ? "ಮೆಟಾಡೇಟಾ"
                     : "Metadata"}
                 </div>
                 <div className="bg-brand-50/30 dark:bg-white/5 border border-brand-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-sm">
@@ -187,6 +193,8 @@ export default function PrivacyPolicyPage() {
                     ? "మద్దతు విభాగాన్ని సంప్రదించండి"
                     : language === "bn"
                     ? "সহায়তা কেন্দ্রে যোগাযোগ করুন"
+                    : language === "kn"
+                    ? "ಬೆಂಬಲ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ"
                     : "Contact Support"}
                   <ArrowRight
                     size={18}
