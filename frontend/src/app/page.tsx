@@ -58,7 +58,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link
-              href="/dashboard"
+              href="/assessment"
               className="group flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-lg shadow-xl border border-transparent dark:border-white/20 hover:shadow-2xl hover:-translate-y-1 hover:bg-slate-800 active:scale-95 transition-all duration-300 w-full sm:w-auto"
             >
               Start Assessment
@@ -99,7 +99,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-8 flex items-center text-brand-600 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
-              <Link href="/dashboard">Learn more</Link> <ArrowRight size={18} />
+              <Link href="/assessment">Learn more</Link> <ArrowRight size={18} />
             </div>
           </div>
 

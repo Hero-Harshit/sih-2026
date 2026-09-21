@@ -30,7 +30,7 @@ export default function Sidebar() {
     },
     {
       name: "Assessment",
-      href: "/dashboard",
+      href: "/assessment",
       icon: (
         <svg
           className="shrink-0"
