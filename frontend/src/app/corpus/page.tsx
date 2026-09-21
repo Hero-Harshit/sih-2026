@@ -429,7 +429,7 @@ export default function CorpusPage() {
             <div className="space-y-6 animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "200ms" }}>
               <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
                 <FileText className="w-6 h-6 text-brand-500" />
-                Our Robust Grounded Database
+                {t.corpus.robustGroundedDatabase}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                 {[...groundedDatabaseDocs].sort((a, b) => a.name.localeCompare(b.name)).map((doc, idx) => (

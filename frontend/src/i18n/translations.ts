@@ -119,6 +119,7 @@ export interface TranslationSchema {
     title: string;
     subtitle: string;
     officialSources: string;
+    robustGroundedDatabase: string;
     sources: Array<{
       acronym: string;
       name: string;
@@ -238,10 +239,50 @@ export interface TranslationSchema {
       };
     };
   };
+  dashboard: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    runAssessment: string;
+    recentLogsTitle: string;
+    recentLogsSubtitle: string;
+    tableHeaders: {
+      productName: string;
+      category: string;
+      riskScore: string;
+      status: string;
+      audited: string;
+    };
+    totalAudited: string;
+    highRisk: string;
+    clearances: string;
+    avgScore: string;
+    liveEvaluation: string;
+  };
 }
 
 export const translations: Record<Language, TranslationSchema> = {
   en: {
+    dashboard: {
+      badge: "Dynamic Analytics Dashboard",
+      title: "AYUSH Compliance & Risk Analytics",
+      subtitle: "Live risk metrics updated from assessment submissions.",
+      runAssessment: "Run New Assessment",
+      recentLogsTitle: "Recent Assessment Risk Logs",
+      recentLogsSubtitle: "Latest evaluations from the assessment form.",
+      tableHeaders: {
+        productName: "Product Name",
+        category: "Category",
+        riskScore: "Risk Score",
+        status: "Status",
+        audited: "Audited"
+      },
+      totalAudited: "Total Products Audited",
+      highRisk: "High Risk Flags",
+      clearances: "Regulatory Clearances",
+      avgScore: "Avg Compliance Score",
+      liveEvaluation: "Live evaluation"
+    },
     common: {
       downloadPdf: "Download PDF",
       exporting: "Exporting...",
@@ -367,6 +408,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "Access official intellectual property databases and important regulatory documents from recognized authorities in India.",
       officialSources: "Official Sources",
+      robustGroundedDatabase: "Our Robust Grounded Database",
       sources: [
         {
           acronym: "TKDL",
@@ -896,6 +938,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   hi: {
+    dashboard: {
+      badge: "डायनेमिक एनालिटिक्स डैशबोर्ड",
+      title: "आयुष अनुपालन और जोखिम विश्लेषिकी",
+      subtitle: "मूल्यांकन प्रस्तुतियों से अपडेट किए गए लाइव जोखिम मेट्रिक्स।",
+      runAssessment: "नया मूल्यांकन चलाएं",
+      recentLogsTitle: "हाल के मूल्यांकन जोखिम लॉग",
+      recentLogsSubtitle: "मूल्यांकन फॉर्म से नवीनतम मूल्यांकन।",
+      tableHeaders: {
+        productName: "उत्पाद का नाम",
+        category: "श्रेणी",
+        riskScore: "जोखिम स्कोर",
+        status: "स्थिति",
+        audited: "ऑडिट किया गया"
+      },
+      totalAudited: "कुल उत्पाद ऑडिट किए गए",
+      highRisk: "उच्च जोखिम झंडे",
+      clearances: "विनियामक मंजूरी",
+      avgScore: "औसत अनुपालन स्कोर",
+      liveEvaluation: "लाइव मूल्यांकन"
+    },
     common: {
       downloadPdf: "पीडीएफ डाउनलोड करें",
       exporting: "निर्यात हो रहा है...",
@@ -1021,6 +1083,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "भारत में मान्यता प्राप्त प्राधिकरणों से आधिकारिक बौद्धिक संपदा डेटाबेस और महत्वपूर्ण नियामक दस्तावेज़ देखें।",
       officialSources: "आधिकारिक स्रोत",
+      robustGroundedDatabase: "हमारा सुदृढ़ प्रमाणित डेटाबेस",
       sources: [
         {
           acronym: "टीकेडीएल (TKDL)",
@@ -1550,6 +1613,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   mr: {
+    dashboard: {
+      badge: "डायनॅमिक ॲनालिटिक्स डॅशबोर्ड",
+      title: "आयुष अनुपालन आणि जोखीम विश्लेषण",
+      subtitle: "मूल्यांकन सबमिशनमधून अपडेट केलेले थेट जोखीम मेट्रिक्स.",
+      runAssessment: "नवीन मूल्यांकन चालवा",
+      recentLogsTitle: "अलीकडील मूल्यांकन जोखीम नोंदी",
+      recentLogsSubtitle: "मूल्यांकन फॉर्मवरील नवीनतम मूल्यमापन.",
+      tableHeaders: {
+        productName: "उत्पादनाचे नाव",
+        category: "श्रेणी",
+        riskScore: "जोखीम स्कोअर",
+        status: "स्थिती",
+        audited: "ऑडिट केले"
+      },
+      totalAudited: "एकूण उत्पादने ऑडिट केली",
+      highRisk: "उच्च जोखीम ध्वज",
+      clearances: "नियामक मंजुरी",
+      avgScore: "सरासरी अनुपालन स्कोअर",
+      liveEvaluation: "थेट मूल्यांकन"
+    },
     common: {
       downloadPdf: "पीडीएफ डाउनलोड करा",
       exporting: "निर्यात होत आहे...",
@@ -1675,6 +1758,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "भारतातील मान्यताप्राप्त प्राधिकरणांचे अधिकृत बौद्धिक संपदा डेटाबेस आणि महत्त्वपूर्ण नियामक दस्तऐवज पहा.",
       officialSources: "अधिकृत स्रोत",
+      robustGroundedDatabase: "आमचा मजबूत प्रमाणित डेटाबेस",
       sources: [
         {
           acronym: "टीकेडीएल (TKDL)",
@@ -2204,6 +2288,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   ta: {
+    dashboard: {
+      badge: "டைனமிக் அனலிட்டிக்ஸ் டாஷ்போர்டு",
+      title: "ஆயுஷ் இணக்கம் மற்றும் அபாய பகுப்பாய்வு",
+      subtitle: "மதிப்பீட்டு சமர்ப்பிப்புகளிலிருந்து புதுப்பிக்கப்பட்ட நேரடி அபாய அளவீடுகள்.",
+      runAssessment: "புதிய மதிப்பீட்டை இயக்கு",
+      recentLogsTitle: "சமீபத்திய மதிப்பீட்டு அபாய பதிவுகள்",
+      recentLogsSubtitle: "மதிப்பீட்டு படிவத்திலிருந்து சமீபத்திய மதிப்பீடுகள்.",
+      tableHeaders: {
+        productName: "தயாரிப்பு பெயர்",
+        category: "வகை",
+        riskScore: "அபாய மதிப்பெண்",
+        status: "நிலை",
+        audited: "தணிக்கை செய்யப்பட்டது"
+      },
+      totalAudited: "மொத்த தயாரிப்புகள் தணிக்கை செய்யப்பட்டன",
+      highRisk: "உயர் அபாய கொடிகள்",
+      clearances: "ஒழுங்குமுறை அனுமதிகள்",
+      avgScore: "சராசரி இணக்க மதிப்பெண்",
+      liveEvaluation: "நேரடி மதிப்பீடு"
+    },
     common: {
       downloadPdf: "PDF பதிவிறக்கம் செய்க",
       exporting: "ஏற்றுமதி செய்யப்படுகிறது...",
@@ -2329,6 +2433,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "இந்தியாவில் அங்கீகரிக்கப்பட்ட அதிகாரப்பூர்வ அறிவுசார் சொத்துரிமை தரவுத்தளங்கள் மற்றும் முக்கியமான ஒழுங்குமுறை ஆவணங்களைப் பார்வையிடுங்கள்.",
       officialSources: "அதிகாரப்பூர்வ ஆதாரங்கள்",
+      robustGroundedDatabase: "எங்கள் வலுவான அடிப்படை தரவுத்தளம்",
       sources: [
         {
           acronym: "டிகேடிஎல் (TKDL)",
@@ -2858,6 +2963,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   te: {
+    dashboard: {
+      badge: "డైనమిక్ అనలిటిక్స్ డాష్‌బోర్డ్",
+      title: "ఆయుష్ కంప్లయన్స్ మరియు రిస్క్ అనలిటిక్స్",
+      subtitle: "అసెస్‌మెంట్ సమర్పణల నుండి నవీకరించబడిన ప్రత్యక్ష రిస్క్ కొలమానాలు.",
+      runAssessment: "కొత్త అసెస్‌మెంట్ అమలు చేయండి",
+      recentLogsTitle: "ఇటీవలి అసెస్‌మెంట్ రిస్క్ లాగ్‌లు",
+      recentLogsSubtitle: "అసెస్‌మెంట్ ఫారమ్ నుండి తాజా మూల్యాంకనాలు.",
+      tableHeaders: {
+        productName: "ఉత్పత్తి పేరు",
+        category: "వర్గం",
+        riskScore: "రిస్క్ స్కోర్",
+        status: "స్థితి",
+        audited: "ఆడిట్ చేయబడింది"
+      },
+      totalAudited: "మొత్తం ఉత్పత్తులు ఆడిట్ చేయబడ్డాయి",
+      highRisk: "అధిక రిస్క్ ఫ్లాగ్‌లు",
+      clearances: "రెగ్యులేటరీ క్లియరెన్స్‌లు",
+      avgScore: "సగటు కంప్లయన్స్ స్కోర్",
+      liveEvaluation: "ప్రత్యక్ష మూల్యాంకనం"
+    },
     common: {
       downloadPdf: "పిడిఎఫ్ డౌన్‌లోడ్ చేయండి",
       exporting: "ఎగుమతి చేస్తోంది...",
@@ -2983,6 +3108,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "భారతదేశంలో గుర్తింపు పొందిన అధికారిక మేధో సంపత్తి డేటాబేస్‌లు మరియు ముఖ్యమైన నియంత్రణ పత్రాలను యాక్సెస్ చేయండి.",
       officialSources: "అధికారిక వనరులు",
+      robustGroundedDatabase: "మా బలమైన ప్రాథమిక డేటాబేస్",
       sources: [
         {
           acronym: "TKDL",
@@ -3512,6 +3638,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   bn: {
+    dashboard: {
+      badge: "ডায়নামিক অ্যানালিটিক্স ড্যাশবোর্ড",
+      title: "আয়ুষ কমপ্লায়েন্স এবং ঝুঁকি বিশ্লেষণ",
+      subtitle: "অ্যাসেসমেন্ট জমা থেকে আপডেট করা লাইভ ঝুঁকি মেট্রিক্স।",
+      runAssessment: "নতুন মূল্যায়ন চালান",
+      recentLogsTitle: "সাম্প্রতিক মূল্যায়ন ঝুঁকি লগ",
+      recentLogsSubtitle: "মূল্যায়ন ফর্ম থেকে সর্বশেষ মূল্যায়ন।",
+      tableHeaders: {
+        productName: "পণ্যের নাম",
+        category: "বিভাগ",
+        riskScore: "ঝুঁকি স্কোর",
+        status: "অবস্থা",
+        audited: "অডিট করা হয়েছে"
+      },
+      totalAudited: "মোট পণ্য অডিট করা হয়েছে",
+      highRisk: "উচ্চ ঝুঁকি ফ্ল্যাগ",
+      clearances: "নিয়ন্ত্রক ছাড়পত্র",
+      avgScore: "গড় কমপ্লায়েন্স স্কোর",
+      liveEvaluation: "লাইভ মূল্যায়ন"
+    },
     common: {
       downloadPdf: "পিডিএফ ডাউনলোড করুন",
       exporting: "রপ্তানি করা হচ্ছে...",
@@ -3637,6 +3783,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "ভারতে স্বীকৃত অফিসিয়াল বুদ্ধিবৃত্তিক সম্পত্তি ডাটাবেস এবং গুরুত্বপূর্ণ নিয়ন্ত্রক নথি দেখুন।",
       officialSources: "অফিসিয়াল উৎসসমূহ",
+      robustGroundedDatabase: "আমাদের শক্তিশালী ভিত্তিযুক্ত ডেটাবেস",
       sources: [
         {
           acronym: "TKDL",
@@ -4095,6 +4242,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   kn: {
+    dashboard: {
+      badge: "ಡೈನಾಮಿಕ್ ಅನಾಲಿಟಿಕ್ಸ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+      title: "ಆಯುಷ್ ಅನುಸರಣೆ ಮತ್ತು ಅಪಾಯದ ವಿಶ್ಲೇಷಣೆ",
+      subtitle: "ಮೌಲ್ಯಮಾಪನ ಸಲ್ಲಿಕೆಗಳಿಂದ ನವೀಕರಿಸಲಾದ ಲೈವ್ ಅಪಾಯದ ಮೆಟ್ರಿಕ್‌ಗಳು.",
+      runAssessment: "ಹೊಸ ಮೌಲ್ಯಮಾಪನವನ್ನು ಚಲಾಯಿಸಿ",
+      recentLogsTitle: "ಇತ್ತೀಚಿನ ಮೌಲ್ಯಮಾಪನ ಅಪಾಯದ ಲಾಗ್‌ಗಳು",
+      recentLogsSubtitle: "ಮೌಲ್ಯಮಾಪನ ಫಾರ್ಮ್‌ನಿಂದ ಇತ್ತೀಚಿನ ಮೌಲ್ಯಮಾಪನಗಳು.",
+      tableHeaders: {
+        productName: "ಉತ್ಪನ್ನದ ಹೆಸರು",
+        category: "ವರ್ಗ",
+        riskScore: "ಅಪಾಯದ ಅಂಕ",
+        status: "ಸ್ಥಿತಿ",
+        audited: "ಆಡಿಟ್ ಮಾಡಲಾಗಿದೆ"
+      },
+      totalAudited: "ಒಟ್ಟು ಉತ್ಪನ್ನಗಳನ್ನು ಆಡಿಟ್ ಮಾಡಲಾಗಿದೆ",
+      highRisk: "ಹೆಚ್ಚಿನ ಅಪಾಯದ ಧ್ವಜಗಳು",
+      clearances: "ನಿಯಂತ್ರಣ ಅನುಮತಿಗಳು",
+      avgScore: "ಸರಾಸರಿ ಅನುಸರಣೆ ಅಂಕ",
+      liveEvaluation: "ಲೈವ್ ಮೌಲ್ಯಮಾಪನ"
+    },
     common: {
       downloadPdf: "ಪಿಡಿಎಫ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
       exporting: "ರಫ್ತು ಮಾಡಲಾಗುತ್ತಿದೆ...",
@@ -4220,6 +4387,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "ಭಾರತದಲ್ಲಿ ಮಾನ್ಯತೆ ಪಡೆದ ಅಧಿಕೃತ ಬೌದ್ಧಿಕ ಆಸ್ತಿ ಡೇಟಾಬೇಸ್‌ಗಳು ಮತ್ತು ಪ್ರಮುಖ ನಿಯಂತ್ರಕ ದಾಖಲೆಗಳನ್ನು ಪ್ರವೇಶಿಸಿ.",
       officialSources: "ಅಧಿಕೃತ ಮೂಲಗಳು",
+      robustGroundedDatabase: "ನಮ್ಮ ದೃಢವಾದ ಮೂಲ ಡೇಟಾಬೇಸ್",
       sources: [
         {
           acronym: "TKDL",
@@ -4678,6 +4846,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   sa: {
+    dashboard: {
+      badge: "गतिशील विश्लेषिकी ड्याशबोर्ड",
+      title: "आयुष अनुपालन तथा जोखिम विश्लेषिकी",
+      subtitle: "मूल्यांकनप्रस्तुतिभ्यः अद्यतनं कृतं सजीवं जोखिममापकम्।",
+      runAssessment: "नूतनं मूल्यांकनं चालयन्तु",
+      recentLogsTitle: "नूतनतमं मूल्यांकनं जोखिमलॉग्स्",
+      recentLogsSubtitle: "मूल्यांकनप्रपत्रात् नूतनतमानि मूल्यांकनानि।",
+      tableHeaders: {
+        productName: "उत्पादस्य नाम",
+        category: "वर्गः",
+        riskScore: "जोखिम अङ्कः",
+        status: "स्थितिः",
+        audited: "परीक्षितम्"
+      },
+      totalAudited: "आहत्य उत्पादाः परीक्षिताः",
+      highRisk: "उच्च जोखिम ध्वजाः",
+      clearances: "नियामक अनुमतिः",
+      avgScore: "औसत अनुपालन अङ्कः",
+      liveEvaluation: "सजीवं मूल्यांकनम्"
+    },
     common: {
       downloadPdf: "पीडीएफ-डाउनलोड् कुर्वन्तु",
       exporting: "निर्यातः क्रियते...",
@@ -4801,6 +4989,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "आयुर्वेद-सम्बद्धाः अधिनियमाः, नियमाः, आधिकारिकाः सन्दर्भाश्च",
       officialSources: "आधिकारिक-स्रोतांसि",
+      robustGroundedDatabase: "अस्माकं सुदृढं प्रमाणितं दत्तांशकोशम्",
       sources: [
         {
           acronym: "AYUSH",
@@ -5275,6 +5464,26 @@ export const translations: Record<Language, TranslationSchema> = {
     },
   },
   gu: {
+    dashboard: {
+      badge: "ડાયનેમિક એનાલિટિક્સ ડેશબોર્ડ",
+      title: "આયુષ પાલન અને જોખમ વિશ્લેષણ",
+      subtitle: "આકારણી સબમિશનમાંથી અપડેટ થયેલ લાઇવ જોખમ મેટ્રિક્સ.",
+      runAssessment: "નવી આકારણી ચલાવો",
+      recentLogsTitle: "તાજેતરના આકારણી જોખમ લોગ",
+      recentLogsSubtitle: "આકારણી ફોર્મમાંથી નવીનતમ મૂલ્યાંકન.",
+      tableHeaders: {
+        productName: "ઉત્પાદનનું નામ",
+        category: "શ્રેણી",
+        riskScore: "જોખમ સ્કોર",
+        status: "સ્થિતિ",
+        audited: "ઓડિટ થયેલ"
+      },
+      totalAudited: "કુલ ઉત્પાદનો ઓડિટ થયા",
+      highRisk: "ઉચ્ચ જોખમ ફ્લેગ્સ",
+      clearances: "નિયમનકારી મંજૂરીઓ",
+      avgScore: "સરેરાશ પાલન સ્કોર",
+      liveEvaluation: "લાઇવ મૂલ્યાંકન"
+    },
     common: {
       downloadPdf: "પીડીએફ ડાઉનલોડ કરો",
       exporting: "નિકાસ કરી રહ્યું છે...",
@@ -5398,6 +5607,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle:
         "આયુર્વેદ સંબંધિત અધિનિયમો, નિયમો અને સત્તાવાર સંદર્ભો",
       officialSources: "સત્તાવાર સ્ત્રોતો",
+      robustGroundedDatabase: "અમારો મજબૂત પ્રમાણિત ડેટાબેઝ",
       sources: [
         {
           acronym: "AYUSH",

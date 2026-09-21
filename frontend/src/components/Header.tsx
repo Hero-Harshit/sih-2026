@@ -159,8 +159,8 @@ export default function Header() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-gradient-to-b from-white via-orange-50/25 to-white dark:from-slate-900 dark:via-orange-950/20 dark:to-slate-900 backdrop-blur-2xl border border-orange-200/90 dark:border-orange-500/30 shadow-xl shadow-orange-500/15 ring-1 ring-orange-500/15 dark:ring-orange-400/20 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
-                <div className="px-3.5 py-2 text-[11px] font-bold uppercase tracking-wider text-orange-600/90 dark:text-orange-400 border-b border-orange-100 dark:border-orange-500/15 flex items-center justify-between bg-orange-50/70 dark:bg-orange-950/40">
+              <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white dark:bg-slate-900 border border-orange-200 dark:border-orange-500/30 shadow-xl shadow-orange-500/15 ring-1 ring-orange-500/15 dark:ring-orange-400/20 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
+                <div className="px-3.5 py-2 text-[11px] font-bold uppercase tracking-wider text-orange-600/90 dark:text-orange-400 border-b border-orange-100 dark:border-orange-500/15 flex items-center justify-between bg-orange-50 dark:bg-orange-950/80">
                   <span className="flex items-center gap-1.5">
                     <Globe size={13} className="text-orange-500 shrink-0" />
                     {t.nav.selectLanguage}

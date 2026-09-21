@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import RiskAnalyticsChart, { CategoryRiskData } from "@/components/RiskAnalyticsChart";
 import RiskPieChart from "@/components/RiskPieChart";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface AuditLogItem {
   name: string;
@@ -58,6 +59,7 @@ const sampleAudits: AuditLogItem[] = [
 ];
 
 export default function AnalyticsDashboardPage() {
+  const { t } = useLanguage();
   const [audits, setAudits] = useState<AuditLogItem[]>(sampleAudits);
 
   useEffect(() => {
@@ -149,28 +151,28 @@ export default function AnalyticsDashboardPage() {
 
   const cards = [
     {
-      title: "Total Products Audited",
+      title: t.dashboard.totalAudited,
       value: total,
       icon: Layers,
       color: "text-brand-600",
       bg: "bg-brand-50 dark:bg-brand-950/40",
     },
     {
-      title: "High Risk Flags",
+      title: t.dashboard.highRisk,
       value: highRisk,
       icon: ShieldAlert,
       color: "text-brand-600",
       bg: "bg-brand-50 dark:bg-brand-950/40",
     },
     {
-      title: "Regulatory Clearances",
+      title: t.dashboard.clearances,
       value: cleared,
       icon: FileCheck,
       color: "text-orange-500",
       bg: "bg-orange-50 dark:bg-orange-950/40",
     },
     {
-      title: "Avg Compliance Score",
+      title: t.dashboard.avgScore,
       value: `${average}%`,
       icon: Scale,
       color: "text-amber-600",
@@ -203,18 +205,18 @@ export default function AnalyticsDashboardPage() {
           <div className="flex flex-col justify-between gap-4 rounded-3xl bg-gradient-to-r from-brand-600 to-brand-800 p-6 text-white shadow-lg border border-black md:flex-row md:items-center">
             <div>
               <div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-100">
-                Dynamic Analytics Dashboard
+                {t.dashboard.badge}
               </div>
-              <h1 className="text-2xl font-black sm:text-3xl">AYUSH Compliance & Risk Analytics</h1>
+              <h1 className="text-2xl font-black sm:text-3xl">{t.dashboard.title}</h1>
               <p className="mt-1 max-w-2xl text-sm text-brand-100">
-                Live risk metrics updated from assessment submissions.
+                {t.dashboard.subtitle}
               </p>
             </div>
             <Link
               href="/assessment"
               className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-brand-700 hover:bg-brand-50 transition-colors shadow-sm"
             >
-              Run New Assessment <ArrowUpRight className="h-4 w-4" />
+              {t.dashboard.runAssessment} <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
@@ -227,9 +229,9 @@ export default function AnalyticsDashboardPage() {
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
-                      Recent Assessment Risk Logs
+                      {t.dashboard.recentLogsTitle}
                     </h3>
-                    <p className="text-xs text-slate-500">Latest evaluations from the assessment form.</p>
+                    <p className="text-xs text-slate-500">{t.dashboard.recentLogsSubtitle}</p>
                   </div>
                   <Link
                     href="/assessment"
@@ -242,11 +244,11 @@ export default function AnalyticsDashboardPage() {
                   <table className="w-full text-left text-xs">
                     <thead>
                       <tr className="border-b text-slate-400 border-slate-100 dark:border-zinc-800">
-                        <th className="px-4 py-3">Product Name</th>
-                        <th className="px-4 py-3">Category</th>
-                        <th className="px-4 py-3">Risk Score</th>
-                        <th className="px-4 py-3">Status</th>
-                        <th className="px-4 py-3 text-right">Audited</th>
+                        <th className="px-4 py-3">{t.dashboard.tableHeaders.productName}</th>
+                        <th className="px-4 py-3">{t.dashboard.tableHeaders.category}</th>
+                        <th className="px-4 py-3">{t.dashboard.tableHeaders.riskScore}</th>
+                        <th className="px-4 py-3">{t.dashboard.tableHeaders.status}</th>
+                        <th className="px-4 py-3 text-right">{t.dashboard.tableHeaders.audited}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 dark:divide-zinc-800">
@@ -328,7 +330,7 @@ export default function AnalyticsDashboardPage() {
                     <div className="mt-4 text-2xl font-black text-slate-900 dark:text-white">
                       {value}
                       <div className="mt-1 flex items-center gap-1 text-[11px] font-medium text-slate-400">
-                        <TrendingDown className="h-3 w-3 text-brand-500" /> Live evaluation
+                        <TrendingDown className="h-3 w-3 text-brand-500" /> {t.dashboard.liveEvaluation}
                       </div>
                     </div>
                   </div>
