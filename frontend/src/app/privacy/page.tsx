@@ -27,7 +27,11 @@ export default function PrivacyPolicyPage() {
             {/* COLUMN 1: LEFT - Table of Contents */}
             <aside className="w-full lg:w-64 shrink-0">
               <div className="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-4">
-                {isHindi ? "सामग्री सूची" : "Table of Contents"}
+                {language === "hi"
+                  ? "सामग्री सूची"
+                  : language === "mr"
+                  ? "अनुक्रमणिका"
+                  : "Table of Contents"}
               </div>
               <nav className="flex flex-col space-y-1 border-l-2 border-brand-100 dark:border-white/10">
                 {policies.map((policy) => (
@@ -98,7 +102,11 @@ export default function PrivacyPolicyPage() {
               <div className="mb-8">
                 <div className="flex items-center gap-2 text-brand-600/70 dark:text-brand-400/70 mb-4 font-bold text-sm uppercase tracking-wider">
                   <Tag size={16} strokeWidth={2.5} />
-                  {isHindi ? "मुख्य शब्द" : "Keywords"}
+                  {language === "hi"
+                    ? "मुख्य शब्द"
+                    : language === "mr"
+                    ? "महत्त्वाचे शब्द"
+                    : "Keywords"}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {activePolicy.tags.map((tag, idx) => (
@@ -116,7 +124,11 @@ export default function PrivacyPolicyPage() {
               <div className="mb-8">
                 <div className="flex items-center gap-2 text-brand-600/70 dark:text-brand-400/70 mb-4 font-bold text-sm uppercase tracking-wider">
                   <Info size={16} strokeWidth={2.5} />
-                  {isHindi ? "मेटाडेटा" : "Metadata"}
+                  {language === "hi"
+                    ? "मेटाडेटा"
+                    : language === "mr"
+                    ? "मेटाडेटा"
+                    : "Metadata"}
                 </div>
                 <div className="bg-brand-50/30 dark:bg-white/5 border border-brand-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-sm">
                   {Object.entries(activePolicy.metadata).map(
@@ -147,7 +159,11 @@ export default function PrivacyPolicyPage() {
                   href="/expert-escalation"
                   className="group w-full flex items-center justify-between bg-transparent border-2 border-brand-600 dark:border-brand-400 text-brand-600 dark:text-brand-400 px-6 py-4 rounded-xl font-bold hover:bg-brand-50 dark:hover:bg-brand-900/20 hover:shadow-md transition-all duration-300 active:scale-95"
                 >
-                  {isHindi ? "सहायता से संपर्क करें" : "Contact Support"}
+                  {language === "hi"
+                    ? "सहायता से संपर्क करें"
+                    : language === "mr"
+                    ? "मदत केंद्राशी संपर्क साधा"
+                    : "Contact Support"}
                   <ArrowRight
                     size={18}
                     className="group-hover:translate-x-1 transition-transform"

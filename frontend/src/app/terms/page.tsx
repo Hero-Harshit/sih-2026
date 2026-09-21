@@ -111,8 +111,10 @@ export default function TermsAndConditionsPage() {
 
           {/* Footer Note */}
           <div className="w-full max-w-3xl mx-auto mt-16 text-center text-sm text-slate-400 animate-in fade-in duration-1000 delay-500">
-            {isHindi
+            {language === "hi"
               ? "अंतिम अद्यतन: सितंबर 2026। आईपी शक्ति सहायक का उपयोग करके, आप इन नियमों और शर्तों से सहमत होते हैं।"
+              : language === "mr"
+              ? "शेवटचे अपडेट: सप्टेंबर २०२६. आयपी शक्ती सहायक वापरून आपण या नियम आणि अटींशी सहमत आहात."
               : "Last updated: September 2026. By using IP Shakti Sahayak, you agree to these Terms & Conditions."}
           </div>
         </div>

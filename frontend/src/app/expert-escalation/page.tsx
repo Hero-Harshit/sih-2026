@@ -118,7 +118,13 @@ export default function ExpertEscalation() {
                       </p>
 
                       <div className="flex items-center text-xs font-semibold text-slate-400 dark:text-slate-500 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
-                        <span>{isHindi ? "आधिकारिक पोर्टल देखें" : "Visit Official Portal"}</span>
+                        <span>
+                          {language === "hi"
+                            ? "आधिकारिक पोर्टल देखें"
+                            : language === "mr"
+                            ? "अधिकृत पोर्टलला भेट द्या"
+                            : "Visit Official Portal"}
+                        </span>
                         <ExternalLink className="w-3.5 h-3.5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       </div>
                     </div>
@@ -181,7 +187,11 @@ export default function ExpertEscalation() {
                           className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold transition-all hover:scale-[1.02]"
                         >
                           <Mail className="w-4 h-4" />
-                          {isHindi ? "ईमेल करें" : "Email"}
+                          {language === "hi"
+                            ? "ईमेल करें"
+                            : language === "mr"
+                            ? "ईमेल पाठवा"
+                            : "Email"}
                         </a>
                         <a
                           href={`https://wa.me/91${contact.mobile}`}
@@ -190,7 +200,11 @@ export default function ExpertEscalation() {
                           className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] dark:text-[#25D366] text-sm font-bold transition-all hover:scale-[1.02]"
                         >
                           <MessageCircle className="w-4 h-4" />
-                          {isHindi ? "व्हाट्सएप परामर्श" : "WhatsApp"}
+                          {language === "hi"
+                            ? "व्हाट्सएप परामर्श"
+                            : language === "mr"
+                            ? "व्हॉट्सॲप सल्लामसलत"
+                            : "WhatsApp"}
                         </a>
                       </div>
                     </div>
