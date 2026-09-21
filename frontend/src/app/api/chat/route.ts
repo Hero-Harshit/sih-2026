@@ -101,7 +101,22 @@ export async function POST(req: NextRequest) {
     }
 
     // Direct Gemini execution (ideal for Vercel and serverless deployments)
-    const geminiApiKey = process.env.GEMINI_API_KEY;
+    let geminiApiKey = process.env.GEMINI_API_KEY;
+    if (!geminiApiKey) {
+      try {
+        const fs = await import("fs");
+        const path = await import("path");
+        const backendEnvPath = path.resolve(process.cwd(), "..", "backend", ".env");
+        if (fs.existsSync(backendEnvPath)) {
+          const content = fs.readFileSync(backendEnvPath, "utf-8");
+          const m = content.match(/GEMINI_API_KEY=([^\r\n]+)/);
+          if (m) geminiApiKey = m[1].trim();
+        }
+      } catch {
+        // ignore in cloud environments where fs is restricted
+      }
+    }
+
     if (!geminiApiKey) {
       return NextResponse.json(
         {

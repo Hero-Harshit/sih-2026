@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Send, Loader2, Bot } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   id: string;
@@ -43,15 +44,9 @@ export default function GenericChat() {
     setIsTyping(true);
 
     try {
-      // Use relative /api/chat so requests route smoothly through the Next.js serverless handler
-      // or to an explicit external production backend without Mixed Content/CORS issues
-      const backendEnvUrl = process.env.NEXT_PUBLIC_API_URL;
-      const endpoint =
-        backendEnvUrl &&
-        !backendEnvUrl.includes("localhost") &&
-        !backendEnvUrl.includes("127.0.0.1")
-          ? `${backendEnvUrl}/api/chat`
-          : "/api/chat";
+      // Always route through /api/chat so the Next.js serverless route handler can
+      // proxy to the backend or seamlessly fall back to Gemini if the backend returns 404/error.
+      const endpoint = "/api/chat";
 
       // Filter out greetings and previous error messages before sending history
       const historyToSend = [...messages, newUserMsg]
@@ -144,9 +139,39 @@ export default function GenericChat() {
                   : "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 text-slate-800 dark:text-slate-100 rounded-tl-sm"
                 }`}
             >
-              <div className="whitespace-pre-wrap leading-relaxed text-[15px] prose prose-slate">
-                {msg.content}
-              </div>
+              {msg.role === "user" ? (
+                <div className="whitespace-pre-wrap leading-relaxed text-[15px]">
+                  {msg.content}
+                </div>
+              ) : (
+                <div className="leading-relaxed text-[15px] prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-100">
+                  <ReactMarkdown
+                    components={{
+                      p: ({ children }) => <p className="mb-3 last:mb-0 leading-relaxed">{children}</p>,
+                      ul: ({ children }) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal pl-5 mb-3 space-y-1">{children}</ol>,
+                      li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                      strong: ({ children }) => <strong className="font-semibold text-slate-900 dark:text-white">{children}</strong>,
+                      h1: ({ children }) => <h1 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">{children}</h1>,
+                      h2: ({ children }) => <h2 className="text-base font-bold mb-2 text-slate-900 dark:text-white">{children}</h2>,
+                      h3: ({ children }) => <h3 className="text-sm font-bold mb-1.5 text-slate-900 dark:text-white">{children}</h3>,
+                      hr: () => <hr className="my-3 border-slate-200 dark:border-slate-700" />,
+                      blockquote: ({ children }) => (
+                        <blockquote className="border-l-4 border-brand-400 pl-3 py-1 my-2 italic text-slate-600 dark:text-slate-400 bg-brand-50/30 rounded-r">
+                          {children}
+                        </blockquote>
+                      ),
+                      code: ({ children }) => (
+                        <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-brand-700 dark:text-brand-300">
+                          {children}
+                        </code>
+                      ),
+                    }}
+                  >
+                    {msg.content}
+                  </ReactMarkdown>
+                </div>
+              )}
             </div>
           </div>
         ))}
