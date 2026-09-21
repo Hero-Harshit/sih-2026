@@ -87,12 +87,6 @@ export default function Sidebar() {
       href: "/expert-escalation",
       icon: <UserPlus size={22} className="shrink-0" />,
     },
-    {
-      id: "assistant",
-      name: t.nav.aiAssistant,
-      href: "/ai-assistant",
-      icon: <MessageSquare size={22} className="shrink-0" />,
-    },
   ];
 
   const bottomLinks = [

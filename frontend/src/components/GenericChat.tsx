@@ -11,13 +11,22 @@ interface Message {
   content: string;
 }
 
-export default function GenericChat() {
+interface GenericChatProps {
+  isModal?: boolean;
+}
+
+export default function GenericChat({ isModal = false }: GenericChatProps) {
   const { t } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "0",
       role: "assistant",
-      content: t.chat.initialGreeting,
+      content: "Heya, I'm Neural Interface for Smart Human Assistance, or you can call me Nisha in short...",
+    },
+    {
+      id: "1",
+      role: "assistant",
+      content: "I'm always here to help you....",
     },
   ]);
   const [input, setInput] = useState("");
@@ -25,21 +34,10 @@ export default function GenericChat() {
 
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
-  // Update initial greeting if language changes and no user messages exist yet
+  // Removed language dependency for initial greeting to preserve Nisha branding
   useEffect(() => {
-    setMessages((prev) => {
-      if (prev.length <= 1 && prev[0]?.id === "0") {
-        return [
-          {
-            id: "0",
-            role: "assistant",
-            content: t.chat.initialGreeting,
-          },
-        ];
-      }
-      return prev;
-    });
-  }, [t.chat.initialGreeting]);
+    // Kept empty to avoid breaking hooks
+  }, []);
 
   // Read prompt query parameter if navigated from Global Search
   useEffect(() => {
@@ -93,7 +91,9 @@ export default function GenericChat() {
             !content.startsWith("नमस्ते! अहम् भवतां एआई विधि-सहायकः अस्मि") &&
             !content.startsWith("નમસ્તે! હું તમારો એઆઈ કાનૂની સહાયક છું") &&
             !content.startsWith("Sorry, I encountered an error") &&
-            !content.startsWith("Unable to reach the assistant")
+            !content.startsWith("Unable to reach the assistant") &&
+            !content.startsWith("Heya, I'm Neural Interface") &&
+            !content.startsWith("I'm always here to help")
           );
         })
         .map((msg) => ({
