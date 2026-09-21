@@ -27,6 +27,27 @@ export default function AssessmentPage() {
       if (response.ok) {
         const result = await response.json();
         setReportData(result);
+
+        // Save to assessment_history in localStorage for Analytics Dashboard
+        try {
+          const score = typeof result.riskScore === "number" ? result.riskScore : 45;
+          const status = score > 75 ? "High Risk" : score > 35 ? "Moderate Risk" : "Cleared";
+          const rawName = (data.product_name || data.formulation_name || data.name || data.title) as string | undefined;
+          const rawCategory = (data.category || data.formulation_type || data.type) as string | undefined;
+          const newRecord = {
+            name: rawName || "AYUSH Formulation Assessment",
+            category: rawCategory || "Classical Formulation",
+            score: score,
+            status: status,
+            date: new Date().toISOString(),
+          };
+          const existing = JSON.parse(localStorage.getItem("assessment_history") || "[]");
+          const updated = Array.isArray(existing) ? [newRecord, ...existing] : [newRecord];
+          localStorage.setItem("assessment_history", JSON.stringify(updated));
+          window.dispatchEvent(new Event("storage"));
+        } catch (e) {
+          console.error("Error saving assessment to history:", e);
+        }
       } else {
         console.error("Failed to fetch report");
       }

@@ -10,6 +10,23 @@ export interface TranslationSchema {
     accessDatabase: string;
     loading: string;
   };
+  search: {
+    buttonLabel: string;
+    placeholder: string;
+    quickLinks: string;
+    noResultsTitle: string;
+    noResultsDesc: string;
+    askAiCta: string;
+    allCategories: string;
+    pagesCategory: string;
+    lawsCategory: string;
+    modulesCategory: string;
+    expertsCategory: string;
+    legalCategory: string;
+    navigateHint: string;
+    selectHint: string;
+    closeHint: string;
+  };
   nav: {
     brandName: string;
     home: string;
@@ -233,6 +250,23 @@ export const translations: Record<Language, TranslationSchema> = {
       tryAgain: "Try Again",
       accessDatabase: "Access Database",
       loading: "Loading...",
+    },
+    search: {
+      buttonLabel: "Search...",
+      placeholder: "Search laws, assessment modules, experts, pages...",
+      quickLinks: "Popular Topics & Quick Links",
+      noResultsTitle: "No matching results found",
+      noResultsDesc: "We couldn't find anything matching your query on the website.",
+      askAiCta: "Ask AI Legal Assistant",
+      allCategories: "All",
+      pagesCategory: "Pages & Tools",
+      lawsCategory: "Statutes & Sources",
+      modulesCategory: "Assessment Modules",
+      expertsCategory: "Experts & Portals",
+      legalCategory: "Legal & Privacy",
+      navigateHint: "Navigate",
+      selectHint: "Select",
+      closeHint: "Close",
     },
     nav: {
       brandName: "IP Shakti Sahayak",
@@ -871,6 +905,23 @@ export const translations: Record<Language, TranslationSchema> = {
       accessDatabase: "डेटाबेस खोलें",
       loading: "लोड हो रहा है...",
     },
+    search: {
+      buttonLabel: "खोजें...",
+      placeholder: "कानून, मूल्यांकन मॉड्यूल, विशेषज्ञ, पृष्ठ खोजें...",
+      quickLinks: "लोकप्रिय विषय और त्वरित लिंक",
+      noResultsTitle: "कोई परिणाम नहीं मिला",
+      noResultsDesc: "आपकी खोज से मेल खाने वाली कोई जानकारी वेबसाइट पर नहीं मिली।",
+      askAiCta: "एआई कानूनी सहायक से पूछें",
+      allCategories: "सभी",
+      pagesCategory: "पृष्ठ और उपकरण",
+      lawsCategory: "अधिनियम और स्रोत",
+      modulesCategory: "मूल्यांकन मॉड्यूल",
+      expertsCategory: "विशेषज्ञ और पोर्टल",
+      legalCategory: "कानूनी और गोपनीयता",
+      navigateHint: "नेविगेट",
+      selectHint: "चुनें",
+      closeHint: "बंद करें",
+    },
     nav: {
       brandName: "आईपी शक्ति सहायक",
       home: "होम",
@@ -1507,6 +1558,23 @@ export const translations: Record<Language, TranslationSchema> = {
       tryAgain: "पुन्हा प्रयत्न करा",
       accessDatabase: "डेटाबेस उघडा",
       loading: "लोड होत आहे...",
+    },
+    search: {
+      buttonLabel: "शोधा...",
+      placeholder: "कायदे, मूल्यांकन मॉड्यूल, तज्ज्ञ, पृष्ठे शोधा...",
+      quickLinks: "लोकप्रिय विषय आणि जलद दुवे",
+      noResultsTitle: "कोणतेही निकाल आढळले नाहीत",
+      noResultsDesc: "तुमच्या शोधाशी जुळणारी कोणतीही माहिती वेबसाइटवर आढळली नाही.",
+      askAiCta: "एआय कायदेशीर सहाय्यकाला विचारा",
+      allCategories: "सर्व",
+      pagesCategory: "पृष्ठे आणि साधने",
+      lawsCategory: "कायदे आणि स्रोत",
+      modulesCategory: "मूल्यांकन मॉड्यूल",
+      expertsCategory: "तज्ज्ञ आणि पोर्टल",
+      legalCategory: "कायदेशीर आणि गोपनीयता",
+      navigateHint: "नेव्हिगेट करा",
+      selectHint: "निवडा",
+      closeHint: "बंद करा",
     },
     nav: {
       brandName: "आयपी शक्ती सहायक",
@@ -2145,6 +2213,23 @@ export const translations: Record<Language, TranslationSchema> = {
       accessDatabase: "தரவுத்தளத்தைத் திறக்கவும்",
       loading: "ஏற்றப்படுகிறது...",
     },
+    search: {
+      buttonLabel: "தேடு...",
+      placeholder: "சட்டங்கள், மதிப்பீட்டு தொகுதிகள், நிபுணர்கள், பக்கங்களைத் தேடுங்கள்...",
+      quickLinks: "பிரபலமான தலைப்புகள் & விரைவு இணைப்புகள்",
+      noResultsTitle: "பொருத்தமான முடிவுகள் எதுவும் கிடைக்கவில்லை",
+      noResultsDesc: "உங்கள் தேடலுக்கு ஏற்ற தகவல் எதுவும் இணையதளத்தில் காணப்படவில்லை.",
+      askAiCta: "AI சட்ட உதவியாளரிடம் கேளுங்கள்",
+      allCategories: "அனைத்தும்",
+      pagesCategory: "பக்கங்கள் & கருவிகள்",
+      lawsCategory: "சட்டங்கள் & ஆதாரங்கள்",
+      modulesCategory: "மதிப்பீட்டு தொகுதிகள்",
+      expertsCategory: "நிபுணர்கள் & போர்ட்டல்கள்",
+      legalCategory: "சட்டம் & தனியுரிமை",
+      navigateHint: "வழிநடத்து",
+      selectHint: "தேர்ந்தெடு",
+      closeHint: "மூடு",
+    },
     nav: {
       brandName: "ஐபி சக்தி சஹாயக்",
       home: "முகப்பு",
@@ -2781,6 +2866,23 @@ export const translations: Record<Language, TranslationSchema> = {
       tryAgain: "మళ్లీ ప్రయత్నించండి",
       accessDatabase: "డేటాబేస్ యాక్సెస్ చేయండి",
       loading: "లోడ్ అవుతోంది...",
+    },
+    search: {
+      buttonLabel: "శోధించండి...",
+      placeholder: "చట్టాలు, మూల్యాంకన మాడ్యూల్స్, నిపుణులు, పేజీలను శోధించండి...",
+      quickLinks: "ప్రముఖ అంశాలు & శీఘ్ర లింకులు",
+      noResultsTitle: "సరిపోలే ఫలితాలు ఏవీ కనుగొనబడలేదు",
+      noResultsDesc: "మీ శోధనకు సరిపోయే సమాచారం వెబ్‌సైట్‌లో కనుగొనబడలేదు.",
+      askAiCta: "AI న్యాయ సహాయకుడిని అడగండి",
+      allCategories: "అన్నీ",
+      pagesCategory: "పేజీలు & సాధనాలు",
+      lawsCategory: "చట్టాలు & వనరులు",
+      modulesCategory: "మూల్యాంకన మాడ్యూల్స్",
+      expertsCategory: "నిపుణులు & పోర్టల్‌లు",
+      legalCategory: "చట్టపరమైన & గోప్యత",
+      navigateHint: "నావిగేట్ చేయండి",
+      selectHint: "ఎంచుకోండి",
+      closeHint: "మూసివేయండి",
     },
     nav: {
       brandName: "ఐపీ శక్తి సహాయక్",
@@ -3419,6 +3521,23 @@ export const translations: Record<Language, TranslationSchema> = {
       accessDatabase: "ডাটাবেস অ্যাক্সেস করুন",
       loading: "লোড হচ্ছে...",
     },
+    search: {
+      buttonLabel: "অনুসন্ধান করুন...",
+      placeholder: "আইন, মূল্যায়ন মডিউল, বিশেষজ্ঞ, পৃষ্ঠা অনুসন্ধান করুন...",
+      quickLinks: "জনপ্রিয় বিষয় এবং দ্রুত লিঙ্ক",
+      noResultsTitle: "কোনো ফলাফল পাওয়া যায়নি",
+      noResultsDesc: "আপনার অনুসন্ধানের সাথে মিলে এমন কোনো তথ্য ওয়েবসাইটে খুঁজে পাওয়া যায়নি।",
+      askAiCta: "এআই আইনি সহকারীকে জিজ্ঞাসা করুন",
+      allCategories: "সব",
+      pagesCategory: "পৃষ্ঠা এবং সরঞ্জাম",
+      lawsCategory: "আইন এবং উৎস",
+      modulesCategory: "মূল্যায়ন মডিউল",
+      expertsCategory: "বিশেষজ্ঞ এবং পোর্টাল",
+      legalCategory: "আইনি ও গোপনীয়তা",
+      navigateHint: "नेভিগেট",
+      selectHint: "নির্বাচন",
+      closeHint: "বন্ধ",
+    },
     nav: {
       brandName: "আইপি শক্তি সহায়ক",
       home: "হোম",
@@ -3985,6 +4104,23 @@ export const translations: Record<Language, TranslationSchema> = {
       accessDatabase: "ಡೇಟಾಬೇಸ್ ಪ್ರವೇಶಿಸಿ",
       loading: "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
     },
+    search: {
+      buttonLabel: "ಹುಡುಕಿ...",
+      placeholder: "ಕಾನೂನುಗಳು, ಮೌಲ್ಯಮಾಪನ ಮಾಡ್ಯೂಲ್‌ಗಳು, ತಜ್ಞರು, ಪುಟಗಳನ್ನು ಹುಡುಕಿ...",
+      quickLinks: "ಜನಪ್ರಿಯ ವಿಷಯಗಳು ಮತ್ತು ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",
+      noResultsTitle: "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+      noResultsDesc: "ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದಿಕೆಯಾಗುವ ಯಾವುದೇ ಮಾಹಿತಿ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಕಂಡುಬಂದಿಲ್ಲ.",
+      askAiCta: "AI ಕಾನೂನು ಸಹಾಯಕನನ್ನು ಕೇಳಿ",
+      allCategories: "ಎಲ್ಲಾ",
+      pagesCategory: "ಪುಟಗಳು ಮತ್ತು ಪರಿಕರಗಳು",
+      lawsCategory: "ಕಾನೂನುಗಳು ಮತ್ತು ಮೂಲಗಳು",
+      modulesCategory: "ಮೌಲ್ಯಮಾಪನ ಮಾಡ್ಯೂಲ್‌ಗಳು",
+      expertsCategory: "ತಜ್ಞರು ಮತ್ತು ಪೋರ್ಟಲ್‌ಗಳು",
+      legalCategory: "ಕಾನೂನು ಮತ್ತು ಗೌಪ್ಯತೆ",
+      navigateHint: "ನ್ಯಾವಿಗೇಟ್",
+      selectHint: "ಆಯ್ಕೆಮಾಡಿ",
+      closeHint: "ಮುಚ್ಚಿ",
+    },
     nav: {
       brandName: "ಐಪಿ ಶಕ್ತಿ ಸಹಾಯಕ",
       home: "ಮುಖಪುಟ",
@@ -4550,6 +4686,23 @@ export const translations: Record<Language, TranslationSchema> = {
       tryAgain: "पुनः प्रयतताम्",
       accessDatabase: "दत्तांशकोशं प्रविशन्तु",
       loading: "लोड् क्रियते...",
+    },
+    search: {
+      buttonLabel: "अन्वेषणं कुर्वन्तु...",
+      placeholder: "विधीन्, मूल्याङ्कन-मॉड्यूल्, तज्ज्ञान्, पृष्ठानि अन्वेषयन्तु...",
+      quickLinks: "प्रसिद्धाः विषयाः त्वरित-सम्पर्काश्च",
+      noResultsTitle: "कोऽपि परिणामः न लब्धः",
+      noResultsDesc: "भवतां पृच्छया सह सङ्गतं किमपि विवरणं वेद्यां न प्राप्‍तम्।",
+      askAiCta: "एआई विधि-सहायकं पृच्छन्तु",
+      allCategories: "सर्वे",
+      pagesCategory: "पृष्ठानि साधनानि च",
+      lawsCategory: "अधिनियमाः स्रोतांसि च",
+      modulesCategory: "मूल्याङ्कन-मॉड्यूल्",
+      expertsCategory: "तज्ज्ञाः पोर्टल् च",
+      legalCategory: "विधिक-गोपनीयता च",
+      navigateHint: "सञ्चारः",
+      selectHint: "चयनम्",
+      closeHint: "पिधानम्",
     },
     nav: {
       brandName: "आई.पी. शक्ति सहायकः",
@@ -5130,6 +5283,23 @@ export const translations: Record<Language, TranslationSchema> = {
       tryAgain: "ફરી પ્રયાસ કરો",
       accessDatabase: "ડેટાબેઝ ઍક્સેસ કરો",
       loading: "લોડ થઈ રહ્યું છે...",
+    },
+    search: {
+      buttonLabel: "શોધો...",
+      placeholder: "કાયદા, મૂલ્યાંકન મોડ્યુલ્સ, નિષ્ણાતો, પૃષ્ઠો શોધો...",
+      quickLinks: "લોકપ્રિય વિષયો અને ઝડપી લિંક્સ",
+      noResultsTitle: "કોઈ મેળ ખાતા પરિણામ મળ્યા નથી",
+      noResultsDesc: "તમારી શોધ સાથે મેળ ખાતી કોઈ માહિતી વેબસાઇટ પર મળી નથી.",
+      askAiCta: "એઆઈ કાનૂની સહાયકને પૂછો",
+      allCategories: "બધા",
+      pagesCategory: "પૃષ્ઠો અને સાધનો",
+      lawsCategory: "કાયદાઓ અને સ્ત્રોતો",
+      modulesCategory: "મૂલ્યાંકન મોડ્યુલ્સ",
+      expertsCategory: "નિષ્ણાતો અને પોર્ટલ",
+      legalCategory: "કાનૂની અને ગોપનીયતા",
+      navigateHint: "નેવિગેટ",
+      selectHint: "પસંદ કરો",
+      closeHint: "બંધ કરો",
     },
     nav: {
       brandName: "આઈપી શક્તિ સહાયક",

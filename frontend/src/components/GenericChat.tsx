@@ -41,6 +41,17 @@ export default function GenericChat() {
     });
   }, [t.chat.initialGreeting]);
 
+  // Read prompt query parameter if navigated from Global Search
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const promptParam = params.get("prompt");
+      if (promptParam && promptParam.trim()) {
+        setInput(promptParam.trim());
+      }
+    }
+  }, []);
+
   useEffect(() => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;

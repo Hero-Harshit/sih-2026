@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Globe, ChevronDown, Check } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language } from "@/i18n/translations";
+import NavbarSearch from "./NavbarSearch";
 
 const LANGUAGES: {
   code: Language;
@@ -110,8 +111,12 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Right side Language Selector */}
-        <div id="navbar-actions" className="flex items-center gap-2">
+        {/* Right side Actions: Navbar Search + Language Selector */}
+        <div id="navbar-actions" className="flex items-center gap-2.5">
+          {/* Inline Search Box with Dropdown */}
+          <NavbarSearch />
+
+          {/* Language Selector Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((prev) => !prev)}

@@ -2,12 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, UserPlus, MessageSquare, Info, Shield, FileText } from "lucide-react";
+import { Home, UserPlus, MessageSquare, Info, Shield, FileText, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+
+const dashboardLabels: Record<string, string> = {
+  en: "Dashboard",
+  hi: "डैशबोर्ड",
+  mr: "डॅशबोर्ड",
+  ta: "டாஷ்போர்டு",
+  te: "డ్యాష్‌బోర్డ్",
+  bn: "ড্যাশবোর্ড",
+  kn: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+  sa: "डैशबोर्ड्",
+  gu: "ડેશબોર્ડ",
+};
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const links = [
     {
@@ -39,6 +51,12 @@ export default function Sidebar() {
           <rect width="7" height="5" x="3" y="16" rx="1" />
         </svg>
       ),
+    },
+    {
+      id: "dashboard",
+      name: dashboardLabels[language] || "Dashboard",
+      href: "/analytics-dashboard",
+      icon: <BarChart3 size={22} className="shrink-0" />,
     },
     {
       id: "corpus",
