@@ -31,6 +31,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
             ? "ஒழுங்குமுறை இயந்திர சூழல்"
             : language === "te"
             ? "రెగ్యులేటరీ ఇంజిన్ సందర్భం"
+            : language === "bn"
+            ? "নিয়ন্ত্রক ইঞ্জিন প্রসঙ্গ"
             : "Regulatory Engine Context"}
         </div>
 
@@ -48,6 +50,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? `இந்த புலம் "${title}"-க்கான ஒழுங்குமுறை பாதையை தீர்மானிக்கிறது. இணக்க தூண்டுதல்களைக் கண்டறிய இயந்திரம் இதை பகுப்பாய்வு செய்கிறது.`
               : language === "te"
               ? `ఈ ఫీల్డ్ "${title}" కోసం నియంత్రణ మార్గాన్ని నిర్ణయిస్తుంది. సమ్మతి ట్రిగ్గర్లను గుర్తించడానికి ఇంజిన్ దీనిని విశ్లేషిస్తుంది.`
+              : language === "bn"
+              ? `এই ক্ষেত্রটি "${title}" এর জন্য নিয়ন্ত্রক পথ নির্ধারণ করে। ইঞ্জিন সম্মতির কারণগুলি শনাক্ত করতে এটি বিশ্লেষণ করে।`
               : `This field determines the regulatory pathway for "${title}". The engine analyzes this to detect compliance triggers.`}
           </p>
         </div>
@@ -62,6 +66,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? "செயலில் உள்ள சட்டங்கள்"
               : language === "te"
               ? "క్రియాశీల చట్టాలు మరియు నిబంధనలు"
+              : language === "bn"
+              ? "সক্রিয় আইন ও বিধিমালा"
               : "Active Statutes"}
           </h5>
           <ul className="space-y-3 text-[13px] text-slate-600 dark:text-slate-300 font-medium">
@@ -76,6 +82,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "மருந்துகள் மற்றும் அழகுசாதனப் பொருட்கள் சட்டம், 1940"
                   : language === "te"
                   ? "డ్రగ్స్ అండ్ కాస్మెటిక్స్ చట్టం, 1940"
+                  : language === "bn"
+                  ? "ড্রাগস অ্যান্ড কসমেটিকস আইন, ১৯৪০"
                   : "Drugs & Cosmetics Act, 1940"}
               </span>
             </li>
@@ -90,6 +98,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "உயிரியல் பன்முகத்தன்மை சட்டம், 2002"
                   : language === "te"
                   ? "జీవ వైవిధ్య చట్టం, 2002"
+                  : language === "bn"
+                  ? "জৈব বৈচিত্র্য আইন, ২০০২"
                   : "Biological Diversity Act, 2002"}
               </span>
             </li>

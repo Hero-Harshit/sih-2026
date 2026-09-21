@@ -1817,6 +1817,457 @@ const TELUGU_MODULES: LocalizedModule[] = [
   },
 ];
 
+export const BENGALI_MODULES: LocalizedModule[] = [
+  {
+    id: 1,
+    title: "উপাদান এবং সক্রিয় উপাদান",
+    description: "আপনার পণ্যের প্রধান সক্রিয় উপাদান এবং ফর্মুলেশনের ঐতিহ্যবাহী জ্ঞানের উৎস সংজ্ঞায়িত করুন।",
+    fields: [
+      {
+        name: "ingredients",
+        label: "প্রধান সক্রিয় উপাদান (উপাদানসমূহ)",
+        type: "checkbox",
+        options: [
+          {
+            value: "Ashwagandha (Withania somnifera)",
+            label: "অশ্বগন্ধা (উইথানিয়া সোমনিফেরা)",
+            description: "সাধারণ অ্যাডাপ্টোজেন। আদর্শ আয়ুষ নীতিমালার অধীনে সাধারণত নিরাপদ।",
+          },
+          {
+            value: "Tulsi (Ocimum sanctum)",
+            label: "তুলসী (ওসিমাম স্যাঙ্কটাম)",
+            description: "পবিত্র তুলসী। ব্যাপকভাবে চাষকৃত, কম নিয়ন্ত্রক ঝুঁকি।",
+          },
+          {
+            value: "Red Sanders (Pterocarpus santalinus)",
+            label: "রক্তচন্দন (টেরোকার্পাস স্যান্টালিনাস)",
+            description: "গুরুতর বিপন্ন প্রজাতি। CITES এবং জাতীয় জৈব বৈচিত্র্য কর্তৃপক্ষের (NBA) কঠোর নজরদারি প্রযোজ্য।",
+          },
+          {
+            value: "Jatamansi (Nardostachys jatamansi)",
+            label: "জটামাংসী (নার্ডোস্ট্যাচিস জটামাংসী)",
+            description: "বিপন্ন হিমালয় ভেষজ। কঠোর অ্যাক্সেস অ্যান্ড বেনিফিট শেয়ারিং (ABS) সম্মতি বাধ্যতামূলক।",
+          },
+          {
+            value: "Purified Chemical Extract (e.g., Curcumin 95%)",
+            label: "পরিশোধিত রাসায়নিক নির্যাস (যেমন কারকিউমিন ৯৫%)",
+            description: "সম্পূর্ণ ভেষজ নয়। ফাইটোফার্মাসিউটিক্যাল নীতিমালা প্রযোজ্য হতে পারে।",
+          },
+          {
+            value: "Neem (Azadirachta indica)",
+            label: "নিম (আজাদিরাচটা ইন্ডিকা)",
+            description: "শাস্ত্রীয় অ্যান্টিমাইক্রোবিয়াল ভেষজ। ঐতিহাসিক EPO পেটেন্ট বাতিলের পূর্ব নজির; TKDL ঐতিহ্যগত জ্ঞান সুরক্ষা।",
+          },
+          {
+            value: "Turmeric / Haridra (Curcuma longa)",
+            label: "হলুদ / হরিদ্রা (কারকিউমা লঙ্গা)",
+            description: "ক্ষত নিরাময় ও প্রদাহনাশক বৈশিষ্ট্য। CSIR মার্কিন পেটেন্ট বাতিলের দৃষ্টান্ত (TKDL)।",
+          },
+          {
+            value: "Kashmiri Saffron (Crocus sativus)",
+            label: "কাশ্মীরি জাফরান (ক্রোকাস স্যাটিভাস)",
+            description: "সুরক্ষিত ভৌগোলিক নির্দেশক (GI) প্রাপ্ত মূল্যবান মসলা। কঠোর সত্যতা এবং বিশুদ্ধতার মানদণ্ড।",
+          },
+          {
+            value: "Guggulu (Commiphora mukul)",
+            label: "গুগগুলু (কম্মিফোরা মুকুল)",
+            description: "নিয়ন্ত্রিত রজন। আয়ুর্বেদিক ফার্মাকোপিয়া (API) মানদণ্ড অনুসারে প্রমিত গুগগুলস্টেরোনের সাপেক্ষ।",
+          },
+          {
+            value: "Kutki (Picrorhiza kurroa)",
+            label: "কুটকি (পিক্রোরহিজা কুররোয়া)",
+            description: "CITES পরিশিষ্ট II এবং জৈব বৈচিত্র্য আইন ধারা ৩৮ এর অধীনে বিপন্ন প্রজাতির তালিকায় অন্তর্ভুক্ত।",
+          },
+          {
+            value: "Sarpgandha (Rauvolfia serpentina)",
+            label: "সর্পগন্ধা (রাউভলফিয়া সার্পেন্টিনা)",
+            description: "রিসার্পিন সমৃদ্ধ উদ্ভিদ। তপশিল E(1) এবং ধারা ৩৮ জৈব বৈচিত্র্য আইনের নিয়ন্ত্রিত তালিকাভুক্ত।",
+          },
+          {
+            value: "Vatsanabha / Indian Aconite (Aconitum ferox)",
+            label: "বৎ্সনাভ / কাঠবিষ (অ্যাকোনিটাম ফেরোক্স)",
+            description: "তপশিল E(1) বিষাক্ত ভেষজ। বাধ্যতামূলক ঐতিহ্যবাহী শোধন এবং লাল সতর্কীকরণ লেবেল প্রয়োজন।",
+          },
+          {
+            value: "Bhang / Vijaya (Cannabis sativa)",
+            label: "ভাং / বিজয়া (ক্যানাবিস স্যাটিভা)",
+            description: "তপশিল E(1) নিয়ন্ত্রিত উদ্ভিদ। NDPS আইন, রাজ্য আবগারি লাইসেন্স এবং আয়ুষ বিজ্ঞপ্তির সাপেক্ষ।",
+          },
+          {
+            value: "Brahmi (Bacopa monnieri)",
+            label: "ব্রাহ্মী (বাকোপা মনিয়েরি)",
+            description: "শাস্ত্রীয় মেধ্য রসায়ন (স্মৃতিশক্তি বর্ধক)। প্রমিত ব্যাকোসাইড পরীক্ষা ও ভারী ধাতু সীমার সাপেক্ষ।",
+          },
+          {
+            value: "Triphala (Amalaki, Haritaki, Bibhitaki)",
+            label: "ত্রিফলা (আমলকী, হরিতকী, বিভীতকী)",
+            description: "শাস্ত্রীয় পলিহার্বাল ফর্মুলা। পেটেন্ট আইন ধারা ৩(p) এর অধীনে ঐতিহ্যবাহী জ্ঞান হিসেবে সুরক্ষিত।",
+          },
+          {
+            value: "Swarna Bhasma (Incinerated Gold Ash)",
+            label: "স্বর্ণ ভস্ম (শোধনকৃত স্বর্ণ ভস্ম)",
+            description: "হার্বো-মেটালিক রসৌষধ। তপশিল T অংশ I-F জিএমপি এবং উপাদান বিশুদ্ধতা সীমার সাপেক্ষ।",
+          },
+        ],
+      },
+      {
+        name: "knowledgeSource",
+        label: "ফর্মুলেশন জ্ঞানের উৎস",
+        type: "radio",
+        options: [
+          {
+            value: "Classical Text (e.g., Charaka Samhita, Sushruta Samhita)",
+            label: "শাস্ত্রীয় গ্রন্থ (যেমন চরক সংহিতা, সুশ্রুত সংহিতা)",
+            description: "নিয়ম ১৫৮B(I)(A) এর অধীনে নতুন নিরাপত্তা/কার্যকারিতা ক্লিনিকাল ডেটার বাধ্যবাধকতা থেকে ছাড়প্রাপ্ত।",
+          },
+          {
+            value: "Proprietary Mix (Patent & Proprietary - P&P)",
+            label: "মালিকানাধীন মিশ্রণ (Patent & Proprietary - P&P)",
+            description: "ধারা ৩(h) এবং নিয়ম ১৫৮B(II) এর অধীনে পেটেন্ট ও প্রোপ্রাইটারি ঔষধের প্রবিধান প্রযোজ্য।",
+          },
+          {
+            value: "Tribal / Traditional Community Knowledge",
+            label: "উপজাতীয় / ঐতিহ্যবাহী সম্প্রদায়ের জ্ঞান",
+            description: "স্থানীয় সম্প্রদায় এবং জীববৈচিত্র্য ব্যবস্থাপনা কমিটির (BMC) সাথে বাধ্যতামূলক সুবিধা-ভাগাভাগি চুক্তি।",
+          },
+          {
+            value: "Ayurvedic Pharmacopoeia of India (API) / AFI Standards",
+            label: "আয়ুর্বেদিক ফার্মাকোপিয়া অফ ইন্ডিয়া (API) / AFI মানদণ্ড",
+            description: "ঔষধ ও প্রসাধন সামগ্রী আইনের দ্বিতীয় তপশিলের অধীনে সরকারি স্বীকৃত ফার্মাকোপিয়াল মনোগ্রাফ।",
+          },
+          {
+            value: "Siddha or Unani Classical Treatises",
+            label: "সিদ্ধ বা ইউনানি শাস্ত্রীয় গ্রন্থাবলী",
+            description: "সিদ্ধ বা ইউনানি তিব্ব পদ্ধতির প্রথম তপশিলে তালিকাভুক্ত স্বীকৃত গ্রন্থাবলী।",
+          },
+          {
+            value: "Novel In-House R&D / Innovative Formulation",
+            label: "অভ্যন্তরীণ উদ্ভাবনী গবেষণা ও উন্নয়ন (R&D) / নতুন ফর্মুলেশন",
+            description: "সম্পূর্ণ নতুন উদ্ভিজ্জ সংমিশ্রণ; ধারা ৩(p)/৩(e) দ্বারা নিষিদ্ধ না হলে পেটেন্টের যোগ্য।",
+          },
+          {
+            value: "Uncodified Ethnobotanical Field Collections (PBR)",
+            label: "অসংহিতাবদ্ধ লোক-উদ্ভিজ্জ ক্ষেত্র সংগ্রহ (PBR)",
+            description: "জনসাধারণের জীববৈচিত্র্য রেজিস্টার (PBR) যাচাই এবং জৈব বৈচিত্র্য আইন ধারা ৪১ বাধ্যতামূলক ABS চুক্তি।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "উৎপাদন পদ্ধতি এবং গুণমান নিয়ন্ত্রণ",
+    description: "প্রক্রিয়াকরণ পদ্ধতি, চূড়ান্ত ডোজ ফর্ম এবং উৎপাদন সুবিধার সার্টিফিকেশন স্তর নির্দিষ্ট করুন।",
+    fields: [
+      {
+        name: "manufacturingMethod",
+        label: "উৎপাদন / নিষ্কাশন পদ্ধতি",
+        type: "radio",
+        options: [
+          {
+            value: "Raw Crushed / Boiled in Water (Aqueous Decoction)",
+            label: "কাঁচা / চূর্ণ / জলে সিদ্ধ (জলীয় ক্বাথ)",
+            description: "আদর্শ শাস্ত্রীয় আয়ুর্বেদিক প্রস্তুতি (ক্বাথ / কশায় প্রক্রিয়া)।",
+          },
+          {
+            value: "Solvent Extraction (Alcohol, Hexane)",
+            label: "দ্রাবক নিষ্কাশন (অ্যালকোহল, হেক্সেন)",
+            description: "অবশিষ্ট দ্রাবক প্রকাশ, TLC ফিঙ্গারপ্রিন্টিং এবং ভারী ধাতু পরীক্ষা বাধ্যতামূলক।",
+          },
+          {
+            value: "Advanced Chemical Isolation",
+            label: "উন্নত রাসায়নিক পৃথকীকরণ (আইসোলেশন)",
+            description: "ফাইটোফার্মাসিউটিক্যাল হিসাবে শ্রেণীবদ্ধ। CDSCO অনুমোদন এবং ক্লিনিকাল ট্রায়াল আবশ্যক।",
+          },
+          {
+            value: "Classical Fermentation (Asava & Arishta)",
+            label: "শাস্ত্রীয় গাঁজন প্রক্রিয়া (আসব ও অরিষ্ট)",
+            description: "প্রাকৃতিকভাবে উৎপাদিত অ্যালকোহল (<১২% v/v); নিয়ম ১৫১ আবগারি ও ঔষধ প্রস্তুতি আইন প্রযোজ্য।",
+          },
+          {
+            value: "Medicated Ghee / Oil Processing (Sneha Kalpana)",
+            label: "ঔষধি ঘৃত / তৈল প্রক্রিয়াকরণ (স্নেহ কল্পনা)",
+            description: "শাস্ত্রীয় লিপিড নিষ্কাশন; পারক্সাইড মান এবং অ্যাসিড মান পরীক্ষা প্রয়োজন।",
+          },
+          {
+            value: "Classical Calcinated Ash / Bhasma (Shodhana & Marana)",
+            label: "শাস্ত্রীয় ভস্ম প্রস্তুতি (শোধন ও মারণ)",
+            description: "রসশাস্ত্রীয় শোধন; তপশিল T ন্যানোকণা এবং ভারী ধাতু সুরক্ষা সম্মতি সাপেক্ষ।",
+          },
+          {
+            value: "Supercritical Fluid CO2 Extraction (SCFE)",
+            label: "সুপারক্রিটিক্যাল ফ্লুইড CO2 নিষ্কাশন (SCFE)",
+            description: "পরিবেশবান্ধব দ্রাবকহীন নিষ্কাশন; পেটেন্ট আইন ধারা ৫ এর অধীনে প্রক্রিয়া পেটেন্টের যোগ্য।",
+          },
+          {
+            value: "Nano-Liposomal / Novel Herbal Drug Delivery (NDDS)",
+            label: "ন্যানো-লাইপোসোমাল / আধুনিক ভেষজ ড্রাগ ডেলিভারি (NDDS)",
+            description: "জৈব প্রাপ্যতা বৃদ্ধি করে; CDSCO নতুন ড্রাগ / ফাইটোফার্মাসিউটিক্যাল নিয়মাবলীর আওতাধীন।",
+          },
+        ],
+      },
+      {
+        name: "finalForm",
+        label: "চূড়ান্ত পণ্যের রূপ",
+        type: "radio",
+        options: [
+          {
+            value: "Oral Solid (Tablets, Capsules, Vati, Gutika)",
+            label: "মুখের শক্ত রূপ (ট্যাবলেট, ক্যাপসুল, বটী, গুটিকা)",
+            description: "অভ্যন্তরীণ ঔষধ ভারী ধাতু মান, দ্রবণীয়তা এবং মাইক্রোবিয়াল সীমার সাপেক্ষ।",
+          },
+          {
+            value: "Oral Liquid (Fermented Asava, Arishta, Syrup)",
+            label: "মুখের তরল রূপ (গাঁজনকৃত আসব, অরিষ্ট, সিরাপ)",
+            description: "নির্দিষ্ট মাধ্যাকর্ষণ, অ্যালকোহল সীমা যাচাই (<১২%) এবং মাইক্রোবিয়াল পরীক্ষার সাপেক্ষ।",
+          },
+          {
+            value: "Oral Powder / Granules (Churna, Kwatha Churna)",
+            label: "মুখের গুঁড়া / দানা (চূর্ণ, ক্বাথ চূর্ণ)",
+            description: "API অনুসারে কণা আকার এবং আর্দ্রতার শতাংশ সীমা সাপেক্ষ।",
+          },
+          {
+            value: "Classical Semi-Solid (Avaleha, Lehyam, Chyawanprash)",
+            label: "শাস্ত্রীয় আধা-কঠিন (অবলেহ, লেহ্যম, চ্যবনপ্রাশ)",
+            description: "চিনি/মধু ভিত্তিক; মোট কঠিন পদার্থ, HMF এবং চিনি সহনশীলতা পরীক্ষা প্রয়োজন।",
+          },
+          {
+            value: "Medicated Oil / Ghee (Taila, Ghrita)",
+            label: "ঔষধি তেল / ঘি (তৈল, ঘৃত)",
+            description: "মুখের মাধ্যমে সেবন বা বাহ্যিক ব্যবহার; আয়োডিন মান এবং স্যাপোনিফিকেশন মানদণ্ড।",
+          },
+          {
+            value: "Topical / External Semi-Solid (Cream, Gel, Lepa, Balm)",
+            label: "বাহ্যিক আধা-কঠিন (ক্রিম, জেল, প্রলেপ, বাম)",
+            description: "তপশিল M-II এর অধীনে প্রসাধন সামগ্রী বা ASU বাহ্যিক প্রয়োগ হিসাবে সম্মতি সাপেক্ষ।",
+          },
+          {
+            value: "Sterile Drops: Nasal / Ophthalmic (Nasya, Netra Bindu)",
+            label: "জীবাণুমুক্ত ড্রপ: নাসিকা / চক্ষু (নস্য, নেত্রবিন্দু)",
+            description: "কঠোর নির্বীজন মান, কণা পরীক্ষা এবং প্রিজারভেটিভ প্রকাশ বাধ্যতামূলক।",
+          },
+          {
+            value: "Transdermal Patch / Hydrogel Device",
+            label: "ট্রান্সডার্মাল প্যাচ / হাইড্রোজেল ডিভাইস",
+            description: "উন্নত ড্রাগ ডেলিভারি ডিভাইস; মেডিকেল ডিভাইস নিয়মাবলী ২০১৭ পর্যালোচনা আকর্ষণ করতে পারে।",
+          },
+        ],
+      },
+      {
+        name: "gmpCertification",
+        label: "উৎপাদন সুবিধা সার্টিফিকেশন স্তর",
+        type: "radio",
+        options: [
+          {
+            value: "State AYUSH Schedule T GMP Certified",
+            label: "রাজ্য আয়ুষ তপশিল T জিএমপি প্রত্যয়িত",
+            description: "ভারতে বাণিজ্যিক ASU উৎপাদনের জন্য সংবিধিবদ্ধ ন্যূনতম শর্তাবলী পূরণ করে।",
+          },
+          {
+            value: "WHO-GMP for Herbal / Phytomedicines Certificate (CoPP)",
+            label: "ভেষজ ওষুধের জন্য WHO-GMP সার্টিফিকেট (CoPP)",
+            description: "উচ্চমূল্যের বৈশ্বিক রপ্তানি এবং আন্তর্জাতিক নিয়ন্ত্রক ফাইলিংয়ের জন্য প্রয়োজনীয়।",
+          },
+          {
+            value: "US-FDA 21 CFR Part 111 cGMP Compliant (Dietary Supplements)",
+            label: "US-FDA 21 CFR Part 111 cGMP অনুবর্তী (ডায়েটারি সাপ্লিমেন্ট)",
+            description: "মার্কিন বাজারে খাদ্য সম্পূরক হিসাবে রপ্তানির জন্য বাধ্যতামূলক পূর্বশর্ত।",
+          },
+          {
+            value: "Third-Party Loan License / Contract Manufacturer Facility",
+            label: "তৃতীয় পক্ষের লোন লাইসেন্স / চুক্তিভিত্তিক উৎপাদন সুবিধা",
+            description: "ফর্ম ২৫E এর অধীনে অন্য প্রত্যয়িত সুবিধায় উৎপাদন; নিয়ন্ত্রিত নিয়ন্ত্রক দায়বদ্ধতা।",
+          },
+          {
+            value: "Uncertified / Informal Cottage Unit (Non-GMP)",
+            label: "অপ্রত্যয়িত / অনানুষ্ঠানিক কুটির শিল্প (নন-জিএমপি)",
+            description: "বাণিজ্যিক বিক্রয়ের অনুমতি নেই; তাত্ক্ষণিক পরিকাঠামো রূপান্তর এবং তপশিল T সার্টিফিকেশন প্রয়োজন।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "কাঁচামালের উৎস এবং জৈব বৈচিত্র্য সম্মতি",
+    description: "কাঁচামালের ভৌগোলিক উৎস এবং আপনার এন্টারপ্রাইজের মালিকানা কাঠামো নির্দেশ করুন।",
+    fields: [
+      {
+        name: "sourcingOrigin",
+        label: "কাঁচামাল সংগ্রহের ভৌগোলিক উৎস",
+        type: "radio",
+        options: [
+          {
+            value: "Wild Harvesting in Protected Indian Forests",
+            label: "ভারতের সংরক্ষিত বন থেকে বন্য সংগ্রহ",
+            description: "সর্বোচ্চ আইনি ঝুঁকি। রাজ্য বন বিভাগ অনুমতি এবং জৈব বৈচিত্র্য আইন ধারা ৩/৪/৭ সম্মতি প্রয়োজন।",
+          },
+          {
+            value: "Sourced Outside India (Imported from Nepal, Bhutan, Africa)",
+            label: "ভারতের বাইরে থেকে সংগৃহীত (নেপাল, ভুটান, আফ্রিকা থেকে আমদানি)",
+            description: "ভারতীয় জৈব বৈচিত্র্য আইন ধারা ৩(২) প্রযোজ্য নয়; তবে DGFT আমদানি লাইসেন্স এবং উদ্ভিদ কোয়ারেন্টাইন ছাড়পত্র প্রয়োজন।",
+          },
+          {
+            value: "Central & Eastern Tribal Belts (Bastar, Chota Nagpur, Odisha)",
+            label: "মধ্য ও পূর্ব উপজাতীয় অঞ্চল (বস্তার, ছোটনাগপুর, ওড়িশা)",
+            description: "উপজাতীয় জ্ঞান সমৃদ্ধ অঞ্চল; বায়োডাইভারসিটি ম্যানেজমেন্ট কমিটির (BMC) সাথে ধারা ৪১ ABS প্রযোজ্য।",
+          },
+          {
+            value: "Certified Cultivated Farmland / Agro-Forestry",
+            label: "প্রত্যয়িত চাষকৃত জমি / কৃষি-বনায়ন",
+            description: "জৈব বৈচিত্র্য (সংশোধনী) আইন ২০২৩ এর অধীনে কিছু ABS নিয়ম থেকে ছাড়প্রাপ্ত চাষাবাদ।",
+          },
+          {
+            value: "Normally Traded Commodities (NTC under Section 40)",
+            label: "সাধারণ বাণিজ্য পণ্য (ধারা ৪০ এর অধীনে NTC)",
+            description: "যেমন শুধুমাত্র বাণিজ্যিক পণ্য হিসেবে ব্যবহৃত হলুদ, আদা; পণ্য রপ্তানির জন্য ABS থেকে ছাড়প্রাপ্ত।",
+          },
+        ],
+      },
+      {
+        name: "companyStructure",
+        label: "কোম্পানির মালিকানা কাঠামো",
+        type: "radio",
+        options: [
+          {
+            value: "100% Indian Citizens / Indian-Owned Entity",
+            label: "১০০% ভারতীয় নাগরিক / ভারতীয় মালিকানাধীন সংস্থা",
+            description: "জৈব বৈচিত্র্য আইন ধারা ৭ প্রযোজ্য (রাজ্য জৈব বৈচিত্র্য বোর্ডকে পূর্ব নোটিশ প্রদান)।",
+          },
+          {
+            value: "Contains Foreign Equity / FDI / NRI Shareholding",
+            label: "বিদেশী ইক্যুইটি / FDI / NRI শেয়ারহোল্ডিং যুক্ত",
+            description: "জৈব বৈচিত্র্য আইন ধারা ৩(২) প্রযোজ্য (ফর্ম ১ এর মাধ্যমে NBA থেকে বাধ্যতামূলক পূর্বানুমোদন)।",
+          },
+          {
+            value: "Foreign Corporation / Multinational Company (Outside India)",
+            label: "বিদেশী কর্পোরেশন / বহুজাতিক কোম্পানি (ভারতের বাইরে)",
+            description: "ধারা ৩(১) এর পূর্ণ সীমাবদ্ধতা; NBA পূর্বানুমোদন এবং কঠোর ABS চুক্তি প্রয়োজন।",
+          },
+          {
+            value: "Registered AYUSH Practitioner (Vaidya / Traditional Healer)",
+            label: "নিবন্ধিত আয়ুষ চিকিৎসক (কবিরাজ / ঐতিহ্যবাহী নিরাময়কারী)",
+            description: "সংশোধিত জৈব বৈচিত্র্য আইন ২০২৩ এর অধীনে ব্যক্তিগত অনুশীলনের জন্য SBB নোটিশ ও ABS থেকে ছাড়প্রাপ্ত।",
+          },
+          {
+            value: "Farmer Producer Organization (FPO) / Local Village Grower Co-op",
+            label: "কৃষক উৎপাদক সংস্থা (FPO) / স্থানীয় সমবায় সমিতি",
+            description: "সংশোধিত আইন ধারা ৭ অনুসারে স্থানীয় চাষীরা ABS থেকে অব্যাহতিপ্রাপ্ত।",
+          },
+          {
+            value: "Collaborative Research with Indian Government / CSIR / ICMR",
+            label: "ভারত সরকার / CSIR / ICMR এর সাথে যৌথ গবেষণা",
+            description: "কেন্দ্রীয় সরকারের অনুমোদন সাপেক্ষে ধারা ৫ যৌথ গবেষণা ছাড়ের যোগ্য।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "লেবেলিং এবং স্বাস্থ্য সংক্রান্ত দাবি",
+    description: "পণ্যের বিপণন এবং লেবেলে প্রদর্শিত দাবিসমূহ নির্বাচন করুন।",
+    fields: [
+      {
+        name: "healthClaims",
+        label: "উদ্দিষ্ট স্বাস্থ্য দাবি",
+        type: "checkbox",
+        options: [
+          {
+            value: "Boosts Immunity & General Wellness",
+            label: "রোগ প্রতিরোধ ক্ষমতা ও সাধারণ সুস্থতা বৃদ্ধি করে",
+            description: "নিরাপদ দাবি। ASCI কোড ও আয়ুষ নিয়মের সাথে সামঞ্জস্যপূর্ণ।",
+          },
+          {
+            value: "Classical Therapeutic Indication (Jwara, Kasa, Prameha)",
+            label: "শাস্ত্রীয় থেরাপিউটিক ইঙ্গিত (জ্বর, কাস, প্রমেহ)",
+            description: "প্রথম তপশিলের শাস্ত্রীয় গ্রন্থে উল্লেখিত প্রামাণ্য ইঙ্গিত; ফর্ম ২৫D লাইসেন্সিংয়ের জন্য নিরাপদ।",
+          },
+          {
+            value: "Support for Joint Pain / Flexibility",
+            label: "জয়েন্টের ব্যথা উপশম / নমনীয়তা সমর্থন",
+            description: "উপশমকারী সহায়তা দাবি; কোনো স্থায়ী নিরাময়ের দাবি করা যাবে না।",
+          },
+          {
+            value: '"Permanent Cure for Diabetes" (Madhumeha Nirmuulan)',
+            label: '"ডায়াবেটিস স্থায়ী নিরাময়" (মধুমহ নির্মূলন)',
+            description: "ঔষধ ও ম্যাজিক প্রতিকার আইন (DMRCA) ১৯৫৪ এর অধীনে কঠোরভাবে নিষিদ্ধ অপরাধ; কারাদণ্ডের বিধান রয়েছে।",
+          },
+          {
+            value: '"Reversal of Gray Hair" / "Permanent Baldness Cure"',
+            label: '"পাকা চুল কালো করা" / "স্থায়ী চুল পড়ার নিরাময়"',
+            description: "DMRCA তপশিল এবং নিয়ম ১০৬ এর অধীনে বিভ্রান্তিকর দাবি হিসেবে নিষিদ্ধ।",
+          },
+          {
+            value: '"Permanent Cure for Obesity / Hypertension / Heart Disease"',
+            label: '"স্থূলতা / উচ্চ রক্তচাপ / হৃদরোগের স্থায়ী নিরাময়"',
+            description: "ড্রাগস অ্যান্ড ম্যাজিক রেমেডিজ আইন তপশিল (এন্ট্রি ১৮, ২৭, ৪১) এর অধীনে কঠোরভাবে নিষিদ্ধ।",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "লক্ষ্য বৈশ্বিক বাজার",
+    description: "পণ্য বিতরণ এবং বুদ্ধিবৃত্তিক সম্পত্তি সুরক্ষার জন্য লক্ষ্য বাজার নির্বাচন করুন।",
+    fields: [
+      {
+        name: "targetMarkets",
+        label: "লক্ষ্য বাজার এবং লাইসেন্সিং পথ",
+        type: "checkbox",
+        options: [
+          {
+            value: "Domestic India: Classical AYUSH Drug (License on Form 25D)",
+            label: "দেশীয় ভারত: শাস্ত্রীয় আয়ুষ ঔষধ (ফর্ম ২৫D লাইসেন্স)",
+            description: "নিয়ম ১৫৮B(I) অনুসারে শাস্ত্রীয় গ্রন্থ উল্লেখ সহ তপশিল T জিএমপি এর অধীনে উৎপাদন।",
+          },
+          {
+            value: "Domestic India: Patent or Proprietary (P&P) Medicine",
+            label: "দেশীয় ভারত: পেটেন্ট বা মালিকানাধীন (P&P) ঔষধ",
+            description: "নিয়ম ১৫৮B(II) দ্বারা নিয়ন্ত্রিত; প্রকাশিত সাহিত্য বা পাইলট ক্লিনিকাল ডেটা আবশ্যক।",
+          },
+          {
+            value: "Domestic India: Ayurveda Aahar / FSSAI Nutraceutical",
+            label: "দেশীয় ভারত: আয়ুর্বেদ আহার / FSSAI নিউট্রাসিউটিক্যাল",
+            description: "খাদ্য সুরক্ষা ও মানদণ্ড প্রবিধান ২০২২ এর অধীনে নিয়ন্ত্রিত; রোগ নিরাময়ের দাবি করা যাবে না।",
+          },
+          {
+            value: "United States: FDA Dietary Supplement (DSHEA 1994)",
+            label: "মার্কিন যুক্তরাষ্ট্র: ইউএস FDA ডায়েটারি সাপ্লিমেন্ট (DSHEA ১৯৯৪)",
+            description: "21 CFR পার্ট 111 cGMP এবং বাধ্যতামূলক FDA দাবিত্যাগ বিবৃতি প্রয়োজন।",
+          },
+          {
+            value: "United States: MoCRA Topical Cosmetic",
+            label: "মার্কিন যুক্তরাষ্ট্র: MoCRA বাহ্যিক প্রসাধন সামগ্রী",
+            description: "MoCRA ২০২২ এর অধীনে বাধ্যতামূলক FDA সুবিধা নিবন্ধন, পণ্য তালিকা এবং সুরক্ষা যাচাইকরণ।",
+          },
+          {
+            value: "European Union: Traditional Herbal Medicinal Products (THMPD 2004/24/EC)",
+            label: "ইউরোপীয় ইউনিয়ন: ঐতিহ্যবাহী ভেষজ ঔষধ পণ্য (THMPD)",
+            description: "৩০ বছরের ঐতিহ্যবাহী ঔষধ ব্যবহারের নথি আবশ্যক (ইইউতে ১৫ বছর সহ)।",
+          },
+          {
+            value: "European Union: Novel Food Regulation (EU 2015/2283)",
+            label: "ইউরোপীয় ইউনিয়ন: নভেল ফুড রেগুলেশন",
+            description: "মে ১৯৯৭ এর পূর্বে ইইউতে ব্যবহারের ইতিহাস না থাকা উদ্ভিদের জন্য প্রযোজ্য।",
+          },
+          {
+            value: "Filing for Indian Patent (IPO)",
+            label: "ভারতীয় পেটেন্ট (IPO) এর জন্য আবেদন",
+            description: "ধারা ৬ এর অধীনে NBA থেকে ফর্ম III পূর্বানুমোদন আবশ্যক; ধারা ৩(p) TKDL যাচাই সাপেক্ষ।",
+          },
+          {
+            value: "Filing for Global Patents (PCT / International Offices)",
+            label: "গ্লোবাল পেটেন্ট (PCT / আন্তর্জাতিক অফিস) ফাইলিং",
+            description: "ধারা ৬ এর অধীনে বাধ্যতামূলক পূর্ব NBA অনুমোদন; জেনেটিক উৎস প্রকাশের আন্তর্জাতিক চুক্তি সাপেক্ষ।",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export function getLocalizedModules(lang: Language): LocalizedModule[] {
   if (lang === "hi") {
     return HINDI_MODULES;
@@ -1829,6 +2280,9 @@ export function getLocalizedModules(lang: Language): LocalizedModule[] {
   }
   if (lang === "te") {
     return TELUGU_MODULES;
+  }
+  if (lang === "bn") {
+    return BENGALI_MODULES;
   }
 
   // Map English MODULES into LocalizedModule structure
