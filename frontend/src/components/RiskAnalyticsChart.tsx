@@ -132,10 +132,10 @@ export default function RiskAnalyticsChart({ categories }: RiskAnalyticsChartPro
           const height = Math.max(8, (value / max) * 100);
           const colorClass =
             item.riskScore > 75
-              ? "bg-[repeating-linear-gradient(45deg,#ea580c,#ea580c_4px,#c2410c_4px,#c2410c_8px)]"
+              ? "bg-[repeating-linear-gradient(45deg,var(--brand-600),var(--brand-600)_4px,var(--brand-700)_4px,var(--brand-700)_8px)]"
               : item.riskScore > 45
-              ? "bg-[repeating-linear-gradient(90deg,#f97316,#f97316_4px,#ea580c_4px,#ea580c_8px)]"
-              : "bg-gradient-to-t from-orange-400 to-orange-300";
+              ? "bg-[repeating-linear-gradient(90deg,var(--brand-500),var(--brand-500)_4px,var(--brand-600)_4px,var(--brand-600)_8px)]"
+              : "bg-[linear-gradient(to_top,var(--brand-400),var(--brand-300))]";
           return (
             <div
               key={item.id}

@@ -202,7 +202,7 @@ export default function AnalyticsDashboardPage() {
       <div className="flex">
         <Sidebar />
         <div className="flex w-full flex-col gap-8 p-4 sm:p-8 lg:ml-16">
-          <div className="flex flex-col justify-between gap-4 rounded-3xl bg-gradient-to-r from-brand-600 to-brand-800 p-6 text-white shadow-lg border border-black md:flex-row md:items-center">
+          <div className="flex flex-col justify-between gap-4 rounded-3xl bg-gradient-to-r from-brand-600 to-brand-800 p-6 text-white shadow-lg border border-black dark:border-white md:flex-row md:items-center">
             <div>
               <div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-100">
                 {t.dashboard.badge}
@@ -214,7 +214,7 @@ export default function AnalyticsDashboardPage() {
             </div>
             <Link
               href="/assessment"
-              className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-brand-700 hover:bg-brand-50 transition-colors shadow-sm"
+              className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-brand-700 dark:text-black border border-transparent dark:border-black hover:bg-brand-50 transition-colors shadow-sm"
             >
               {t.dashboard.runAssessment} <ArrowUpRight className="h-4 w-4" />
             </Link>

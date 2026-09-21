@@ -16,9 +16,9 @@ export default function RiskPieChart({
 }: RiskPieChartProps) {
   const [hovered, setHovered] = useState<number | null>(null);
   const items = [
-    { name: "High Risk (>75%)", count: highRiskCount, color: "#ea580c", pattern: "url(#pattern-high)" },
-    { name: "Moderate Risk (36-75%)", count: moderateRiskCount, color: "#f97316", pattern: "url(#pattern-mod)" },
-    { name: "Low Risk / Cleared (<=35%)", count: clearedCount, color: "#fb923c", pattern: "url(#pattern-low)" },
+    { name: "High Risk (>75%)", count: highRiskCount, color: "var(--brand-600)", pattern: "url(#pattern-high)" },
+    { name: "Moderate Risk (36-75%)", count: moderateRiskCount, color: "var(--brand-500)", pattern: "url(#pattern-mod)" },
+    { name: "Low Risk / Cleared (<=35%)", count: clearedCount, color: "var(--brand-400)", pattern: "url(#pattern-low)" },
   ];
   const total = items.reduce((sum, item) => sum + item.count, 0);
   const safeTotal = total || 1;
@@ -35,15 +35,15 @@ export default function RiskPieChart({
           <svg viewBox="0 0 42 42" className="h-full w-full -rotate-90">
             <defs>
               <pattern id="pattern-high" width="1.5" height="1.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <rect width="1.5" height="1.5" fill="#ea580c" />
-                <line x1="0" y1="0" x2="0" y2="1.5" stroke="#c2410c" strokeWidth="0.8" />
+                <rect width="1.5" height="1.5" fill="var(--brand-600)" />
+                <line x1="0" y1="0" x2="0" y2="1.5" stroke="var(--brand-700)" strokeWidth="0.8" />
               </pattern>
               <pattern id="pattern-mod" width="1.5" height="1.5" patternUnits="userSpaceOnUse">
-                <rect width="1.5" height="1.5" fill="#f97316" />
-                <circle cx="0.75" cy="0.75" r="0.4" fill="#ea580c" />
+                <rect width="1.5" height="1.5" fill="var(--brand-500)" />
+                <circle cx="0.75" cy="0.75" r="0.4" fill="var(--brand-600)" />
               </pattern>
               <pattern id="pattern-low" width="2" height="2" patternUnits="userSpaceOnUse">
-                <rect x="0" y="0" width="2" height="2" fill="#fb923c" />
+                <rect x="0" y="0" width="2" height="2" fill="var(--brand-400)" />
               </pattern>
             </defs>
             {items.map((item, index) => {

@@ -44,7 +44,7 @@ export default function HomePage() {
       <div className="flex-1 lg:ml-16 w-full flex flex-col items-center px-6 pt-16 pb-24 lg:pt-24">
         {/* Hero Section */}
         <div className="w-full max-w-6xl flex flex-col items-center justify-center text-center animate-in fade-in slide-in-from-bottom-8 duration-500">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-brand-200/60 text-brand-700 dark:text-brand-400 text-sm font-bold mb-8 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-slate-900 transition-all cursor-pointer group">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-brand-200/60 dark:border-white/20 text-brand-700 dark:text-brand-400 text-sm font-bold mb-8 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-slate-900 transition-all cursor-pointer group">
             <span>{t.home.heroBadge}</span>
           </div>
 
@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="w-full max-w-6xl mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both">
           {/* Card 1: Large Span */}
           <div className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all p-8 flex flex-col justify-between min-h-[300px]">
-            <div className="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-bl from-brand-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500"></div>
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-bl from-brand-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500 dark:hidden"></div>
             <div>
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-400 to-brand-accent text-white flex items-center justify-center mb-6 shadow-lg shadow-brand-500/30">
                 <ShieldCheck size={28} />
@@ -106,7 +106,7 @@ export default function HomePage() {
 
           {/* Card 2 */}
           <div className="relative group overflow-hidden rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all p-8 flex flex-col justify-between min-h-[300px]">
-            <div className="absolute -left-20 -bottom-20 w-48 h-48 bg-gradient-to-tr from-amber-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500"></div>
+            <div className="absolute -left-20 -bottom-20 w-48 h-48 bg-gradient-to-tr from-amber-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500 dark:hidden"></div>
             <div>
               <div className="w-14 h-14 rounded-2xl bg-slate-900 text-brand-400 flex items-center justify-center mb-6 shadow-lg">
                 <Scale size={28} />
@@ -122,7 +122,7 @@ export default function HomePage() {
 
           {/* Card 3 */}
           <div className="relative group overflow-hidden rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all p-8 flex flex-col justify-between min-h-[300px]">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-bl from-orange-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-bl from-orange-200 to-transparent rounded-full opacity-40 blur-3xl group-hover:opacity-60 transition-opacity duration-500 dark:hidden"></div>
             <div>
               <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center mb-6 shadow-md">
                 <FileText size={28} />
@@ -138,7 +138,7 @@ export default function HomePage() {
 
           {/* Card 4: Large Span */}
           <div className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all p-8 flex flex-col md:flex-row items-center justify-between min-h-[300px] gap-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-transparent pointer-events-none dark:hidden"></div>
 
             <div className="flex-1 z-10">
               <div className="w-14 h-14 rounded-2xl bg-brand-500/10 backdrop-blur-md text-brand-500 flex items-center justify-center mb-6 border border-brand-500/20">

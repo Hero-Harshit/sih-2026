@@ -6,6 +6,7 @@ import { Globe, ChevronDown, Check } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language } from "@/i18n/translations";
 import NavbarSearch from "./NavbarSearch";
+import ThemeCycler from "./ThemeCycler";
 
 const LANGUAGES: {
   code: Language;
@@ -115,6 +116,9 @@ export default function Header() {
         <div id="navbar-actions" className="flex items-center gap-2.5">
           {/* Inline Search Box with Dropdown */}
           <NavbarSearch />
+
+          {/* Theme Cycler */}
+          <ThemeCycler />
 
           {/* Language Selector Dropdown */}
           <div className="relative" ref={dropdownRef}>
