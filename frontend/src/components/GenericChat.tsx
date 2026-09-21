@@ -76,6 +76,7 @@ export default function GenericChat() {
             !content.startsWith("नमस्ते! मैं आपका एआई कानूनी सहायक") &&
             !content.startsWith("नमस्कार! मी आपला एआई कायदेशीर सहाय्यक") &&
             !content.startsWith("வணக்கம்! நான் உங்கள் AI சட்ட உதவியாளர்") &&
+            !content.startsWith("నమస్కారం! నేను మీ AI చట్టపరమైన సహాయకుడిని") &&
             !content.startsWith("Sorry, I encountered an error") &&
             !content.startsWith("Unable to reach the assistant")
           );

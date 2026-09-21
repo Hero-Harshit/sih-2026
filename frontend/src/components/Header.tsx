@@ -67,6 +67,8 @@ export default function Header() {
                   ? "मराठी"
                   : language === "ta"
                   ? "தமிழ்"
+                  : language === "te"
+                  ? "తెలుగు"
                   : "English"}
               </span>
               <span className="inline sm:hidden uppercase font-mono text-xs font-bold text-brand-600">
@@ -81,7 +83,7 @@ export default function Header() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-52 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-brand-200/60 dark:border-white/10 shadow-xl py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
+              <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-brand-200/60 dark:border-white/10 shadow-xl py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
                 <div className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-brand-100/60 dark:border-white/5">
                   {t.nav.selectLanguage}
                 </div>
@@ -161,7 +163,27 @@ export default function Header() {
                     <Check size={16} className="text-brand-600 dark:text-brand-400" />
                   )}
                 </button>
+
+                <button
+                  onClick={() => handleSelectLanguage("te")}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
+                    language === "te"
+                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
+                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300">
+                      TE
+                    </span>
+                    <span>తెలుగు (Telugu)</span>
+                  </div>
+                  {language === "te" && (
+                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
+                  )}
+                </button>
               </div>
+
             )}
           </div>
         </div>

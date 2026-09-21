@@ -125,6 +125,8 @@ export default function ExpertEscalation() {
                             ? "अधिकृत पोर्टलला भेट द्या"
                             : language === "ta"
                             ? "அதிகாரப்பூர்வ தளத்தைப் பார்வையிடுங்கள்"
+                            : language === "te"
+                            ? "అధికారిక పోర్టల్ సందర్శించండి"
                             : "Visit Official Portal"}
                         </span>
                         <ExternalLink className="w-3.5 h-3.5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -195,6 +197,8 @@ export default function ExpertEscalation() {
                             ? "ईमेल पाठवा"
                             : language === "ta"
                             ? "மின்னஞ்சல் அனுப்புக"
+                            : language === "te"
+                            ? "ఇమెయిల్ చేయండి"
                             : "Email"}
                         </a>
                         <a
@@ -210,6 +214,8 @@ export default function ExpertEscalation() {
                             ? "व्हॉट्सॲप सल्लामसलत"
                             : language === "ta"
                             ? "வாட்ஸ்அப் ஆலோசனை"
+                            : language === "te"
+                            ? "వాట్సాప్ సంప్రదింపులు"
                             : "WhatsApp"}
                         </a>
                       </div>

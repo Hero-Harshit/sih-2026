@@ -1368,6 +1368,455 @@ const TAMIL_MODULES: LocalizedModule[] = [
   },
 ];
 
+const TELUGU_MODULES: LocalizedModule[] = [
+  {
+    id: 1,
+    title: "కూర్పు మరియు క్రియాశీల పదార్థాలు",
+    description: "మీ ఉత్పత్తి యొక్క ముఖ్యమైన క్రియాశీల పదార్థాలు మరియు ఫార్ములేషన్ యొక్క సాంప్రదాయ విజ్ఞాన మూలాన్ని నిర్వచించండి.",
+    fields: [
+      {
+        name: "ingredients",
+        label: "ముఖ్య క్రియాశీల పదార్థాలు (పదార్థాలు)",
+        type: "checkbox",
+        options: [
+          {
+            value: "Ashwagandha (Withania somnifera)",
+            label: "అశ్వగంధ (విథానియా సోమ్నిఫెరా)",
+            description: "సాధారణ అడాప్టోజెన్. ప్రామాణిక ఆయుష్ నిబంధనల ప్రకారం సాధారణంగా సురక్షితం.",
+          },
+          {
+            value: "Tulsi (Ocimum sanctum)",
+            label: "తులసి (ఆసిమమ్ సాంక్టమ్)",
+            description: "పవిత్ర తులసి. విస్తృతంగా సాగు చేయబడుతుంది, తక్కువ నియంత్రణ ప్రమాదం.",
+          },
+          {
+            value: "Red Sanders (Pterocarpus santalinus)",
+            label: "ఎర్ర చందనం (టెరోకార్పస్ శాంటాలినస్)",
+            description: "తీవ్ర ప్రమాదంలో ఉన్న జాతి. CITES మరియు జాతీయ జీవ వైవిధ్య అథారిటీ (NBA) కఠిన నిఘా వర్తిస్తుంది.",
+          },
+          {
+            value: "Jatamansi (Nardostachys jatamansi)",
+            label: "జటామాంసి (నార్డోస్టాచిస్ జటామాంసి)",
+            description: "అంతరించిపోతున్న హిమాలయ మూలిక. కఠినమైన యాక్సెస్ మరియు బెనిఫిట్ షేరింగ్ (ABS) సమ్మతి తప్పనిసరి.",
+          },
+          {
+            value: "Purified Chemical Extract (e.g., Curcumin 95%)",
+            label: "శుద్ధి చేసిన రసాయన సారం (ఉదా. కర్కుమిన్ 95%)",
+            description: "పూర్తి మూలిక కాదు. ఫైటోఫార్మాస్యూటికల్ నిబంధనలు వర్తించవచ్చు.",
+          },
+          {
+            value: "Neem (Azadirachta indica)",
+            label: "వేప (అజాడిరచ్టా ఇండికా)",
+            description: "శాస్త్రీయ యాంటీమైక్రోబియల్ మూలిక. చారిత్రక EPO పేటెంట్ రద్దు పూర్వాపరాలు; TKDL ముందస్తు కళ రక్షణ.",
+          },
+          {
+            value: "Turmeric / Haridra (Curcuma longa)",
+            label: "పసుపు / హరిద్ర (కర్కుమా లోంగా)",
+            description: "గాయాలను నయం చేసే మరియు యాంటీ ఇన్‌ఫ్లమేటరీ లక్షణాలు. CSIR యుఎస్ పేటెంట్ రద్దు నిదర్శనం (TKDL).",
+          },
+          {
+            value: "Kashmiri Saffron (Crocus sativus)",
+            label: "కాశ్మీరీ కుంకుమపువ్వు (క్రోకస్ సటైవస్)",
+            description: "రక్షిత భౌగోళిక సూచిక (GI) కలిగిన విలువైన మసాలా. కఠినమైన ప్రామాణికత మరియు స్వచ్ఛత ప్రమాణాలు.",
+          },
+          {
+            value: "Guggulu (Commiphora mukul)",
+            label: "గుగ్గులు (కమ్మిఫోరా ముకుల్)",
+            description: "నియంత్రిత రెసిన్. ఆయుర్వేద ఫార్మకోపోయియా (API) ప్రకారం ప్రామాణిక గుగ్గుల్‌స్టెరోన్‌లకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Kutki (Picrorhiza kurroa)",
+            label: "కుట్కి (పిక్రోరైజా కుర్రోవా)",
+            description: "CITES అపెండిక్స్ II మరియు జీవ వైవిధ్య చట్టం సెక్షన్ 38 కింద అంతరించిపోతున్న జాతుల జాబితాలో చేర్చబడింది.",
+          },
+          {
+            value: "Sarpgandha (Rauvolfia serpentina)",
+            label: "సర్పగంధ (రౌవోల్ఫియా సర్పెంటినా)",
+            description: "రెసెర్పైన్ కలిగిన మొక్క. షెడ్యూల్ E(1) మరియు సెక్షన్ 38 జీవ వైవిధ్య చట్టం నిషేధిత జాబితాలో ఉంది.",
+          },
+          {
+            value: "Vatsanabha / Indian Aconite (Aconitum ferox)",
+            label: "వత్సనాభ / నాభి (అకోనిటమ్ ఫెరాక్స్)",
+            description: "షెడ్యూల్ E(1) విషపూరిత మూలిక. తప్పనిసరి సాంప్రదాయ శోధన మరియు ఎరుపు హెచ్చరిక లేబుల్ అవసరం.",
+          },
+          {
+            value: "Bhang / Vijaya (Cannabis sativa)",
+            label: "భాంగ్ / విజయ (కన్నాబిస్ సటైవా)",
+            description: "షెడ్యూల్ E(1) మాదకద్రవ్య మొక్క. NDPS చట్టం, రాష్ట్ర ఎక్సైజ్ లైసెన్స్ మరియు ఆయుష్ నోటిఫికేషన్‌లకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Brahmi (Bacopa monnieri)",
+            label: "బ్రాహ్మి / సరస్వతి ఆకు (బాకోపా మోన్నియేరి)",
+            description: "శాస్త్రీయ మేధ్య రసాయనం (జ్ఞాపకశక్తిని పెంచేది). ప్రామాణిక బాకోసైడ్ పరీక్ష మరియు భారీ లోహాల పరిమితులకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Triphala (Amalaki, Haritaki, Bibhitaki)",
+            label: "త్రిఫల (ఉసిరి, కరక్కాయ, తానికాయ)",
+            description: "శాస్త్రీయ పాలీహెర్బల్ మిశ్రమం. పేటెంట్ చట్టం సెక్షన్ 3(p) కింద సాంప్రదాయ విజ్ఞానంగా రక్షించబడింది.",
+          },
+          {
+            value: "Swarna Bhasma (Incinerated Gold Ash)",
+            label: "స్వర్ణ భస్మం (శుద్ధి చేసిన బంగారు భస్మం)",
+            description: "హెర్బో-మెటాలిక్ రసౌషధం. షెడ్యూల్ T పార్ట్ I-F GMP మరియు మలినాల పరిమితులకు లోబడి ఉంటుంది.",
+          },
+        ],
+      },
+      {
+        name: "knowledgeSource",
+        label: "ఫార్ములేషన్ విజ్ఞాన మూలం",
+        type: "radio",
+        options: [
+          {
+            value: "Classical Text (e.g., Charaka Samhita, Sushruta Samhita)",
+            label: "శాస్త్రీయ గ్రంథాలు (ఉదా. చరక సంహిత, సుశ్రుత సంహిత)",
+            description: "రూల్ 158B(I)(A) ప్రకారం కొత్త భద్రత/సమర్థత క్లినికల్ డేటా అవసరాల నుండి మినహాయింపు లభించింది.",
+          },
+          {
+            value: "Proprietary Mix (Patent & Proprietary - P&P)",
+            label: "యాజమాన్య మిశ్రమం (Patent & Proprietary - P&P)",
+            description: "సెక్షన్ 3(h) మరియు రూల్ 158B(II) ప్రకారం ప్రామాణిక పేటెంట్ మరియు యాజమాన్య ఔషధ నిబంధనలు వర్తిస్తాయి.",
+          },
+          {
+            value: "Tribal / Traditional Community Knowledge",
+            label: "గిరిజన / సాంప్రదాయ సమాజ విజ్ఞానం",
+            description: "స్థానిక సమాజాలు మరియు జీవ వైవిధ్య నిర్వహణ కమిటీలతో (BMC) తప్పనిసరి ప్రయోజన భాగస్వామ్య ఒప్పందం.",
+          },
+          {
+            value: "Ayurvedic Pharmacopoeia of India (API) / AFI Standards",
+            label: "భారతీయ ఆయుర్వేద ఫార్మకోపోయియా (API) / AFI ప్రమాణాలు",
+            description: "డ్రగ్స్ & కాస్మెటిక్స్ చట్టం రెండవ షెడ్యూల్ కింద అధికారికంగా గుర్తించబడిన ఫార్మకోపోయిల్ మోనోగ్రాఫ్‌లు.",
+          },
+          {
+            value: "Siddha or Unani Classical Treatises",
+            label: "సిద్ధ లేదా యునాని శాస్త్రీయ గ్రంథాలు",
+            description: "సిద్ధ లేదా యునాని వైద్య విధానాల మొదటి షెడ్యూల్‌లో జాబితా చేయబడిన అధికారిక గ్రంథాలు.",
+          },
+          {
+            value: "Novel In-House R&D / Innovative Formulation",
+            label: "కొత్త ఇన్‌-హౌస్ R&D / వినూత్న ఫార్ములేషన్",
+            description: "పూర్తిగా నవల వృక్షసంబంధ మిశ్రమం; సెక్షన్ 3(p)/3(e) ద్వారా నిషేధించబడకపోతే పేటెంట్‌కు అర్హత.",
+          },
+          {
+            value: "Uncodified Ethnobotanical Field Collections (PBR)",
+            label: "కోడ్ చేయని ఎథ్నోబొటానికల్ సేకరణలు (PBR)",
+            description: "పీపుల్స్ బయోడైవర్సిటీ రిజిస్టర్‌లలో నమోదు చేయబడింది; తప్పనిసరి యాక్సెస్ మరియు బెనిఫిట్ షేరింగ్ (ABS) ఒప్పందం.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "తయారీ మరియు ప్రాసెసింగ్",
+    description: "ఉత్పత్తి తయారీ ప్రాసెసింగ్ పద్ధతులు మరియు తుది భౌతిక రూపాన్ని వివరించండి.",
+    fields: [
+      {
+        name: "processingMethod",
+        label: "ఉత్పత్తి తయారీ ప్రక్రియ",
+        type: "radio",
+        options: [
+          {
+            value: "Raw / Crushed / Water-Boiled (Aqueous)",
+            label: "ముడి / చూర్ణం చేసిన / నీటిలో ఉడకబెట్టిన (జల సారం)",
+            description: "ప్రామాణిక శాస్త్రీయ ఆయుర్వేద తయారీ (కషాయం / క్వాథ ప్రక్రియ).",
+          },
+          {
+            value: "Solvent Extraction (Alcohol, Hexane)",
+            label: "సాల్వెంట్ ఎక్స్‌ట్రాక్షన్ (ఆల్కహాల్, హెక్సేన్)",
+            description: "మిగిలిన ద్రావకం వెల్లడి, TLC ఫింగర్‌ప్రింటింగ్ మరియు భారీ లోహాల పరీక్ష తప్పనిసరి.",
+          },
+          {
+            value: "Advanced Chemical Isolation",
+            label: "అధునాతన రసాయన విభజన (ఐసోలేషన్)",
+            description: "ఫైటోఫార్మాస్యూటికల్‌గా వర్గీకరించబడింది. CDSCO ఆమోదం మరియు క్లినికల్ ట్రయల్స్ అవసరం.",
+          },
+          {
+            value: "Classical Fermentation (Asava & Arishta)",
+            label: "శాస్త్రీయ కిణ్వ ప్రక్రియ (ఆసవ & అరిష్ట)",
+            description: "స్వయంచాలకంగా ఉత్పత్తి అయ్యే ఆల్కహాల్ (<12% v/v); రూల్ 151 ఆల్కహాల్ ఎక్సైజ్ మరియు ఔషధ తయారీల చట్టం కిందకు వస్తుంది.",
+          },
+          {
+            value: "Medicated Ghee / Oil Processing (Sneha Kalpana)",
+            label: "సిద్ధ ఘృతం / తైల నిర్మాణం (స్నేహ కల్పన)",
+            description: "శాస్త్రీయ లిపిడ్ సంగ్రహణ; పెరాక్సైడ్ విలువ మరియు యాసిడ్ విలువ పరీక్షలు అవసరం.",
+          },
+          {
+            value: "Classical Calcinated Ash / Bhasma (Shodhana & Marana)",
+            label: "శాస్త్రీయ భస్మ నిర్మాణం (శోధన & మారణ)",
+            description: "రసశాస్త్ర విష నిర్మూలన; షెడ్యూల్ T నానో కణాలు మరియు భారీ లోహాల భద్రతా సమ్మతి.",
+          },
+          {
+            value: "Supercritical Fluid CO2 Extraction (SCFE)",
+            label: "సూపర్‌క్రిటికల్ ఫ్లూయిడ్ CO2 సంగ్రహణ (SCFE)",
+            description: "హరిత ద్రావకం లేని సంగ్రహణ; పేటెంట్ చట్టం సెక్షన్ 5 కింద ప్రాసెస్ పేటెంట్‌కు అర్హత.",
+          },
+          {
+            value: "Nano-Liposomal / Novel Herbal Drug Delivery (NDDS)",
+            label: "నానో-లిపోసోమల్ / నవల హెర్బల్ డ్రగ్ డెలివరీ (NDDS)",
+            description: "జీవ లభ్యతను పెంచడం; CDSCO కొత్త ఔషధ / ఫైటోఫార్మాస్యూటికల్ నిబంధనలను ఆకర్షిస్తుంది.",
+          },
+        ],
+      },
+      {
+        name: "finalForm",
+        label: "తుది ఉత్పత్తి రూపం",
+        type: "radio",
+        options: [
+          {
+            value: "Oral Solid (Tablets, Capsules, Vati, Gutika)",
+            label: "నోటి ద్వారా ఘనరూపం (మాత్రలు, క్యాప్సూల్స్, వటి, గుళికలు)",
+            description: "అంతర్గత ఔషధం భారీ లోహాల ప్రమాణాలు, కరిగిపోయే గుణం మరియు సూక్ష్మజీవుల పరిమితులకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Oral Liquid (Fermented Asava, Arishta, Syrup)",
+            label: "నోటి ద్వారా ద్రవరూపం (కిణ్వ ప్రక్రియ ఆసవం, అరిష్టం, సిరప్)",
+            description: "నిర్దిష్ట గురుత్వాకర్షణ, ఆల్కహాల్ పరిమితి ధృవీకరణ (<12%) మరియు సూక్ష్మజీవుల పరీక్షకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Oral Powder / Granules (Churna, Kwatha Churna)",
+            label: "నోటి ద్వారా పొడి / రేణువులు (చూర్ణం, క్వాథ చూర్ణం)",
+            description: "API ప్రకారం కణ పరిమాణం మరియు తేమ శాత పరిమితులు.",
+          },
+          {
+            value: "Classical Semi-Solid (Avaleha, Lehyam, Chyawanprash)",
+            label: "శాస్త్రీయ సెమీ-సాలిడ్ (అవలేహం, లేహ్యం, చ్యవన్‌ప్రాశ్)",
+            description: "చక్కెర/తేనె బేస్; మొత్తం ఘనపదార్థాలు, HMF మరియు చక్కెర సహన పరీక్షలు అవసరం.",
+          },
+          {
+            value: "Medicated Oil / Ghee (Taila, Ghrita)",
+            label: "సిద్ధ తైలం / ఘృతం (తైలం, ఘృతం)",
+            description: "నోటి ద్వారా లేదా బాహ్య వినియోగం; అయోడిన్ విలువ మరియు సపోనిఫికేషన్ ప్రమాణాలు.",
+          },
+          {
+            value: "Topical / External Semi-Solid (Cream, Gel, Lepa, Balm)",
+            label: "బాహ్య సెమీ-సాలిడ్ (క్రీమ్, జెల్, లేపనం, బామ్)",
+            description: "షెడ్యూల్ M-II కింద కాస్మెటిక్ లేదా ASU బాహ్య అనువర్తనంగా సాధారణ సమ్మతి.",
+          },
+          {
+            value: "Sterile Drops: Nasal / Ophthalmic (Nasya, Netra Bindu)",
+            label: "స్టెరైల్ చుక్కలు: నాసికా / కంటి (నస్యం, నేత్ర బిందు)",
+            description: "కఠినమైన స్టెరిలిటీ ప్రమాణాలు, కణ పరీక్ష మరియు సంరక్షణకారి వెల్లడి తప్పనిసరి.",
+          },
+          {
+            value: "Ayurveda Aahar / Ready-to-Consume Herbal Food",
+            label: "ఆయుర్వేద ఆహార్ / తినడానికి సిద్ధంగా ఉన్న హెర్బల్ ఆహారం",
+            description: "ఆహార భద్రత మరియు ప్రమాణాల (ఆయుర్వేద ఆహార్) నిబంధనలు, 2022 కింద నియంత్రించబడుతుంది.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "వనరుల మూలం మరియు కంపెనీ యాజమాన్యం",
+    description: "జీవ వనరుల మూలం ఉన్న ప్రాంతం మరియు కంపెనీ యాజమాన్య నిర్మాణాన్ని పేర్కొనండి.",
+    fields: [
+      {
+        name: "sourcingRegion",
+        label: "ప్రధాన వనరుల సేకరణ ప్రాంతం",
+        type: "radio",
+        options: [
+          {
+            value: "Kerala (e.g., Navara Rice, Malabar Pepper)",
+            label: "కేరళ (ఉదా. నవర బియ్యం, మలబార్ మిరియాలు)",
+            description: "భౌగోళిక సూచిక (GI) రక్షణకు అధిక అవకాశం.",
+          },
+          {
+            value: "Himalayan Belt",
+            label: "హిమాలయ ప్రాంతం",
+            description: "ఎత్తైన ప్రాంతాల వృక్షసంపద. రాష్ట్ర అటవీ శాఖ కఠిన పర్యవేక్షణ.",
+          },
+          {
+            value: "Imported from outside India",
+            label: "భారతదేశం వెలుపలి నుండి దిగుమతి చేయబడింది",
+            description: "భారతీయ జీవ వైవిధ్య చట్టం నుండి మినహాయింపు, కానీ దిగుమతి పర్మిట్లకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Western Ghats Biodiversity Hotspot",
+            label: "పశ్చిమ కనుమల జీవ వైవిధ్య కేంద్రం",
+            description: "స్థానిక జాతులు; రాష్ట్ర జీవ వైవిధ్య బోర్డు (SBB) కఠిన పరిశీలన మరియు సెక్షన్ 7 ముందస్తు సమాచారం.",
+          },
+          {
+            value: "Central & Eastern Tribal Belts (Bastar, Chota Nagpur, Odisha)",
+            label: "మధ్య & తూర్పు గిరిజన ప్రాంతాలు (బస్తర్, చోటా నాగ్‌పూర్, ఒడిశా)",
+            description: "గిరిజన విజ్ఞాన సాంద్రత కలిగిన ప్రాంతం; బయోడైవర్సిటీ మేనేజ్‌మెంట్ కమిటీలతో (BMC) సెక్షన్ 41 ABS.",
+          },
+          {
+            value: "Certified Cultivated Farmland / Agro-Forestry",
+            label: "ధృవీకరించబడిన సాగు భూమి / వ్యవసాయ-అటవీ",
+            description: "జీవ వైవిధ్య (సవరణ) చట్టం 2023 కింద కొన్ని ABS నిబంధనల నుండి మినహాయింపు పొందిన సాగు.",
+          },
+          {
+            value: "Normally Traded Commodities (NTC under Section 40)",
+            label: "సాధారణంగా వ్యాపారం చేసే వస్తువులు (సెక్షన్ 40 కింద NTC)",
+            description: "ఉదా. కేవలం వ్యాపార వస్తువుగా ఉన్న పసుపు, అల్లం; వస్తువుల ఎగుమతికి ABS నుండి మినహాయింపు.",
+          },
+        ],
+      },
+      {
+        name: "companyStructure",
+        label: "సంస్థ యాజమాన్య నిర్మాణం",
+        type: "radio",
+        options: [
+          {
+            value: "100% Indian Citizens / Indian-Owned Entity",
+            label: "100% భారతీయ పౌరులు / భారతీయుల యాజమాన్యంలోని సంస్థ",
+            description: "జీవ వైవిధ్య చట్టం సెక్షన్ 7 వర్తిస్తుంది (రాష్ట్ర జీవ వైవిధ్య బోర్డుకు ముందస్తు సమాచారం).",
+          },
+          {
+            value: "Contains Foreign Equity / FDI / NRI Shareholding",
+            label: "విదేశీ ఈక్విటీ / FDI / NRI వాటాలు కలిగినది",
+            description: "జీవ వైవిధ్య చట్టం సెక్షన్ 3(2) వర్తిస్తుంది (ఫారం 1 ద్వారా NBA తప్పనిసరి ముందస్తు అనుమతి).",
+          },
+          {
+            value: "Foreign Corporation / Multinational Company (Outside India)",
+            label: "విదేశీ కార్పొరేషన్ / బహుళజాతి కంపెనీ (భారతదేశం వెలుపల)",
+            description: "సెక్షన్ 3(1) పూర్తి పరిమితులు; NBA ముందస్తు ఆమోదం మరియు కఠినమైన ABS ఒప్పందం అవసరం.",
+          },
+          {
+            value: "Registered AYUSH Practitioner (Vaidya / Traditional Healer)",
+            label: "నమోదిత ఆయుష్ వైద్యుడు (వైద్యుడు / సంప్రదాయ చికిత్సకుడు)",
+            description: "సవరించిన జీవ వైవిధ్య చట్టం 2023 కింద వ్యక్తిగత ప్రాక్టీస్ కోసం SBB నోటీసు మరియు ABS నుండి మినహాయింపు.",
+          },
+          {
+            value: "Farmer Producer Organization (FPO) / Local Village Grower Co-op",
+            label: "రైతు ఉత్పత్తి సంస్థ (FPO) / స్థానిక గ్రామ సహకార సంఘం",
+            description: "సవరించిన చట్టం సెక్షన్ 7 ప్రకారం స్థానిక సాగుదారులు ABS నుండి మినహాయించబడ్డారు.",
+          },
+          {
+            value: "Collaborative Research with Indian Government / CSIR / ICMR",
+            label: "భారత ప్రభుత్వం / CSIR / ICMR తో ఉమ్మడి పరిశోధన",
+            description: "కేంద్ర ప్రభుత్వ ఆమోదానికి లోబడి సెక్షన్ 5 ఉమ్మడి పరిశోధన మినహాయింపుకు అర్హత.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "లేబులింగ్ మరియు ఆరోగ్య క్లెయిమ్‌లు",
+    description: "ఉత్పత్తి మార్కెటింగ్ మరియు లేబుల్‌పై ప్రదర్శించబడే క్లెయిమ్‌లను ఎంచుకోండి.",
+    fields: [
+      {
+        name: "healthClaims",
+        label: "లక్ష్య ఆరోగ్య క్లెయిమ్‌లు",
+        type: "checkbox",
+        options: [
+          {
+            value: "Boosts Immunity & General Wellness",
+            label: "రోగనిరోధక శక్తి మరియు సాధారణ ఆరోగ్యాన్ని పెంచుతుంది",
+            description: "సురక్షితమైన క్లెయిమ్. ASCI కోడ్‌కు అనుగుణంగా ఉంటుంది.",
+          },
+          {
+            value: 'Improves Skin Glow / Radiance ("Varnya")',
+            label: 'చర్మ కాంతి మరియు మెరుపును మెరుగుపరుస్తుంది ("వర్ణ్య")',
+            description: "చర్మ ఆరోగ్యం మరియు బాహ్య ఫార్ములేషన్ల కోసం సురక్షితమైన సౌందర్య క్లెయిమ్.",
+          },
+          {
+            value: "Cures Diabetes / Cancer / Blindness",
+            label: "మధుమేహం / క్యాన్సర్ / అంధత్వాన్ని శాశ్వతంగా నయం చేస్తుంది",
+            description: "ఖచ్చితంగా నిషేధించబడింది. డ్రగ్స్ & మ్యాజిక్ రెమెడీస్ చట్టం (DMR) మరియు షెడ్యూల్ J ఉల్లంఘన.",
+          },
+          {
+            value: "Clinically Proven / CTRI Registered Trial",
+            label: "క్లినికల్‌గా నిరూపించబడింది / CTRI నమోదిత ట్రయల్",
+            description: "CTRI నమోదిత మానవ క్లినికల్ ట్రయల్ డేటా రికార్డులు తప్పనిసరిగా ఉండాలి.",
+          },
+          {
+            value: 'Classical Rejuvenation & Vitality ("Rasayana" / "Balya")',
+            label: 'శాస్త్రీయ పునరుజ్జీవనం మరియు బలం ("రసాయనం" / "బాల్యం")',
+            description: "మొదటి షెడ్యూల్ గ్రంథాల కింద గుర్తించబడిన శాస్త్రీయ చికిత్సా సూచనలు; ట్రయల్ తప్పనిసరి కాదు.",
+          },
+          {
+            value: 'Digestive & Metabolic Health ("Deepana" / "Pachana")',
+            label: 'జీర్ణక్రియ మరియు జీవక్రియ ఆరోగ్యం ("దీపన" / "పాచన")',
+            description: "ఆయుష్ మరియు ఆయుర్వేద ఆహార్ నిబంధనల కింద ఆమోదయోగ్యమైన నిర్మాణం-పనితీరు క్లెయిమ్.",
+          },
+          {
+            value: "Joint Mobility & Pain Relief (Symptomatic Relief)",
+            label: "కీళ్ల కదలిక మరియు నొప్పి నివారణ (లక్షణ ఉపశమనం)",
+            description: "ఆమోదయోగ్యమైన లక్షణ ఉపశమన క్లెయిమ్; ఆర్థరైటిస్‌ను శాశ్వతంగా నయం చేస్తామని క్లెయిమ్ చేయడం DMR చట్టంలో నిషేధం.",
+          },
+          {
+            value: 'Stress Relief, Memory & Sleep Support ("Medhya")',
+            label: 'ఒత్తిడి ఉపశమనం, జ్ఞాపకశక్తి మరియు నిద్ర మద్దతు ("మేధ్య")',
+            description: "మోనోగ్రాఫ్‌ల మద్దతు ఉన్నప్పుడు ASCI మార్గదర్శకాల కింద ఆమోదయోగ్యమైన క్లెయిమ్.",
+          },
+          {
+            value: '"100% Natural / Pure Ayurvedic / Zero Side Effects"',
+            label: '"100% సహజమైనది / స్వచ్ఛమైన ఆయుర్వేదం / ఎటువంటి దుష్ప్రభావాలు లేవు"',
+            description: "ASCI పరిశీలనకు లోబడి ఉంటుంది: ఏదైనా ఆరోగ్య ఉత్పత్తికి 'ఎటువంటి దుష్ప్రభావాలు లేవు' అని క్లెయిమ్ చేయడం ఖచ్చితంగా నిషేధించబడింది.",
+          },
+          {
+            value: '"Permanent Cure for Obesity / Hypertension / Heart Disease"',
+            label: '"ఊబకాయం / రక్తపోటు / గుండె జబ్బులకు శాశ్వత నివారణ"',
+            description: "డ్రగ్స్ & మ్యాజిక్ రెమెడీస్ చట్టం షెడ్యూల్ (ఎంట్రీ 18, 27, 41) కింద ఖచ్చితంగా నిషేధించబడింది.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "లక్ష్య గ్లోబల్ మార్కెట్లు",
+    description: "ఉత్పత్తి పంపిణీ మరియు మేధో సంపత్తి రక్షణ కోసం లక్ష్య మార్కెట్లను ఎంచుకోండి.",
+    fields: [
+      {
+        name: "targetMarkets",
+        label: "లక్ష్య మార్కెట్లు మరియు లైసెన్సులు",
+        type: "checkbox",
+        options: [
+          {
+            value: "Domestic India: Classical AYUSH Drug (License on Form 25D)",
+            label: "దేశీయ భారతదేశం: శాస్త్రీయ ఆయుష్ ఔషధం (ఫారం 25D లైసెన్స్)",
+            description: "రూల్ 158B(I) ప్రకారం శాస్త్రీయ గ్రంథ సూచనతో షెడ్యూల్ T GMP కింద తయారీ.",
+          },
+          {
+            value: "Domestic India: Patent or Proprietary (P&P) Medicine",
+            label: "దేశీయ భారతదేశం: పేటెంట్ లేదా యాజమాన్య (P&P) ఔషధం",
+            description: "రూల్ 158B(II) ద్వారా నియంత్రించబడుతుంది; ప్రచురించబడిన సాహిత్యం లేదా పైలట్ క్లినికల్ డేటా అవసరం.",
+          },
+          {
+            value: "Domestic India: Ayurveda Aahar / FSSAI Nutraceutical",
+            label: "దేశీయ భారతదేశం: ఆయుర్వేద ఆహార్ / FSSAI న్యూట్రాస్యూటికల్",
+            description: "ఆహార భద్రత మరియు ప్రమాణాల నిబంధనలు 2022 కింద నియంత్రించబడుతుంది; వ్యాధిని నయం చేస్తామని క్లెయిమ్ చేయలేరు.",
+          },
+          {
+            value: "United States: FDA Dietary Supplement (DSHEA 1994)",
+            label: "యునైటెడ్ స్టేట్స్: యుఎస్ FDA డైటరీ సప్లిమెంట్ (DSHEA 1994)",
+            description: "21 CFR పార్ట్ 111 cGMP మరియు తప్పనిసరి FDA నిరాకరణ ప్రకటన అవసరం.",
+          },
+          {
+            value: "United States: MoCRA Topical Cosmetic",
+            label: "యునైటెడ్ స్టేట్స్: MoCRA బాహ్య సౌందర్య సాధనం",
+            description: "MoCRA 2022 కింద తప్పనిసరి FDA సదుపాయ నమోదు, ఉత్పత్తి జాబితా మరియు భద్రతా ధృవీకరణ.",
+          },
+          {
+            value: "European Union: Traditional Herbal Medicinal Products (THMPD 2004/24/EC)",
+            label: "యూరోపియన్ యూనియన్: సాంప్రదాయ మూలికా ఔషధ ఉత్పత్తులు (THMPD)",
+            description: "30 సంవత్సరాల సాంప్రదాయ ఔషధ వినియోగ పత్రాలు అవసరం (EU లో 15 సంవత్సరాలతో సహా).",
+          },
+          {
+            value: "European Union: Novel Food Regulation (EU 2015/2283)",
+            label: "యూరోపియన్ యూనియన్: నోవెల్ ఫుడ్ నియంత్రణ",
+            description: "మే 1997 కి ముందు EU లో వినియోగ చరిత్ర లేని వృక్ష జాతుల కోసం అవసరం.",
+          },
+          {
+            value: "Filing for Indian Patent (IPO)",
+            label: "భారతీయ పేటెంట్ (IPO) కోసం దరఖాస్తు",
+            description: "సెక్షన్ 6 కింద NBA నుండి ఫారం III ముందస్తు అనుమతి అవసరం; సెక్షన్ 3(p) TKDL పరిశీలనకు లోబడి ఉంటుంది.",
+          },
+          {
+            value: "Filing for Global Patents (PCT / International Offices)",
+            label: "గ్లోబల్ పేటెంట్లు (PCT / అంతర్జాతీయ కార్యాలయాలు) ఫైలింగ్",
+            description: "సెక్షన్ 6 కింద తప్పనిసరి ముందస్తు NBA ఆమోదం; జన్యు మూల వెల్లడిపై WIPO ఒప్పంద సమ్మతి.",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export function getLocalizedModules(lang: Language): LocalizedModule[] {
   if (lang === "hi") {
     return HINDI_MODULES;
@@ -1377,6 +1826,9 @@ export function getLocalizedModules(lang: Language): LocalizedModule[] {
   }
   if (lang === "ta") {
     return TAMIL_MODULES;
+  }
+  if (lang === "te") {
+    return TELUGU_MODULES;
   }
 
   // Map English MODULES into LocalizedModule structure
@@ -1396,3 +1848,4 @@ export function getLocalizedModules(lang: Language): LocalizedModule[] {
     })),
   }));
 }
+
