@@ -125,6 +125,8 @@ export default function TermsAndConditionsPage() {
               ? "ಕೊನೆಯ ನವೀಕರಣ: ಸೆಪ್ಟೆಂಬರ್ 2026. ಐಪಿ ಶಕ್ತಿ ಸಹಾಯಕ ಬಳಸುವ ಮೂಲಕ, ನೀವು ಈ ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ."
               : language === "sa"
               ? "अन्तिम-अद्यतनम्: सितम्बर २०२६। आई.पी. शक्ति सहायकमनुसृत्य भवन्तः एतान् नियमान् अङ्गीकुर्वन्ति।"
+              : language === "gu"
+              ? "છેલ્લું અપડેટ: સપ્ટેમ્બર 2026. આઈપી શક્તિ સહાયકનો ઉપયોગ કરીને, તમે આ નિયમો અને શરતો સાથે સંમત થાઓ છો."
               : "Last updated: September 2026. By using IP Shakti Sahayak, you agree to these Terms & Conditions."}
           </div>
         </div>

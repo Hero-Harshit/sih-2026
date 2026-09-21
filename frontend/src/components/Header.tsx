@@ -6,6 +6,68 @@ import { Globe, ChevronDown, Check } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language } from "@/i18n/translations";
 
+const LANGUAGES: {
+  code: Language;
+  name: string;
+  badge: string;
+  badgeColor: string;
+}[] = [
+  {
+    code: "en",
+    name: "English",
+    badge: "EN",
+    badgeColor: "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300",
+  },
+  {
+    code: "hi",
+    name: "हिन्दी (Hindi)",
+    badge: "HI",
+    badgeColor: "bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-300",
+  },
+  {
+    code: "mr",
+    name: "मराठी (Marathi)",
+    badge: "MR",
+    badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300",
+  },
+  {
+    code: "ta",
+    name: "தமிழ் (Tamil)",
+    badge: "TA",
+    badgeColor: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300",
+  },
+  {
+    code: "te",
+    name: "తెలుగు (Telugu)",
+    badge: "TE",
+    badgeColor: "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300",
+  },
+  {
+    code: "bn",
+    name: "বাংলা (Bengali)",
+    badge: "BN",
+    badgeColor: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300",
+  },
+  {
+    code: "kn",
+    name: "ಕನ್ನಡ (Kannada)",
+    badge: "KN",
+    badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300",
+  },
+  {
+    code: "sa",
+    name: "संस्कृतम् (Sanskrit)",
+    badge: "SA",
+    badgeColor: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300",
+  },
+  {
+    code: "gu",
+    name: "ગુજરાતી (Gujarati)",
+    badge: "GU",
+    badgeColor: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300",
+  },
+];
+
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -38,15 +100,12 @@ export default function Header() {
                 maskImage: "url(/emblem.svg)",
                 WebkitMaskImage: "url(/emblem.svg)",
                 maskSize: "contain",
-                WebkitMaskSize: "contain",
                 maskRepeat: "no-repeat",
-                WebkitMaskRepeat: "no-repeat",
                 maskPosition: "center",
-                WebkitMaskPosition: "center",
               }}
-            ></div>
+            />
           </div>
-          <span className="font-black text-xl text-brand-600 dark:text-brand-500 tracking-tight">
+          <span className="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-100">
             {t.nav.brandName}
           </span>
         </Link>
@@ -57,9 +116,13 @@ export default function Header() {
             <button
               onClick={() => setDropdownOpen((prev) => !prev)}
               aria-label={t.nav.selectLanguage}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 border border-brand-200/80 dark:border-white/10 text-slate-700 dark:text-slate-200 text-sm font-semibold shadow-xs hover:shadow-sm transition-all active:scale-95"
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-slate-800/90 hover:bg-orange-50/60 dark:hover:bg-slate-800 border ${
+                dropdownOpen
+                  ? "border-orange-400 dark:border-orange-500/70 ring-2 ring-orange-400/25 text-orange-600 dark:text-orange-400 shadow-sm"
+                  : "border-orange-200/80 dark:border-white/10 text-slate-700 dark:text-slate-200 hover:border-orange-300"
+              } text-sm font-semibold shadow-xs hover:shadow-sm transition-all active:scale-95`}
             >
-              <Globe size={16} className="text-brand-600 dark:text-brand-400 shrink-0" />
+              <Globe size={16} className="text-orange-600 dark:text-orange-400 shrink-0" />
               <span className="hidden sm:inline">
                 {language === "hi"
                   ? "हिन्दी"
@@ -75,178 +138,62 @@ export default function Header() {
                   ? "ಕನ್ನಡ"
                   : language === "sa"
                   ? "संस्कृतम्"
+                  : language === "gu"
+                  ? "ગુજરાતી"
                   : "English"}
               </span>
-              <span className="inline sm:hidden uppercase font-mono text-xs font-bold text-brand-600">
+              <span className="inline sm:hidden uppercase font-mono text-xs font-bold text-orange-600">
                 {language}
               </span>
               <ChevronDown
                 size={14}
-                className={`text-slate-400 transition-transform duration-200 ${
-                  dropdownOpen ? "rotate-180" : ""
+                className={`text-orange-500/70 transition-transform duration-200 ${
+                  dropdownOpen ? "rotate-180 text-orange-600" : ""
                 }`}
               />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-brand-200/60 dark:border-white/10 shadow-xl py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
-                <div className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-brand-100/60 dark:border-white/5">
-                  {t.nav.selectLanguage}
+              <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-gradient-to-b from-white via-orange-50/25 to-white dark:from-slate-900 dark:via-orange-950/20 dark:to-slate-900 backdrop-blur-2xl border border-orange-200/90 dark:border-orange-500/30 shadow-xl shadow-orange-500/15 ring-1 ring-orange-500/15 dark:ring-orange-400/20 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
+                <div className="px-3.5 py-2 text-[11px] font-bold uppercase tracking-wider text-orange-600/90 dark:text-orange-400 border-b border-orange-100 dark:border-orange-500/15 flex items-center justify-between bg-orange-50/70 dark:bg-orange-950/40">
+                  <span className="flex items-center gap-1.5">
+                    <Globe size={13} className="text-orange-500 shrink-0" />
+                    {t.nav.selectLanguage}
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-100/90 dark:bg-orange-900/60 text-orange-700 dark:text-orange-300 font-bold border border-orange-200/70 dark:border-orange-700/60">
+                    {LANGUAGES.length}
+                  </span>
                 </div>
-                
-                <button
-                  onClick={() => handleSelectLanguage("en")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "en"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                      EN
-                    </span>
-                    <span>English</span>
-                  </div>
-                  {language === "en" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
 
-                <button
-                  onClick={() => handleSelectLanguage("hi")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "hi"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-300">
-                      HI
-                    </span>
-                    <span>हिन्दी (Hindi)</span>
-                  </div>
-                  {language === "hi" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("mr")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "mr"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300">
-                      MR
-                    </span>
-                    <span>मराठी (Marathi)</span>
-                  </div>
-                  {language === "mr" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("ta")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "ta"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300">
-                      TA
-                    </span>
-                    <span>தமிழ் (Tamil)</span>
-                  </div>
-                  {language === "ta" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("te")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "te"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300">
-                      TE
-                    </span>
-                    <span>తెలుగు (Telugu)</span>
-                  </div>
-                  {language === "te" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("bn")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "bn"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300">
-                      BN
-                    </span>
-                    <span>বাংলা (Bengali)</span>
-                  </div>
-                  {language === "bn" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("kn")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "kn"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300">
-                      KN
-                    </span>
-                    <span>ಕನ್ನಡ (Kannada)</span>
-                  </div>
-                  {language === "kn" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
-
-                <button
-                  onClick={() => handleSelectLanguage("sa")}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium transition-colors ${
-                    language === "sa"
-                      ? "text-brand-600 dark:text-brand-400 bg-brand-50/70 dark:bg-brand-900/20 font-semibold"
-                      : "text-slate-700 dark:text-slate-200 hover:bg-brand-50/40 dark:hover:bg-slate-800/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                      SA
-                    </span>
-                    <span>संस्कृतम् (Sanskrit)</span>
-                  </div>
-                  {language === "sa" && (
-                    <Check size={16} className="text-brand-600 dark:text-brand-400" />
-                  )}
-                </button>
+                <div className="max-h-[168px] overflow-y-auto custom-scrollbar-orange divide-y divide-orange-100/30 dark:divide-white/5 pr-0.5">
+                  {LANGUAGES.map((langItem) => {
+                    const isSelected = language === langItem.code;
+                    return (
+                      <button
+                        key={langItem.code}
+                        onClick={() => handleSelectLanguage(langItem.code)}
+                        className={`w-full h-[42px] flex items-center justify-between px-3.5 text-sm font-medium transition-colors ${
+                          isSelected
+                            ? "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/40 font-semibold"
+                            : "text-slate-700 dark:text-slate-200 hover:bg-orange-50/60 dark:hover:bg-orange-950/20"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span
+                            className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${langItem.badgeColor}`}
+                          >
+                            {langItem.badge}
+                          </span>
+                          <span className="truncate">{langItem.name}</span>
+                        </div>
+                        {isSelected && (
+                          <Check size={16} className="text-orange-600 dark:text-orange-400 shrink-0 ml-2" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-
             )}
           </div>
         </div>

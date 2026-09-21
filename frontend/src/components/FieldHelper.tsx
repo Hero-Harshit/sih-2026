@@ -37,6 +37,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
             ? "ನಿಯಂತ್ರಕ ಎಂಜಿನ್ ಸಂದರ್ಭ"
             : language === "sa"
             ? "नियामक-यन्त्र-प्रसङ्गः"
+            : language === "gu"
+            ? "નિયમનકારી એન્જિન સંદર્ભ"
             : "Regulatory Engine Context"}
         </div>
 
@@ -60,6 +62,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? `ಈ ಕ್ಷೇತ್ರವು "${title}" ಗಾಗಿ ನಿಯಂತ್ರಕ ಮಾರ್ಗವನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ. ಅನುಸರಣಾ ಪ್ರಚೋದಕಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಎಂಜಿನ್ ಇದನ್ನು ವಿಶ್ಲೇಷಿಸುತ್ತದೆ.`
               : language === "sa"
               ? `हे क्षेत्रम् "${title}" कृते नियामक-मार्गं निर्धारयति। अनुपालन-सूचकानाम् अन्वेषणाय यन्त्रम् एतत् विश्लेषयति।`
+              : language === "gu"
+              ? `આ ક્ષેત્ર "${title}" માટે નિયમનકારી માર્ગ નિર્ધારિત કરે છે. એન્જિન અનુપાલન સંકેતો શોધવા માટે આનું વિશ્લેષણ કરે છે.`
               : `This field determines the regulatory pathway for "${title}". The engine analyzes this to detect compliance triggers.`}
           </p>
         </div>
@@ -80,6 +84,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
               ? "ಸಕ್ರಿಯ ಕಾಯ್ದೆಗಳು ಮತ್ತು ನಿಯಮಗಳು"
               : language === "sa"
               ? "सक्रियाः अधिनियमाः नियमाश्च"
+              : language === "gu"
+              ? "સક્રિય કાયદાઓ અને નિયમો"
               : "Active Statutes"}
           </h5>
           <ul className="space-y-3 text-[13px] text-slate-600 dark:text-slate-300 font-medium">
@@ -100,6 +106,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "ಔಷಧಿಗಳು ಮತ್ತು ಸೌಂದರ್ಯವರ್ಧಕಗಳ ಕಾಯ್ದೆ, 1940"
                   : language === "sa"
                   ? "औषध-प्रसाधन-अधिनियमः, १९४०"
+                  : language === "gu"
+                  ? "ડ્રગ્સ એન્ડ કોસ્મેટિક્સ એક્ટ, 1940"
                   : "Drugs & Cosmetics Act, 1940"}
               </span>
             </li>
@@ -120,6 +128,8 @@ export default function FieldHelper({ title }: FieldHelperProps) {
                   ? "ಜೈವಿಕ ವೈವಿಧ್ಯತಾ ಕಾಯ್ದೆ, 2002"
                   : language === "sa"
                   ? "जैव-विविधता-अधिनियमः, २००२"
+                  : language === "gu"
+                  ? "જૈવ વિવિધતા અધિનિયમ, 2002"
                   : "Biological Diversity Act, 2002"}
               </span>
             </li>

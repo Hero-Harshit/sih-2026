@@ -292,6 +292,43 @@ body {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Custom neat and clean orange scrollbar */
+  .custom-scrollbar-orange {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(249, 115, 22, 0.45) transparent;
+  }
+
+  .custom-scrollbar-orange::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .custom-scrollbar-orange::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+  }
+
+  .custom-scrollbar-orange::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.4);
+    border-radius: 9999px;
+    transition: background-color 0.2s ease;
+  }
+
+  .custom-scrollbar-orange::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 88, 12, 0.75);
+  }
+}
+
+.dark .custom-scrollbar-orange {
+  scrollbar-color: rgba(251, 146, 60, 0.45) transparent;
+}
+
+.dark .custom-scrollbar-orange::-webkit-scrollbar-thumb {
+  background: rgba(251, 146, 60, 0.35);
+}
+
+.dark .custom-scrollbar-orange::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 146, 60, 0.7);
 }
 
 /* Premium UI utilities */
