@@ -43,22 +43,51 @@ export default function GenericChat() {
     setIsTyping(true);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-      const response = await fetch(`${apiUrl}/api/chat`, {
+      // Use relative /api/chat so requests route smoothly through the Next.js serverless handler
+      // or to an explicit external production backend without Mixed Content/CORS issues
+      const backendEnvUrl = process.env.NEXT_PUBLIC_API_URL;
+      const endpoint =
+        backendEnvUrl &&
+        !backendEnvUrl.includes("localhost") &&
+        !backendEnvUrl.includes("127.0.0.1")
+          ? `${backendEnvUrl}/api/chat`
+          : "/api/chat";
+
+      // Filter out greetings and previous error messages before sending history
+      const historyToSend = [...messages, newUserMsg]
+        .filter((msg) => {
+          const content = msg.content.trim();
+          return (
+            content.length > 0 &&
+            !content.startsWith("Hello! I am your AI Legal Assistant") &&
+            !content.startsWith("Sorry, I encountered an error") &&
+            !content.startsWith("Unable to reach the assistant")
+          );
+        })
+        .map((msg) => ({
+          role: msg.role,
+          content: msg.content,
+        }));
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          messages: [...messages, newUserMsg].map((msg) => ({
-            role: msg.role,
-            content: msg.content,
-          })),
+          messages: historyToSend,
         }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch response");
+        let errorDetail = "";
+        try {
+          const errorJson = await response.json();
+          errorDetail = errorJson.detail || "";
+        } catch {
+          // JSON parsing failed
+        }
+        throw new Error(errorDetail || `Request failed with status ${response.status}`);
       }
 
       const data = await response.json();
@@ -70,14 +99,20 @@ export default function GenericChat() {
       };
 
       setMessages((prev) => [...prev, newAssistantMsg]);
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("Error communicating with chat API:", error);
+      const err = error as Error;
+      const userFacingError =
+        err?.message && !err.message.includes("Failed to fetch")
+          ? `Sorry, I encountered an issue: ${err.message}`
+          : "Unable to reach the AI Legal Assistant. Please ensure GEMINI_API_KEY is configured in your deployment settings.";
+
       setMessages((prev) => [
         ...prev,
         {
           id: (Date.now() + 1).toString(),
           role: "assistant",
-          content: "Sorry, I encountered an error. Please try again later.",
+          content: userFacingError,
         },
       ]);
     } finally {
