@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState, useCallback, useRef, useEffect } from "react";
+import React, { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import {
   ArrowLeft,
   ChevronRight,
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
-import { MODULES } from "../data/modules";
 import FieldHelper from "./FieldHelper";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { getLocalizedModules } from "../data/modulesLocalized";
 
 interface LegalIntakeFormProps {
   onComplete: (data: Record<string, string | string[]>) => void;
@@ -18,6 +19,7 @@ const ActionCard = React.memo(
   ({
     optionLabel,
     optionDescription,
+    optionValue,
     isSelected,
     type,
     name,
@@ -26,6 +28,7 @@ const ActionCard = React.memo(
   }: {
     optionLabel: string;
     optionDescription: string;
+    optionValue: string;
     isSelected: boolean;
     type: string;
     name: string;
@@ -48,13 +51,13 @@ const ActionCard = React.memo(
         <input
           type={type}
           name={name}
-          value={optionLabel}
+          value={optionValue}
           checked={isSelected}
           onChange={(e) => {
             if (type === "radio") {
-              onRadioChange(name, optionLabel);
+              onRadioChange(name, optionValue);
             } else {
-              onCheckboxChange(name, optionLabel, e.target.checked);
+              onCheckboxChange(name, optionValue, e.target.checked);
             }
           }}
           className="sr-only"
@@ -99,14 +102,17 @@ const ActionCard = React.memo(
 ActionCard.displayName = "ActionCard";
 
 export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
+  const { language, t } = useLanguage();
+  const localizedModules = useMemo(() => getLocalizedModules(language), [language]);
+
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<Record<string, string | string[]>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
 
-  const currentModule = MODULES[currentStep];
-  const isLastStep = currentStep === MODULES.length - 1;
-  const progress = ((currentStep + 1) / MODULES.length) * 100;
+  const currentModule = localizedModules[currentStep] || localizedModules[0];
+  const isLastStep = currentStep === localizedModules.length - 1;
+  const progress = ((currentStep + 1) / localizedModules.length) * 100;
 
   const scrollToTop = useCallback(() => {
     if (topRef.current) {
@@ -172,7 +178,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
               <Sparkles size={16} className="text-white" />
             </div>
             <span className="font-bold text-sm tracking-widest uppercase text-slate-500 dark:text-slate-400">
-              Phase {currentModule.id} of {MODULES.length}
+              {t.assessment.step} {currentModule.id} / {localizedModules.length}
             </span>
           </div>
           <span className="font-bold text-brand-600 dark:text-brand-400 text-sm">
@@ -213,14 +219,15 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
                 {field.options.map((optionObj) => {
                   const isSelected =
                     field.type === "radio"
-                      ? formData[field.name] === optionObj.label
-                      : (formData[field.name] || []).includes(optionObj.label);
+                      ? formData[field.name] === optionObj.value
+                      : (formData[field.name] || []).includes(optionObj.value);
 
                   return (
                     <ActionCard
-                      key={optionObj.label}
+                      key={optionObj.value}
                       optionLabel={optionObj.label}
                       optionDescription={optionObj.description}
+                      optionValue={optionObj.value}
                       isSelected={isSelected}
                       type={field.type}
                       name={field.name}
@@ -242,7 +249,7 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
           disabled={currentStep === 0 || isSubmitting}
           className="flex items-center gap-2 px-6 py-3 text-sm font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white disabled:opacity-30 disabled:hover:text-slate-500 transition-all uppercase tracking-wider"
         >
-          <ArrowLeft size={18} strokeWidth={2.5} /> Back
+          <ArrowLeft size={18} strokeWidth={2.5} /> {t.assessment.back}
         </button>
 
         <button
@@ -251,14 +258,14 @@ export default function LegalIntakeForm({ onComplete }: LegalIntakeFormProps) {
           className="flex items-center gap-3 px-10 py-4 rounded-full text-sm font-extrabold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:scale-105 hover:shadow-xl hover:shadow-slate-900/20 dark:hover:shadow-white/20 transition-all uppercase tracking-wider disabled:opacity-70 disabled:hover:scale-100"
         >
           {isSubmitting ? (
-            <>Processing...</>
+            <>{t.common.loading}</>
           ) : isLastStep ? (
             <>
-              Analyze Profile <CheckCircle2 size={20} strokeWidth={3} />
+              {t.assessment.generateReport} <CheckCircle2 size={20} strokeWidth={3} />
             </>
           ) : (
             <>
-              Continue <ChevronRight size={20} strokeWidth={3} />
+              {t.assessment.continue} <ChevronRight size={20} strokeWidth={3} />
             </>
           )}
         </button>

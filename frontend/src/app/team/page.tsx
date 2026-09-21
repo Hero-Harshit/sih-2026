@@ -1,7 +1,12 @@
+"use client";
+
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function TeamCodeveda() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen pb-10 flex flex-col bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -15,11 +20,10 @@ export default function TeamCodeveda() {
             {/* Blank as of now for Future Developments */}
             <div className="flex flex-col items-center justify-center h-[60vh] text-center formal-panel rounded-2xl p-10 animate-in fade-in slide-in-from-bottom-4 duration-300">
               <h2 className="text-3xl font-bold text-foreground mb-4 bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-accent">
-                Team Codeveda
+                {t.team.title}
               </h2>
               <p className="text-muted-foreground max-w-md">
-                This dedicated team page is currently empty but we will develop
-                it in the future.
+                {t.team.desc}
               </p>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import {
@@ -18,117 +20,23 @@ import {
   Leaf,
   Library,
 } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function AboutPage() {
-  const missionPillars = [
-    {
-      title: "Understand",
-      desc: "Help users understand their product, formulation, and IP-related situation.",
-      icon: Lightbulb,
-    },
-    {
-      title: "Guide",
-      desc: "Identify the relevant intellectual-property, regulatory, or ABS area.",
-      icon: Map,
-    },
-    {
-      title: "Verify",
-      desc: "Provide answers supported by authoritative sources and citations.",
-      icon: CheckCircle2,
-    },
-    {
-      title: "Empower",
-      desc: "Give users enough clarity to take their next step or approach the right professional.",
-      icon: Shield,
-    },
-  ];
+  const { t } = useLanguage();
 
-  const differentiators = [
-    {
-      title: "AI That Searches Before It Answers",
-      icon: Search,
-      content:
-        "Most chatbots just guess based on past training. IP Shakti Sahayak works differently using Retrieval-Augmented Generation (RAG). Before answering, she actually searches through our curated knowledge base of official documents, ensuring every response is grounded in facts.",
-    },
-    {
-      title: "Built Specifically for Ayurveda",
-      icon: BookOpen,
-      content:
-        "IP Shakti Sahayak isn't a generic legal assistant. She was built specifically to tackle the unique challenges of the Ayurveda ecosystem, covering niche areas like Traditional Knowledge, Biodiversity, and Access and Benefit Sharing (ABS).",
-    },
-    {
-      title: "Product Classification Comes First",
-      icon: Layers,
-      content:
-        "Rules change completely depending on whether your product is a classical medicine, a new drug, or a nutraceutical. That's why IP Shakti Sahayak asks a few quick questions to figure out exactly what you're building before giving advice.",
-    },
-    {
-      title: "Clear Separation of Jurisdictions",
-      icon: Globe,
-      content:
-        "What works in India might not work abroad. Our system clearly separates Indian laws from international frameworks like TRIPS or WIPO, so you never get confused by mixed-up requirements.",
-    },
-    {
-      title: "ABS & Biodiversity Guidance",
-      icon: Leaf,
-      content:
-        "Working with plants and traditional knowledge often comes with extra responsibilities under the Access and Benefit Sharing (ABS) guidelines. IP Shakti Sahayak helps you figure out if these rules apply to you.",
-    },
-    {
-      title: "Traditional Knowledge & Prior Art",
-      icon: Library,
-      content:
-        "Telling the difference between a genuinely new invention and existing traditional wisdom can be tricky. IP Shakti Sahayak points you toward relevant traditional knowledge databases (like the TKDL) to help you see if your idea is truly novel.",
-    },
-    {
-      title: "Multilingual by Design",
-      icon: MessageSquare,
-      content:
-        "Legal jargon is hard enough in English. You should be able to ask questions and get answers in the language you're most comfortable with. We're constantly working to make the system as inclusive as possible.",
-    },
-    {
-      title: "Traceable Answers",
-      icon: FileText,
-      content:
-        "Trust is everything when it comes to regulations. We don't expect you to take our AI's word for it. Every answer includes the context, the exact source, and a citation so you can verify it yourself.",
-    },
-    {
-      title: "Human Escalation",
-      icon: Users,
-      content:
-        "AI isn't perfect, and we know that. When a question is just too complex or highly sensitive, IP Shakti Sahayak won't guess. She'll respectfully step back and connect you with human IP facilitators who can help.",
-    },
-  ];
+  const pillarIcons = [Lightbulb, Map, CheckCircle2, Shield];
 
-  const steps = [
-    {
-      title: "Tell us what you're working on",
-      desc: "Just describe your Ayurveda product, formulation, or regulatory question in your own words.",
-    },
-    {
-      title: "Understand & Classify",
-      desc: "IP Shakti Sahayak will ask a couple of quick questions to understand the exact context of your product.",
-    },
-    {
-      title: "Identify the Relevant Area",
-      desc: "The system figures out if your concern relates to Patents, Trademarks, Drug Regulations, ABS, or something else entirely.",
-    },
-    {
-      title: "Retrieve Trusted Information",
-      desc: "Our RAG engine scans through curated laws, treaties, and official records to find the most relevant rules.",
-    },
-    {
-      title: "Generate a Simple Answer",
-      desc: "IP Shakti Sahayak breaks down the complex legal information into simple, understandable advice.",
-    },
-    {
-      title: "Show Sources & Confidence",
-      desc: "You get a clear answer along with direct citations to the official sources, plus a confidence score.",
-    },
-    {
-      title: "Help With the Next Step",
-      desc: "If things get too complicated, we'll guide you toward a human expert to take things forward.",
-    },
+  const differentiatorIcons = [
+    Search,
+    BookOpen,
+    Layers,
+    Globe,
+    Leaf,
+    Library,
+    MessageSquare,
+    FileText,
+    Users,
   ];
 
   return (
@@ -148,11 +56,10 @@ export default function AboutPage() {
               <Info size={36} />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-brand-accent mb-6 tracking-tight drop-shadow-sm leading-tight pb-2">
-              About IP Shakti Sahayak
+              {t.about.title}
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed font-medium">
-              Making Ayurveda IP and regulatory guidance simple, accessible, and
-              trustworthy.
+              {t.about.subtitle}
             </p>
           </div>
 
@@ -161,75 +68,32 @@ export default function AboutPage() {
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               <div className="animate-in slide-in-from-left-4 fade-in duration-500">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Our Story
+                  {t.about.storyTitle}
                 </h2>
                 <h3 className="text-xl font-semibold text-brand-600 dark:text-brand-400 mb-4">
-                  Making the Complex World of Ayurveda IPR Easier to Understand
+                  {t.about.storySubtitle}
                 </h3>
                 <div className="space-y-4 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  <p>
-                    Ayurveda is so much more than a traditional system of
-                    medicine. It&apos;s centuries of knowledge, healing
-                    practices, and community-held wisdom passed down through
-                    generations. Today, passionate innovators, practitioners,
-                    and startups are bringing this ancient wisdom into the
-                    modern world.
-                  </p>
-                  <p>
-                    But protecting that knowledge and navigating the regulations
-                    around it can be incredibly frustrating. The rules for
-                    patents, traditional knowledge, biodiversity, and drug
-                    compliance are scattered across dozens of different laws and
-                    government portals.
-                  </p>
-                  <p>
-                    If you don&apos;t have a legal background, figuring out what
-                    rules apply to you can feel overwhelming. That&apos;s
-                    exactly why we built IP Shakti Sahayak.
-                  </p>
-                  <p>
-                    IP Shakti Sahayak is a multilingual AI assistant designed specifically
-                    for the Ayurveda ecosystem. We aren&apos;t trying to replace
-                    your lawyers or regulatory experts. We just want to make
-                    taking that crucial first step easier, clearer, and a lot
-                    less intimidating.
-                  </p>
+                  {t.about.storyParagraphs.map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
                 </div>
               </div>
 
               <div className="animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "100ms" }}>
                 <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Why We Built IP Shakti Sahayak
+                  {t.about.whyBuiltTitle}
                 </h2>
                 <div className="formal-panel rounded-2xl p-8 relative overflow-hidden bg-brand-50/50 dark:bg-zinc-900/50">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-3xl -mr-10 -mt-10 z-0"></div>
                   <div className="relative z-10 space-y-4 text-slate-500 dark:text-slate-400 leading-relaxed">
-                    <p>
-                      Imagine you&apos;re a small Ayurveda startup that just
-                      developed an amazing new herbal product. You&apos;re
-                      probably asking yourself:
-                    </p>
+                    <p>{t.about.whyBuiltIntro}</p>
                     <ul className="list-disc pl-6 space-y-2 text-foreground font-medium">
-                      <li>&quot;Can I actually patent this?&quot;</li>
-                      <li>
-                        &quot;Is this already considered traditional
-                        knowledge?&quot;
-                      </li>
-                      <li>
-                        &quot;Do I need to worry about biodiversity
-                        compliance?&quot;
-                      </li>
-                      <li>
-                        &quot;Is my product legally a medicine, a food, or a
-                        cosmetic?&quot;
-                      </li>
+                      {t.about.whyBuiltQuestions.map((q, idx) => (
+                        <li key={idx}>{q}</li>
+                      ))}
                     </ul>
-                    <p>
-                      Normally, finding answers to these questions means hiring
-                      expensive consultants or digging through complex legal
-                      texts. IP Shakti Sahayak brings all of this into one simple, guided
-                      conversation.
-                    </p>
+                    <p>{t.about.whyBuiltConclusion}</p>
                   </div>
                 </div>
               </div>
@@ -244,24 +108,16 @@ export default function AboutPage() {
                     <Eye size={28} />
                   </div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">
-                    Our Vision
+                    {t.about.visionTitle}
                   </h2>
                   <p className="text-lg font-medium text-brand-600 dark:text-brand-400 mb-4">
-                    A future where Ayurveda innovators can protect their
-                    knowledge with confidence.
+                    {t.about.visionSubtitle}
                   </p>
-                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                    We believe that understanding intellectual property and
-                    regulations should not be limited to people who have access
-                    to expensive legal or consultancy services.
-                  </p>
-                  <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Whether someone is an Ayurvedic practitioner, a researcher,
-                    a student, a farmer, a startup founder, an MSME, or an
-                    Ayurveda-based innovator, they should be able to understand
-                    the basics of protecting and responsibly commercializing
-                    their work.
-                  </p>
+                  {t.about.visionParagraphs.map((p, idx) => (
+                    <p key={idx} className="text-slate-500 dark:text-slate-400 leading-relaxed mb-4 last:mb-0">
+                      {p}
+                    </p>
+                  ))}
                 </div>
 
                 {/* Mission Card */}
@@ -270,37 +126,36 @@ export default function AboutPage() {
                     <Target size={28} />
                   </div>
                   <h2 className="text-3xl font-bold text-foreground mb-4">
-                    Our Mission
+                    {t.about.missionTitle}
                   </h2>
                   <p className="text-lg font-medium text-brand-600 dark:text-brand-400 mb-6">
-                    Turning complex legal and regulatory information into clear,
-                    useful guidance.
+                    {t.about.missionSubtitle}
                   </p>
                   <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
-                    Our mission is to use Artificial Intelligence,
-                    Retrieval-Augmented Generation (RAG), multilingual
-                    technologies, and trusted knowledge sources to help the
-                    Ayurveda community navigate IPR and regulatory requirements.
+                    {t.about.missionIntro}
                   </p>
 
                   {/* Mission 4 Pillars */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {missionPillars.map((pillar, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-brand-50/50 dark:bg-zinc-900/50 rounded-xl p-4 border border-brand-500/10"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <pillar.icon size={18} className="text-brand-500" />
-                          <h4 className="font-bold text-foreground">
-                            {idx + 1}. {pillar.title}
-                          </h4>
+                    {t.about.pillars.map((pillar, idx) => {
+                      const Icon = pillarIcons[idx] || Lightbulb;
+                      return (
+                        <div
+                          key={idx}
+                          className="bg-brand-50/50 dark:bg-zinc-900/50 rounded-xl p-4 border border-brand-500/10"
+                        >
+                          <div className="flex items-center gap-3 mb-2">
+                            <Icon size={18} className="text-brand-500" />
+                            <h4 className="font-bold text-foreground">
+                              {idx + 1}. {pillar.title}
+                            </h4>
+                          </div>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            {pillar.desc}
+                          </p>
                         </div>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
-                          {pillar.desc}
-                        </p>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -310,14 +165,14 @@ export default function AboutPage() {
             <section className="animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "300ms" }}>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">
-                  What Makes IP Shakti Sahayak Different?
+                  {t.about.differentiatorsTitle}
                 </h2>
                 <div className="h-1 w-24 bg-gradient-to-r from-brand-300 to-transparent rounded-full mx-auto opacity-50"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {differentiators.map((diff, index) => {
-                  const Icon = diff.icon;
+                {t.about.differentiators.map((diff, index) => {
+                  const Icon = differentiatorIcons[index] || Search;
                   return (
                     <div
                       key={index}
@@ -345,10 +200,10 @@ export default function AboutPage() {
             <section className="animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "400ms" }}>
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-foreground mb-2">
-                  Our Smart Approach
+                  {t.about.howItWorksTitle}
                 </h2>
                 <p className="text-brand-600 dark:text-brand-400 font-medium">
-                  How IP Shakti Sahayak Works
+                  {t.about.howItWorksSubtitle}
                 </p>
               </div>
 
@@ -357,7 +212,7 @@ export default function AboutPage() {
                 <div className="absolute left-8 lg:left-1/2 top-4 bottom-4 w-0.5 bg-brand-500/20 -translate-x-1/2 rounded-full hidden sm:block"></div>
 
                 <div className="space-y-12 relative">
-                  {steps.map((step, index) => (
+                  {t.about.steps.map((step, index) => (
                     <div
                       key={index}
                       className={`relative flex flex-col sm:flex-row items-start ${index % 2 === 0 ? "lg:flex-row-reverse" : ""} gap-6 lg:gap-16 group`}

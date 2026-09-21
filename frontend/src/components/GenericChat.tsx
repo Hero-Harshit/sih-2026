@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Send, Loader2, Bot } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface Message {
   id: string;
@@ -11,17 +12,34 @@ interface Message {
 }
 
 export default function GenericChat() {
+  const { t } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "0",
       role: "assistant",
-      content: "Hello! I am your AI Legal Assistant. How can I help you today?",
+      content: t.chat.initialGreeting,
     },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+
+  // Update initial greeting if language changes and no user messages exist yet
+  useEffect(() => {
+    setMessages((prev) => {
+      if (prev.length <= 1 && prev[0]?.id === "0") {
+        return [
+          {
+            id: "0",
+            role: "assistant",
+            content: t.chat.initialGreeting,
+          },
+        ];
+      }
+      return prev;
+    });
+  }, [t.chat.initialGreeting]);
 
   useEffect(() => {
     if (messagesContainerRef.current) {
@@ -55,6 +73,7 @@ export default function GenericChat() {
           return (
             content.length > 0 &&
             !content.startsWith("Hello! I am your AI Legal Assistant") &&
+            !content.startsWith("नमस्ते! मैं आपका एआई कानूनी सहायक") &&
             !content.startsWith("Sorry, I encountered an error") &&
             !content.startsWith("Unable to reach the assistant")
           );
@@ -100,7 +119,7 @@ export default function GenericChat() {
       const userFacingError =
         err?.message && !err.message.includes("Failed to fetch")
           ? `Sorry, I encountered an issue: ${err.message}`
-          : "Unable to reach the AI Legal Assistant. Please ensure GEMINI_API_KEY is configured in your deployment settings.";
+          : t.chat.errorMessage;
 
       setMessages((prev) => [
         ...prev,
@@ -118,9 +137,9 @@ export default function GenericChat() {
   return (
     <div className="w-full flex-1 flex flex-col min-h-0 formal-panel">
       {/* Header */}
-      <div className="bg-brand-50/50 px-4 py-2 border-b border-brand-100 flex items-center justify-center gap-2 text-xs text-brand-700 font-medium">
+      <div className="bg-brand-50/50 px-4 py-2 border-b border-brand-100 flex items-center justify-center gap-2 text-xs text-brand-700 dark:text-brand-400 font-medium">
         <Bot size={14} />
-        AI Legal Assistant
+        {t.chat.header}
       </div>
 
       {/* Messages Area */}
@@ -181,7 +200,7 @@ export default function GenericChat() {
             <div className="max-w-[80%] p-3 px-5 rounded-xl bg-white dark:bg-slate-900 border border-brand-100 text-brand-600 shadow-sm flex items-center gap-3">
               <Loader2 className="animate-spin" size={16} />
               <span className="text-sm font-semibold animate-pulse">
-                Thinking...
+                {t.chat.thinking}
               </span>
             </div>
           </div>
@@ -196,7 +215,7 @@ export default function GenericChat() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Type your message here..."
+            placeholder={t.chat.inputPlaceholder}
             className="w-full formal-input rounded-xl py-4 pl-5 pr-14 text-slate-900 focus:outline-none shadow-inner bg-white/50"
             disabled={isTyping}
           />

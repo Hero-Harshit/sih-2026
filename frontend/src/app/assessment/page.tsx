@@ -6,8 +6,10 @@ import Sidebar from "@/components/Sidebar";
 import LegalIntakeForm from "@/components/LegalIntakeForm";
 import ComplianceReport, { ComplianceData } from "@/components/ComplianceReport";
 import { Loader2, Sparkles } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function AssessmentPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(false);
   const [reportData, setReportData] = useState<ComplianceData | null>(null);
@@ -62,10 +64,10 @@ export default function AssessmentPage() {
                   </div>
                 </div>
                 <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
-                  Analyzing Profile
+                  {t.assessment.analyzingTitle}
                 </h2>
                 <p className="text-slate-500 font-medium max-w-md text-center text-lg">
-                  Running semantic similarity search across global regulatory frameworks...
+                  {t.assessment.analyzingDesc}
                 </p>
               </div>
             ) : reportData ? (
@@ -76,16 +78,16 @@ export default function AssessmentPage() {
                   <Sparkles className="text-rose-500" size={32} />
                 </div>
                 <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
-                  Assessment Failed
+                  {t.assessment.failedTitle}
                 </h2>
                 <p className="text-slate-500 font-medium mb-8">
-                  There was an issue processing your request.
+                  {t.assessment.failedDesc}
                 </p>
                 <button
                   onClick={handleRestart}
                   className="px-8 py-3 rounded-full font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:scale-105 transition-all shadow-lg"
                 >
-                  Try Again
+                  {t.common.tryAgain}
                 </button>
               </div>
             )}

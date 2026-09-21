@@ -2,35 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserPlus, MessageSquare, Info, Shield, FileText } from "lucide-react";
+import { Home, UserPlus, MessageSquare, Info, Shield, FileText } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const links = [
     {
-      name: "Home",
+      id: "home",
+      name: t.nav.home,
       href: "/",
-      icon: (
-        <svg
-          className="shrink-0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-      ),
+      icon: <Home size={22} className="shrink-0" />,
     },
     {
-      name: "Assessment",
+      id: "assessment",
+      name: t.nav.assessment,
       href: "/assessment",
       icon: (
         <svg
@@ -53,7 +41,8 @@ export default function Sidebar() {
       ),
     },
     {
-      name: "Legal Corpus",
+      id: "corpus",
+      name: t.nav.legalCorpus,
       href: "/corpus",
       icon: (
         <svg
@@ -75,12 +64,14 @@ export default function Sidebar() {
       ),
     },
     {
-      name: "Expert Escalation",
+      id: "expert",
+      name: t.nav.expertEscalation,
       href: "/expert-escalation",
       icon: <UserPlus size={22} className="shrink-0" />,
     },
     {
-      name: "AI Assistant",
+      id: "assistant",
+      name: t.nav.aiAssistant,
       href: "/ai-assistant",
       icon: <MessageSquare size={22} className="shrink-0" />,
     },
@@ -88,17 +79,20 @@ export default function Sidebar() {
 
   const bottomLinks = [
     {
-      name: "About Us",
+      id: "about",
+      name: t.nav.aboutUs,
       href: "/about",
       icon: <Info size={20} className="shrink-0" />,
     },
     {
-      name: "Privacy Policy",
+      id: "privacy",
+      name: t.nav.privacyPolicy,
       href: "/privacy",
       icon: <Shield size={20} className="shrink-0" />,
     },
     {
-      name: "Terms & Conditions",
+      id: "terms",
+      name: t.nav.termsAndConditions,
       href: "/terms",
       icon: <FileText size={20} className="shrink-0" />,
     },
@@ -112,7 +106,7 @@ export default function Sidebar() {
           const isActive = pathname === link.href;
           return (
             <Link
-              key={link.name}
+              key={link.id}
               href={link.href}
               className={`w-full flex items-center h-12 rounded-xl active:scale-95 transition-all relative overflow-hidden group/btn ${
                 isActive
@@ -138,7 +132,7 @@ export default function Sidebar() {
           const isActive = pathname === link.href;
           return (
             <Link
-              key={link.name}
+              key={link.id}
               href={link.href}
               className={`w-full flex items-center h-10 rounded-xl active:scale-95 transition-all relative overflow-hidden group/btn ${
                 isActive
@@ -165,10 +159,10 @@ export default function Sidebar() {
                 ? "text-brand-600 bg-brand-500/10 border-brand-500/30 shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] dark:text-brand-400"
                 : "text-slate-400 dark:text-slate-500 border-brand-200/50 dark:border-white/10 bg-transparent"
             }`}
-            title="Team Codeveda"
+            title={t.nav.teamCodeveda}
           >
             <span className="font-bold text-[11px] tracking-wide whitespace-nowrap">
-              Team Codeveda
+              {t.nav.teamCodeveda}
             </span>
           </div>
         </div>

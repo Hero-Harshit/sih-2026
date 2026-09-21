@@ -5,40 +5,38 @@ import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
 import { Settings, Check, Palette } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();
+  const { t } = useLanguage();
 
   const themes = [
     {
       id: "saffron",
-      name: "Kesari (Hindutva)",
-      description:
-        "Designed to help you achieve absolute detachment from worldly desires, except for the desire to have a really vibrant & paavan (scared) user interface Filled with Bhagwaness (orange). Jai Shree Ram.",
+      name: t.settings.themes.saffron.name,
+      description: t.settings.themes.saffron.desc,
       colors: ["bg-orange-500", "bg-orange-200", "bg-white"],
       image: "/themes/Kesari.jpg",
     },
     {
       id: "blue",
-      name: "Pragati (Bhim)",
-      description:
-        "Channel the profound, uncompromising intellect required to draft an entire national constitution. A deeply logical theme where every single pixel is guaranteed equal rights. Jai Bhim, Jai Bharat.",
+      name: t.settings.themes.blue.name,
+      description: t.settings.themes.blue.desc,
       colors: ["bg-blue-800", "bg-blue-300", "bg-white"],
       image: "/themes/Pragati.jpg",
     },
     {
       id: "green",
-      name: "Samriddhi (Ummah)",
-      description:
-        "Fostering a profound sense of universal brotherhood and global solidarity. The world could not have been anymore peaceful without you'll in it. Allah Hu Akbar.",
+      name: t.settings.themes.green.name,
+      description: t.settings.themes.green.desc,
       colors: ["bg-green-800", "bg-green-500", "bg-white"],
       image: "/themes/Samriddhi.png",
     },
     {
       id: "dark",
-      name: "Andhakar (Dark)",
-      description:
-        "Embrace the cosmic void. For those moments when you realize all digital interfaces are merely Maya (an illusion), and you'd really just prefer to spare your corneas from the blinding light of reality. Andhera Kaayam Rahe.",
+      name: t.settings.themes.dark.name,
+      description: t.settings.themes.dark.desc,
       colors: ["bg-slate-800", "bg-slate-600", "bg-black"],
       image: "/themes/Andhakar.jpg",
     },
@@ -60,10 +58,10 @@ export default function SettingsPage() {
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-accent tracking-tight">
-                  Settings
+                  {t.settings.title}
                 </h1>
                 <p className="text-slate-500 dark:text-slate-400 mt-1">
-                  Manage your application preferences
+                  {t.settings.subtitle}
                 </p>
               </div>
             </div>
@@ -71,18 +69,18 @@ export default function SettingsPage() {
             <div className="formal-panel p-8 rounded-2xl w-full animate-in slide-in-from-bottom-4 fade-in duration-300" style={{ animationDelay: "100ms" }}>
               <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center gap-2">
                 <Palette size={20} className="text-brand-500" />
-                Appearance & Theme
+                {t.settings.themeTitle}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {themes.map((t) => {
-                  const isActive = theme === t.id;
+                {themes.map((tItem) => {
+                  const isActive = theme === tItem.id;
 
                   return (
                     <button
-                      key={t.id}
+                      key={tItem.id}
                       onClick={() =>
-                        setTheme(t.id as "saffron" | "dark" | "blue" | "green")
+                        setTheme(tItem.id as "saffron" | "dark" | "blue" | "green")
                       }
                       className={`group relative text-left p-6 rounded-xl border-2 transition-all duration-300 ${
                         isActive
@@ -99,19 +97,19 @@ export default function SettingsPage() {
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 shadow-sm border border-slate-200/50 dark:border-slate-700/50 relative">
                           <Image
-                            src={t.image}
-                            alt={t.name}
+                            src={tItem.image}
+                            alt={tItem.name}
                             fill
                             className="object-cover"
                           />
                         </div>
                         <h3 className="font-bold text-slate-800 dark:text-slate-100 text-lg">
-                          {t.name}
+                          {tItem.name}
                         </h3>
                       </div>
 
                       <p className="text-sm text-slate-500 dark:text-slate-400 min-h-[40px]">
-                        {t.description}
+                        {tItem.description}
                       </p>
                     </button>
                   );

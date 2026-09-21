@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
@@ -10,8 +12,11 @@ import {
   BookOpen,
   Layers,
 } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen flex flex-col relative overflow-x-hidden">
       <Header />
@@ -39,21 +44,19 @@ export default function HomePage() {
       <div className="flex-1 lg:ml-16 w-full flex flex-col items-center px-6 pt-16 pb-24 lg:pt-24">
         {/* Hero Section */}
         <div className="w-full max-w-6xl flex flex-col items-center justify-center text-center animate-in fade-in slide-in-from-bottom-8 duration-500">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-brand-200/60 text-brand-700 text-sm font-bold mb-8 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-slate-900 transition-all cursor-pointer group">
-            <span>Welcome to the Future of Legal Compliance</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-brand-200/60 text-brand-700 dark:text-brand-400 text-sm font-bold mb-8 shadow-sm hover:shadow-md hover:bg-white dark:hover:bg-slate-900 transition-all cursor-pointer group">
+            <span>{t.home.heroBadge}</span>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black text-slate-800 dark:text-slate-100 tracking-tighter leading-[1.05] mb-6 drop-shadow-sm pb-3">
-            Simplify Your <br />
+            {t.home.heroTitlePrefix} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-brand-accent pr-2">
-              Ayurvedic Licensing
+              {t.home.heroTitleHighlight}
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-12 font-medium">
-            IP Shakti Sahayak is an intelligent, unified retrieval assistant designed
-            specifically to guide you through the regulatory complexities of the
-            AYUSH sector.
+            {t.home.heroSubtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -61,7 +64,7 @@ export default function HomePage() {
               href="/assessment"
               className="group flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-lg shadow-xl border border-transparent dark:border-white/20 hover:shadow-2xl hover:-translate-y-1 hover:bg-slate-800 active:scale-95 transition-all duration-300 w-full sm:w-auto"
             >
-              Start Assessment
+              {t.home.startAssessment}
               <ArrowRight
                 size={20}
                 className="group-hover:translate-x-1 transition-transform"
@@ -71,7 +74,7 @@ export default function HomePage() {
               href="/corpus"
               className="group flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-bold text-lg shadow-lg border border-slate-100 dark:border-white/20 hover:shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full sm:w-auto"
             >
-              Browse Legal Corpus
+              {t.home.browseLegalCorpus}
               <BookOpen
                 size={20}
                 className="text-brand-500 group-hover:scale-110 transition-transform"
@@ -90,16 +93,14 @@ export default function HomePage() {
                 <ShieldCheck size={28} />
               </div>
               <h3 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-3 tracking-tight">
-                Compliance First
+                {t.home.cards.complianceFirst.title}
               </h3>
               <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
-                Ensure you meet all compliance thresholds before submitting
-                applications to the AYUSH ministry. We analyze your inputs
-                against the latest regulations automatically.
+                {t.home.cards.complianceFirst.desc}
               </p>
             </div>
             <div className="mt-8 flex items-center text-brand-600 font-semibold group-hover:gap-3 gap-2 transition-all cursor-pointer">
-              <Link href="/assessment">Learn more</Link> <ArrowRight size={18} />
+              <Link href="/assessment">{t.common.learnMore}</Link> <ArrowRight size={18} />
             </div>
           </div>
 
@@ -111,11 +112,10 @@ export default function HomePage() {
                 <Scale size={28} />
               </div>
               <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3 tracking-tight">
-                Regulatory Clarity
+                {t.home.cards.regulatoryClarity.title}
               </h3>
               <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">
-                Navigate the Drugs and Cosmetics Act & Biodiversity Act with
-                intelligent AI parsing.
+                {t.home.cards.regulatoryClarity.desc}
               </p>
             </div>
           </div>
@@ -128,11 +128,10 @@ export default function HomePage() {
                 <FileText size={28} />
               </div>
               <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3 tracking-tight">
-                Unified Intake
+                {t.home.cards.unifiedIntake.title}
               </h3>
               <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">
-                A single, streamlined process to assess your entity type,
-                formulations, and required licenses.
+                {t.home.cards.unifiedIntake.desc}
               </p>
             </div>
           </div>
@@ -146,16 +145,14 @@ export default function HomePage() {
                 <Search size={28} />
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-3 tracking-tight">
-                Deep Legal Corpus Search
+                {t.home.cards.deepSearch.title}
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-                Our built-in intelligent search lets you quickly query thousands
-                of official AYUSH precedents, guidelines, and TKDL references
-                instantly.
+                {t.home.cards.deepSearch.desc}
               </p>
               <Link href="/corpus">
                 <button className="mt-8 px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-bold shadow-md transition-colors">
-                  Try the Search Engine
+                  {t.home.cards.deepSearch.cta}
                 </button>
               </Link>
             </div>

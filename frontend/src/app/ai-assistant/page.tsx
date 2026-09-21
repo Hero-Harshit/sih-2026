@@ -1,9 +1,14 @@
+"use client";
+
 import GenericChat from "@/components/GenericChat";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { Sparkles } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function AIAssistantPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="h-screen w-full flex flex-col overflow-hidden relative">
       <Header />
@@ -34,13 +39,13 @@ export default function AIAssistantPage() {
             <div className="flex flex-col gap-1 shrink-0 animate-in slide-in-from-left-4 fade-in duration-500">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50/80 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/60 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-wider w-fit shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-brand-500" />
-                Intelligent RAG Assistant
+                {t.chat.badge}
               </div>
               <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-accent tracking-tight pb-1">
-                AI Legal Assistant
+                {t.chat.title}
               </h1>
               <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base">
-                Chat with our AI Legal Assistant to get quick insights and regulatory guidance.
+                {t.chat.subtitle}
               </p>
             </div>
 
