@@ -13,10 +13,22 @@ const LANGUAGES: {
   badgeColor: string;
 }[] = [
   {
+    code: "bn",
+    name: "বাংলা (Bengali)",
+    badge: "BN",
+    badgeColor: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300",
+  },
+  {
     code: "en",
     name: "English",
     badge: "EN",
     badgeColor: "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300",
+  },
+  {
+    code: "gu",
+    name: "ગુજરાતી (Gujarati)",
+    badge: "GU",
+    badgeColor: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300",
   },
   {
     code: "hi",
@@ -25,10 +37,22 @@ const LANGUAGES: {
     badgeColor: "bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-300",
   },
   {
+    code: "kn",
+    name: "ಕನ್ನಡ (Kannada)",
+    badge: "KN",
+    badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300",
+  },
+  {
     code: "mr",
     name: "मराठी (Marathi)",
     badge: "MR",
     badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300",
+  },
+  {
+    code: "sa",
+    name: "संस्कृतम् (Sanskrit)",
+    badge: "SA",
+    badgeColor: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300",
   },
   {
     code: "ta",
@@ -41,30 +65,6 @@ const LANGUAGES: {
     name: "తెలుగు (Telugu)",
     badge: "TE",
     badgeColor: "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300",
-  },
-  {
-    code: "bn",
-    name: "বাংলা (Bengali)",
-    badge: "BN",
-    badgeColor: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300",
-  },
-  {
-    code: "kn",
-    name: "ಕನ್ನಡ (Kannada)",
-    badge: "KN",
-    badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300",
-  },
-  {
-    code: "sa",
-    name: "संस्कृतम् (Sanskrit)",
-    badge: "SA",
-    badgeColor: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300",
-  },
-  {
-    code: "gu",
-    name: "ગુજરાતી (Gujarati)",
-    badge: "GU",
-    badgeColor: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300",
   },
 ];
 
