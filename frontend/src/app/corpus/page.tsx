@@ -361,6 +361,34 @@ export default function CorpusPage() {
     {
       name: "Drugs_And_Cosmetics_Law_Part_1.pdf",
       url: "https://drive.google.com/file/d/1xBN-EifZAgksJE_hqExhYFSLDLi7NN_A/view?usp=drive_link"
+    },
+    {
+      name: "Drugs_And_Cosmetics_Rules_1945_Rule_158B.pdf",
+      url: "https://drive.google.com/file/d/15VFjaQwwpncvv5lHkUmO59AHX_TOMqUg/view?usp=drive_link"
+    },
+    {
+      name: "Food_Safety_And_Standards_Part_1.pdf",
+      url: "https://drive.google.com/file/d/1IwQqgRVYaChvECfCGtgjnfUdB-Cn7KyN/view?usp=drive_link"
+    },
+    {
+      name: "Food_Safety_And_Standards_Part_2.pdf",
+      url: "https://drive.google.com/file/d/1SQJbsW95bccUmsw_7U-xvgpJqYGkmVsd/view?usp=drive_link"
+    },
+    {
+      name: "Product_Classification_Regulation_Part_1.pdf",
+      url: "https://drive.google.com/file/d/1aUBSQtxGKyavStwZowkNkMyHqRcuTWS6/view?usp=drive_link"
+    },
+    {
+      name: "Product_Classification_Regulation_Part_2.pdf",
+      url: "https://drive.google.com/file/d/1ucfOskRqoDvVusCY7JHfTt3In8rQb9J2/view?usp=drive_link"
+    },
+    {
+      name: "Product_Classification_Regulation_Part_3.pdf",
+      url: "https://drive.google.com/file/d/18lBDES35gLsAtXzXDQhhcqs2tsZjH9oN/view?usp=drive_link"
+    },
+    {
+      name: "Product_Classification_Regulation_Part_4.pdf",
+      url: "https://drive.google.com/file/d/17ZwxzYQSc7FXGvGSRcaC5cKPBRTqY55w/view?usp=drive_link"
     }
   ];
 
@@ -448,7 +476,7 @@ export default function CorpusPage() {
                       rel="noopener noreferrer"
                       className="shrink-0 ml-4 px-4 py-2 rounded-xl border-2 border-brand-500 text-brand-600 hover:bg-brand-50 hover:text-brand-700 font-medium text-sm transition-colors"
                     >
-                      Access File
+                      {t.common.accessFile}
                     </a>
                   </div>
                 ))}

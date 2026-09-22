@@ -8,6 +8,7 @@ export interface TranslationSchema {
     learnMore: string;
     tryAgain: string;
     accessDatabase: string;
+    accessFile: string;
     loading: string;
   };
   search: {
@@ -290,6 +291,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "Learn more",
       tryAgain: "Try Again",
       accessDatabase: "Access Database",
+      accessFile: "Access File",
       loading: "Loading...",
     },
     search: {
@@ -965,6 +967,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "अधिक जानें",
       tryAgain: "पुनः प्रयास करें",
       accessDatabase: "डेटाबेस खोलें",
+      accessFile: "फ़ाइल एक्सेस करें",
       loading: "लोड हो रहा है...",
     },
     search: {
@@ -1640,6 +1643,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "अधिक जाणून घ्या",
       tryAgain: "पुन्हा प्रयत्न करा",
       accessDatabase: "डेटाबेस उघडा",
+      accessFile: "फाईल ऍक्सेस करा",
       loading: "लोड होत आहे...",
     },
     search: {
@@ -2315,6 +2319,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "மேலும் அறிக",
       tryAgain: "மீண்டும் முயற்சிக்கவும்",
       accessDatabase: "தரவுத்தளத்தைத் திறக்கவும்",
+      accessFile: "கோப்பை அணுகவும்",
       loading: "ஏற்றப்படுகிறது...",
     },
     search: {
@@ -2990,6 +2995,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "మరింత తెలుసుకోండి",
       tryAgain: "మళ్లీ ప్రయత్నించండి",
       accessDatabase: "డేటాబేస్ యాక్సెస్ చేయండి",
+      accessFile: "ఫైల్‌ను యాక్సెస్ చేయండి",
       loading: "లోడ్ అవుతోంది...",
     },
     search: {
@@ -3665,6 +3671,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "আরও জানুন",
       tryAgain: "আবার চেষ্টা করুন",
       accessDatabase: "ডাটাবেস অ্যাক্সেস করুন",
+      accessFile: "ফাইল অ্যাক্সেস করুন",
       loading: "লোড হচ্ছে...",
     },
     search: {
@@ -4269,6 +4276,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "ಹೆಚ್ಚು ತಿಳಿಯಿರಿ",
       tryAgain: "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
       accessDatabase: "ಡೇಟಾಬೇಸ್ ಪ್ರವೇಶಿಸಿ",
+      accessFile: "ಫೈಲ್ ಪ್ರವೇಶಿಸಿ",
       loading: "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
     },
     search: {
@@ -4873,6 +4881,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "अधिकं ज्ञायताम्",
       tryAgain: "पुनः प्रयतताम्",
       accessDatabase: "दत्तांशकोशं प्रविशन्तु",
+      accessFile: "सञ्चिकां प्राप्नुहि",
       loading: "लोड् क्रियते...",
     },
     search: {
@@ -5491,6 +5500,7 @@ export const translations: Record<Language, TranslationSchema> = {
       learnMore: "વધુ જાણો",
       tryAgain: "ફરી પ્રયાસ કરો",
       accessDatabase: "ડેટાબેઝ ઍક્સેસ કરો",
+      accessFile: "ફાઇલ ઍક્સેસ કરો",
       loading: "લોડ થઈ રહ્યું છે...",
     },
     search: {
