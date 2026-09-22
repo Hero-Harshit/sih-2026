@@ -44,7 +44,7 @@ export default function ExpertEscalation() {
     {
       email: "swamini129@gmail.com",
       mobile: "8793203588",
-      image: "/experts/swamini.jpeg",
+      image: "/experts/swamini-formal.png",
     },
     {
       email: "biradarmamta24@gmail.com",

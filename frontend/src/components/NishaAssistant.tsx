@@ -11,6 +11,7 @@ export default function NishaAssistant() {
   const [isOpen, setIsOpen] = useState(false);
 
   const blobRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const dragInfo = useRef({ startX: 0, startY: 0, initialX: 0, initialY: 0, moved: false });
 
   useEffect(() => {
@@ -21,6 +22,27 @@ export default function NishaAssistant() {
     });
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        isOpen &&
+        blobRef.current &&
+        !blobRef.current.contains(event.target as Node) &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     dragInfo.current = {
@@ -140,6 +162,7 @@ export default function NishaAssistant() {
       {/* Chat Modal Popover */}
       {isOpen && (
         <div
+          ref={modalRef}
           className="fixed z-[9998] w-[90vw] sm:w-[400px] h-[600px] max-h-[80vh] flex flex-col rounded-3xl bg-white dark:bg-zinc-900 shadow-2xl border border-brand-200 dark:border-zinc-800 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
           style={modalStyle}
         >
