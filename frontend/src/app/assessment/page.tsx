@@ -57,11 +57,14 @@ export default function AssessmentPage() {
           const rawName = (data.product_name || data.formulation_name || data.name || data.title) as string | undefined;
           const rawCategory = (data.category || data.formulation_type || data.type) as string | undefined;
           const newRecord = {
+            id: Date.now().toString(),
             name: rawName || "AYUSH Formulation Assessment",
             category: rawCategory || "Classical Formulation",
             score: score,
             status: status,
             date: new Date().toISOString(),
+            formData: data,
+            reportData: result,
           };
           const existing = JSON.parse(localStorage.getItem("assessment_history") || "[]");
           const updated = Array.isArray(existing) ? [newRecord, ...existing] : [newRecord];

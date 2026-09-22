@@ -89,7 +89,7 @@ const defaults: CategoryRiskData[] = [
 ];
 
 export default function RiskAnalyticsChart({ categories }: RiskAnalyticsChartProps) {
-  const data = categories?.length ? categories : defaults;
+  const data = categories || defaults;
   const [mode, setMode] = useState<"risk" | "issues">("risk");
   const [active, setActive] = useState<number | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
