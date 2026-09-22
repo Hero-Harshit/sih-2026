@@ -9,7 +9,7 @@ import { Loader2, Sparkles } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function AssessmentPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(false);
   const [reportData, setReportData] = useState<ComplianceData | null>(null);
@@ -25,7 +25,29 @@ export default function AssessmentPage() {
         body: JSON.stringify(data)
       });
       if (response.ok) {
-        const result = await response.json();
+        let result = await response.json();
+
+        // Translate if language is not English
+        if (language !== "en") {
+          try {
+            const translateRes = await fetch("/api/translate", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ reportData: result, language })
+            });
+            if (translateRes.ok) {
+              const translatedResult = await translateRes.json();
+              // Retain original riskScore to be safe
+              translatedResult.riskScore = result.riskScore;
+              result = translatedResult;
+            } else {
+              console.error("Translation failed, using English fallback");
+            }
+          } catch (e) {
+            console.error("Translation error:", e);
+          }
+        }
+
         setReportData(result);
 
         // Save to assessment_history in localStorage for Analytics Dashboard

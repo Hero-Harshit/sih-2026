@@ -474,7 +474,7 @@ export const translations: Record<Language, TranslationSchema> = {
       ],
       experts: [
         {
-          name: "Tanvi Durude",
+          name: "Tanvi Durgude",
           role: "Legal & Regulatory Expert",
           desc: "Specialized in providing expert consultations and legal insights for regulatory compliance. Dedicated to solving your legal queries efficiently.",
         },
